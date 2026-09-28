@@ -4,7 +4,7 @@
 
 ## Giới thiệu
 
-Asha Group Website là trang web hệ sinh thái kết nối đầu tư được xây dựng bằng React, Vite, và React Router. Website tập trung vào việc tạo điểm gặp giữa nhà đầu tư, chủ dự án và đối tác chuyên môn trên nền tảng thông tin rõ ràng và hợp tác có trách nhiệm.
+Matrix Holding Website là trang web hệ sinh thái kết nối đầu tư được xây dựng bằng React, Vite, và React Router. Website tập trung vào việc tạo điểm gặp giữa nhà đầu tư, chủ dự án và đối tác chuyên môn trên nền tảng thông tin rõ ràng và hợp tác có trách nhiệm.
 
 ## Công nghệ sử dụng
 
@@ -20,10 +20,10 @@ Asha Group Website là trang web hệ sinh thái kết nối đầu tư được
 
 ```bash
 # Clone repository
-git clone https://github.com/asha-group/website.git
+git clone https://github.com/toduco5/Matrix-Ventures.git
 
 # Di chuyển vào thư mục dự án
-cd asha-group-website
+cd Matrix-Ventures
 
 # Cài đặt dependencies
 npm install
