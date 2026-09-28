@@ -1,0 +1,3 @@
+import { PILLARS } from "../data/constants.js";
+const icons=["fa-compass-drafting","fa-gears","fa-leaf"];
+export default function Features(){return <section className="section pillars"><div className="container"><div className="section-heading"><p className="eyebrow">CÁCH CHÚNG TÔI KẾT NỐI</p><h2>Ba nguyên tắc. <em>Một cộng đồng tin cậy.</em></h2><p>Nền tảng tạo điều kiện cho các bên gặp gỡ và trao đổi; không cam kết lợi nhuận và không thay thế hoạt động thẩm định độc lập.</p></div><div className="pillar-grid">{PILLARS.map((p,i)=><article className="pillar-card" key={p.number}><span className="pillar-icon"><i className={`fa-solid ${icons[i]}`} /></span><span className="eyebrow">{p.number}</span><h3>{p.title}</h3><p>{p.desc}</p></article>)}</div></div></section>}

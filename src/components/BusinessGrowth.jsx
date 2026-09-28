@@ -1,0 +1,3 @@
+import { Link } from "react-router-dom";
+import { GROWTH_PROJECT, IMG } from "../data/constants.js";
+export default function BusinessGrowth(){return <section className="project-highlight"><div className="container project-grid"><div className="project-image"><img src={`${IMG}/${GROWTH_PROJECT.image}`} alt="Đại diện dự án và nhà đầu tư trao đổi trực tiếp" loading="lazy"/><span className="project-tag">QUY TRÌNH KẾT NỐI</span></div><div className="project-copy"><p className="eyebrow">TỪ TRAO ĐỔI ĐẾN HỢP TÁC</p><h2>{GROWTH_PROJECT.title}<br/><em>{GROWTH_PROJECT.subtitle}</em></h2><p>{GROWTH_PROJECT.desc}</p><Link to="/contact" className="text-link">Bắt đầu kết nối <i className="fa-solid fa-arrow-right"/></Link></div></div></section>}
