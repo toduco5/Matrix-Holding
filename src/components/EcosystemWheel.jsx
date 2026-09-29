@@ -1,18 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-const outerCompanies = [
-  ["Bất động sản & Hạ tầng", "property"],
-  ["Công nghệ & Đổi mới", "technology"],
-  ["Năng lượng & Bền vững", "energy"],
-  ["Logistics & Chuỗi cung ứng", "logistics"],
-  ["Du lịch & Dịch vụ", "leisure"],
-];
+import { SECTORS } from "../data/constants.js";
 
 const coreBusinesses = [
-  ["Network", "/ecosystem/network", "fa-circle-nodes"],
-  ["Connect", "/ecosystem/connect", "fa-link"],
-  ["Ventures", "/ecosystem/ventures", "fa-arrow-trend-up"],
+  { name:"Network", path:"/ecosystem/network", icon:"fa-circle-nodes", description:"Mạng lưới hợp tác và thị trường" },
+  { name:"Connect", path:"/ecosystem/connect", icon:"fa-link", description:"Kết nối năng lực chuyên môn" },
+  { name:"Ventures", path:"/ecosystem/ventures", icon:"fa-arrow-trend-up", description:"Phát triển danh mục kinh doanh" },
 ];
 
 export default function EcosystemWheel() {
@@ -26,10 +19,10 @@ export default function EcosystemWheel() {
     <div className={`ecosystem-stage${paused ? " is-paused" : ""}`}>
       <div className="ecosystem-glow" aria-hidden="true" />
       <div className="ecosystem-wheel ecosystem-wheel--outer">
-        {outerCompanies.map(([name, slug], index) => <Link className="ecosystem-node ecosystem-node--outer" to={`/ecosystem/${slug}`} key={name} style={{"--angle":`${index * (360 / outerCompanies.length)}deg`,"--negative-angle":`${index * (-360 / outerCompanies.length)}deg`}}><span>{name}</span></Link>)}
+        {SECTORS.map((sector, index) => <Link className="ecosystem-node ecosystem-node--outer" to={`/ecosystem/${sector.slug}`} key={sector.id} aria-label={`Xem trang ${sector.name}`} style={{"--angle":`${index * (360 / SECTORS.length)}deg`,"--negative-angle":`${index * (-360 / SECTORS.length)}deg`}}><span>{sector.name}</span></Link>)}
       </div>
       <div className="ecosystem-wheel ecosystem-wheel--inner">
-        {coreBusinesses.map(([name, path, icon], index) => <Link className="ecosystem-node ecosystem-node--inner" to={path} key={name} style={{"--angle":`${index * (360 / coreBusinesses.length)}deg`,"--negative-angle":`${index * (-360 / coreBusinesses.length)}deg`}}><span><i className={`fa-solid ${icon}`} aria-hidden="true" />{name}</span></Link>)}
+        {coreBusinesses.map((item, index) => <Link className="ecosystem-node ecosystem-node--inner" to={item.path} key={item.name} aria-label={`${item.name}: ${item.description}`} style={{"--angle":`${index * (360 / coreBusinesses.length)}deg`,"--negative-angle":`${index * (-360 / coreBusinesses.length)}deg`}}><span><i className={`fa-solid ${item.icon}`} aria-hidden="true" />{item.name}</span></Link>)}
       </div>
       <Link className="ecosystem-core" to="/about" aria-label="Giới thiệu Matrix Holding"><img src="/assets/matrix-holding-logo.png?v=matrix" alt="Matrix Holding" /><strong>MATRIX</strong><span>HOLDING</span></Link>
     </div>

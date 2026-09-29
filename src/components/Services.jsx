@@ -8,7 +8,7 @@ export default function Services() {
         <div>
           <p className="eyebrow">LĨNH VỰC ĐẦU TƯ TRỌNG TÂM</p>
           <h2>Nơi nguồn lực gặp <em>cơ hội phù hợp.</em></h2>
-          <p>Năm lĩnh vực giúp nhà đầu tư, chủ dự án và chuyên gia xác định đúng phạm vi để bắt đầu một cuộc trao đổi có cơ sở.</p>
+          <p>Năm lĩnh vực là nền tảng cho danh mục kinh doanh đa ngành, kết nối năng lực phát triển, vận hành và thị trường.</p>
         </div>
         <Link className="text-link" to="/sectors">Xem toàn bộ lĩnh vực <i className="fa-solid fa-arrow-right" /></Link>
       </div>

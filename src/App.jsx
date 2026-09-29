@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Community from "./pages/Community.jsx";
+import Careers from "./pages/Careers.jsx";
 import News from "./pages/News.jsx";
 import Sectors from "./pages/Sectors.jsx";
 import EcosystemDetail from "./pages/EcosystemDetail.jsx";
@@ -83,7 +84,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Community />} />
+          <Route path="/tuyen-dung" element={<Careers />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/news" element={<News />} />
           <Route path="/sectors" element={<Sectors />} />
           <Route path="/ecosystem/:slug" element={<EcosystemDetail />} />

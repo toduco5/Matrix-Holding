@@ -7,9 +7,10 @@ export default function PageMeta({ title, description }) {
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", fullTitle);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
-    return () => {
-      document.title = "Matrix Holding | Hệ sinh thái cộng đồng kết nối đầu tư";
-    };
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
+    canonical.href = `${window.location.origin}${window.location.pathname}`;
+    return () => { document.title = "Matrix Holding | Hệ sinh thái đầu tư đa ngành"; };
   }, [title, description]);
   return null;
 }

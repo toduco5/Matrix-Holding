@@ -1,0 +1,24 @@
+:root{--site-bg:#fff;--surface:#fff;--surface-soft:#f4f7fb;--surface-raised:#eef3f9;--button-primary:#174f9e;--button-primary-hover:#0d3978;--button-text:#fff;--button-secondary:#f0b72e;--button-secondary-text:#172437;--control-border:#d4dfec;--heading-blue:#123d80}
+html,body,#root{background:var(--site-bg)}
+body{color:var(--muted);transition:background-color .28s ease,color .28s ease}
+.btn,.nav-cta,.contact-form button,.mega-contact{background:var(--button-primary)!important;color:var(--button-text)!important;border:1px solid transparent;box-shadow:0 5px 14px #174f9e2b}
+.btn:hover,.nav-cta:hover,.contact-form button:hover,.mega-contact:hover{background:var(--button-primary-hover)!important;color:#fff!important;box-shadow:0 9px 22px #174f9e3d}
+.btn:focus-visible,.nav-cta:focus-visible,.contact-form button:focus-visible,.career-filters button:focus-visible,.insights-categories button:focus-visible{outline:3px solid var(--button-secondary);outline-offset:3px}
+.career-search span{background:var(--button-secondary);color:var(--button-secondary-text)}
+.career-filters button,.insights-categories button{border-color:var(--control-border);color:var(--ink)}
+.career-filters button.is-active,.insights-categories button.is-active{background:var(--button-primary);border-color:var(--button-primary);color:var(--button-text)}
+.theme-toggle{border-color:var(--control-border);background:var(--surface-raised);color:var(--heading-blue)}
+
+:root[data-theme="dark"]{--site-bg:#07111f;--surface:#101d30;--surface-soft:#0b1727;--surface-raised:#16263c;--control-border:#2d4260;--heading-blue:#b8d3ff;--button-primary:#5a94ff;--button-primary-hover:#7daaff;--button-text:#071422;--button-secondary:#e4bd62;--button-secondary-text:#111b2a}
+:root[data-theme="dark"] .career-content,:root[data-theme="dark"] .insights-page{background:var(--site-bg)}
+:root[data-theme="dark"] .career-aside,:root[data-theme="dark"] .job-card,:root[data-theme="dark"] .insights-cards article{background:var(--surface);border-color:var(--control-border)}
+:root[data-theme="dark"] .career-aside h2,:root[data-theme="dark"] .career-aside li,:root[data-theme="dark"] .job-card h2,:root[data-theme="dark"] .job-card__link,:root[data-theme="dark"] .insights-heading h1,:root[data-theme="dark"] .insights-latest__heading h2,:root[data-theme="dark"] .insights-latest h3,:root[data-theme="dark"] .insights-list-heading h2,:root[data-theme="dark"] .insights-cards h2{color:var(--heading-blue)}
+:root[data-theme="dark"] .career-aside p,:root[data-theme="dark"] .career-aside small,:root[data-theme="dark"] .job-list__meta,:root[data-theme="dark"] .job-card p,:root[data-theme="dark"] .job-card small,:root[data-theme="dark"] .insights-heading p,:root[data-theme="dark"] .insights-latest p,:root[data-theme="dark"] .insights-cards p{color:#adbbcf}
+:root[data-theme="dark"] .career-search{background:#0e1b2d;color:var(--button-primary)}
+:root[data-theme="dark"] .career-search input,:root[data-theme="dark"] .insights-toolbar input{background:transparent;color:#edf4ff}
+:root[data-theme="dark"] .job-tags span,:root[data-theme="dark"] .job-type{background:#172a43;color:#c7d8f4}
+:root[data-theme="dark"] .career-aside hr,:root[data-theme="dark"] .insights-crumb,:root[data-theme="dark"] .insights-toolbar,:root[data-theme="dark"] .insights-latest__heading,:root[data-theme="dark"] .insights-latest article,:root[data-theme="dark"] .insights-list-heading{border-color:var(--control-border)}
+:root[data-theme="dark"] .insights-cards a,:root[data-theme="dark"] .insights-crumb,:root[data-theme="dark"] .insights-toolbar label{color:#9fc2ff}
+:root[data-theme="dark"] .career-filters button{background:var(--surface);border-color:var(--control-border);color:#cfdbed}
+:root[data-theme="dark"] .career-filters button.is-active{background:var(--button-primary);color:var(--button-text)}
+:root[data-theme="dark"] .theme-toggle{background:#1a2d47;color:var(--button-secondary);border-color:#385273}

@@ -2,6 +2,10 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import "./styles/enhancements.css";
+import "./styles/careers-news.css";
+import "./styles/theme.css";
+import "./styles/capabilities.css";
+import "./styles/audience-paths.css";
 import CursorGlow from "./components/CursorGlow.jsx";
 
 const savedTheme = localStorage.getItem("matrix-theme");

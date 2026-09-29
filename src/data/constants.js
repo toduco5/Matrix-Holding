@@ -9,7 +9,7 @@ export const SECTORS = [
 ];
 
 export const QUICK_LINKS = [
-  ["Trang chủ", "/"], ["Giới thiệu", "/about"], ["Kiến thức", "/news"], ["Tham gia cộng đồng", "/careers"], ["Liên hệ", "/contact"],
+  ["Trang chủ", "/"], ["Giới thiệu", "/about"], ["Tin tức", "/news"], ["Tuyển dụng", "/tuyen-dung"], ["Liên hệ", "/contact"],
 ];
 
 export const TOPBAR_INFO = [
@@ -18,18 +18,18 @@ export const TOPBAR_INFO = [
   { icon:"fa-mobile-alt", text:"(+84) 332 318 460", href:"tel:+84332318460" },
 ];
 export const BANNER_SLIDES = [
-  { key:"connect", image:"photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=88", title:"Kết nối nguồn lực. Kiến tạo cơ hội.", subtitle:"Matrix Holding xây dựng hệ sinh thái cộng đồng nơi nhà đầu tư, chủ dự án và đối tác chuyên môn gặp nhau trên nền tảng thông tin rõ ràng và mục tiêu hợp tác dài hạn." },
-  { key:"network", image:"photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2000&q=88", title:"Một cộng đồng cùng tầm nhìn", subtitle:"Mở rộng mạng lưới quan hệ chất lượng, chia sẻ kinh nghiệm thực tế và tiếp cận những góc nhìn đa chiều trước mỗi quyết định." },
-  { key:"projects", image:"photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=88", title:"Cơ hội được trình bày minh bạch", subtitle:"Mỗi dự án cần mô tả rõ mục tiêu, giai đoạn, nhu cầu nguồn lực và đầu mối trao đổi để cộng đồng có cơ sở tìm hiểu ban đầu." },
-  { key:"innovation", image:"photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=88", title:"Đổi mới tạo nên tăng trưởng", subtitle:"Kết nối công nghệ, dữ liệu và năng lực triển khai để biến ý tưởng thành giải pháp có giá trị cho thị trường." },
-  { key:"sustainable", image:"photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2000&q=88", title:"Đầu tư có trách nhiệm", subtitle:"Khuyến khích những hướng phát triển cân bằng giữa hiệu quả kinh tế, tác động xã hội và trách nhiệm với môi trường." },
-  { key:"future", image:"photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2000&q=88", title:"Cùng xây dựng bước tiếp theo", subtitle:"Bắt đầu bằng một cuộc trao đổi đúng trọng tâm, tiến tới thẩm định độc lập và thiết lập phương án hợp tác phù hợp." },
+  { key:"holding", image:"photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=88", title:"Kiến tạo giá trị qua hệ sinh thái đa ngành.", subtitle:"Matrix Holding phát triển các lĩnh vực trọng tâm bằng năng lực đầu tư, vận hành và hợp tác dài hạn." },
+  { key:"property", image:"photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=88", title:"Bất động sản & hạ tầng cho tương lai", subtitle:"Phát triển tài sản, không gian và hạ tầng dựa trên quy hoạch, hiệu quả vận hành và giá trị bền vững." },
+  { key:"technology", image:"photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=88", title:"Công nghệ thúc đẩy hiệu quả", subtitle:"Ứng dụng dữ liệu, tự động hóa và đổi mới để nâng cao năng lực cạnh tranh của từng ngành kinh doanh." },
+  { key:"energy", image:"photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2000&q=88", title:"Năng lượng cho tăng trưởng bền vững", subtitle:"Kết hợp hiệu quả kinh tế với trách nhiệm môi trường trong các quyết định phát triển dài hạn." },
+  { key:"logistics", image:"photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=88", title:"Kết nối chuỗi cung ứng thông minh", subtitle:"Tối ưu dòng chảy hàng hóa, dữ liệu và dịch vụ để phục vụ thị trường nhanh hơn, hiệu quả hơn." },
+  { key:"leisure", image:"photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=88", title:"Trải nghiệm dịch vụ có bản sắc", subtitle:"Phát triển du lịch, lưu trú và dịch vụ bằng chất lượng vận hành, thương hiệu và sự thấu hiểu khách hàng." },
 ];
 
 export const PILLARS = [
-  { number:"NGUYÊN TẮC 01", title:"Thông tin rõ ràng", desc:"Thông tin giới thiệu giúp cộng đồng hiểu mục tiêu và nhu cầu kết nối; quyết định đầu tư cần dựa trên hồ sơ và thẩm định độc lập." },
-  { number:"NGUYÊN TẮC 02", title:"Kết nối phù hợp", desc:"Ưu tiên chất lượng cuộc gặp, sự tương đồng về định hướng và khả năng bổ trợ nguồn lực giữa các bên." },
-  { number:"NGUYÊN TẮC 03", title:"Đồng hành dài hạn", desc:"Xây dựng quan hệ dựa trên trách nhiệm, trao đổi thẳng thắn và cam kết tạo giá trị bền vững cho cộng đồng." },
+  { number:"NĂNG LỰC 01", title:"Phát triển danh mục", desc:"Tập trung vào các lĩnh vực có nền tảng thị trường, tiềm năng vận hành và khả năng tạo giá trị dài hạn." },
+  { number:"NĂNG LỰC 02", title:"Vận hành xuất sắc", desc:"Chuẩn hóa quy trình, ứng dụng công nghệ và phát triển đội ngũ để nâng cao hiệu quả trong từng đơn vị kinh doanh." },
+  { number:"NĂNG LỰC 03", title:"Tăng trưởng bền vững", desc:"Cân bằng hiệu quả tài chính, trách nhiệm xã hội và sử dụng nguồn lực có trách nhiệm." },
 ];
 
 export const TESTIMONIALS = [
