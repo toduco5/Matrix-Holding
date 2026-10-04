@@ -24,7 +24,7 @@ export default function Careers() {
           <h1>Cơ hội phù hợp cho hành trình tiếp theo của bạn.</h1>
           <p>Khám phá các vị trí tại Matrix Holding và những doanh nghiệp trong hệ sinh thái đối tác.</p>
           <label className="career-search"><i className="fa-solid fa-magnifying-glass" /><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Tìm vị trí, công ty hoặc phòng ban" /><span>{jobs.length} vị trí <i className="fa-solid fa-arrow-right" /></span></label>
-          <div className="career-hero__stats"><strong>{CAREER_JOBS.length} vị trí đang tuyển</strong><strong>5 doanh nghiệp liên trong</strong></div>
+          <div className="career-hero__stats"><strong>{CAREER_JOBS.length} vị trí được đăng tải</strong><strong>Cơ hội từ các đơn vị trong hệ sinh thái</strong></div>
         </div>
       </section>
 
@@ -47,7 +47,7 @@ export default function Careers() {
               {jobs.length ? jobs.map(job => <article className={`job-card job-card--${job.tone}`} key={job.id}>
                 <div className="job-card__code">{job.code}</div>
                 <div className="job-card__body"><span className="job-type">{job.type}</span><h2>{job.title}</h2><strong>{job.unit}</strong><div className="job-tags"><span><i className="fa-solid fa-location-dot" />{job.location}</span><span><i className="fa-regular fa-money-bill-1" />{job.salary}</span><span><i className="fa-regular fa-folder" />{job.department}</span></div><p>{job.summary}</p><small>Đăng ngày {job.date}</small></div>
-                <Link to="/contact" className="job-card__link">Xem chi tiết <i className="fa-solid fa-arrow-right" /></Link>
+                <Link to={`/careers/${job.id}`} className="job-card__link">Xem chi tiết <i className="fa-solid fa-arrow-right" /></Link>
               </article>) : <div className="career-empty"><i className="fa-regular fa-folder-open" /><h2>Chưa có vị trí phù hợp</h2><p>Thử thay đổi từ khóa hoặc phòng ban.</p></div>}
             </div>
           </div>

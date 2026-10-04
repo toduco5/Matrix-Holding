@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { SECTORS } from "../data/constants.js";
+import { ECOSYSTEM_UNITS } from "../data/ecosystem-units.js";
 
 const featuredProjects = [
   { name:"Năng lượng mặt trời cho trường học", meta:"Giáo dục & năng lượng · Minh họa", to:"/projects/solar-school" },
@@ -33,7 +34,7 @@ export default function Header() {
       <nav id="main-nav" className={`nav${open ? " nav--open" : ""}`} aria-label="Điều hướng chính">
         <NavLink to="/" end onClick={close}>Trang chủ</NavLink>
         <NavLink to="/about" onClick={close}>Giới thiệu</NavLink>
-        <details ref={dropdownRef} className="nav-dropdown"><summary>Hệ sinh thái <i className="fa-solid fa-chevron-down" /></summary><div className="dropdown-menu ecosystem-mega"><div className="mega-groups"><div className="mega-heading"><span>05 LĨNH VỰC ĐẦU TƯ</span><Link to="/sectors" onClick={close}>Xem tổng quan <i className="fa-solid fa-arrow-right" /></Link></div>{SECTORS.map((sector, index) => <Link className="mega-group" key={sector.id} to={`/ecosystem/${sector.slug}`} onClick={close}><b>0{index + 1}</b><span><strong>{sector.name}</strong><small>{sector.desc}</small></span><i className="fa-solid fa-arrow-right" /></Link>)}</div><div className="dropdown-projects"><p>DỰ ÁN MINH HỌA</p>{featuredProjects.map(project => <Link className="dropdown-project" key={project.name} to={project.to} onClick={close}><span>{project.name}</span><small>{project.meta}</small></Link>)}<Link className="mega-contact" to="/contact" onClick={close}>Bạn có dự án cần kết nối? <i className="fa-solid fa-arrow-right" /></Link></div></div></details>
+        <details ref={dropdownRef} className="nav-dropdown"><summary>Hệ sinh thái <i className="fa-solid fa-chevron-down" /></summary><div className="dropdown-menu ecosystem-mega"><div className="mega-groups"><div className="mega-heading"><span>04 HỆ SINH THÁI THÀNH VIÊN</span><Link to="/sectors" onClick={close}>Xem tổng quan <i className="fa-solid fa-arrow-right" /></Link></div>{ECOSYSTEM_UNITS.map(unit => <Link className="mega-group" key={unit.id} to={`/ecosystem/${unit.id}`} onClick={close}><b>{unit.number}</b><span><strong>{unit.name}</strong><small>{unit.label}</small></span><i className="fa-solid fa-arrow-right" /></Link>)}</div><div className="dropdown-projects"><p>LĨNH VỰC ƯU TIÊN</p>{SECTORS.slice(0,3).map(sector => <Link className="dropdown-project" key={sector.id} to={`/ecosystem/${sector.slug}`} onClick={close}><span>{sector.name}</span><small>{sector.desc}</small></Link>)}<Link className="mega-contact" to="/contact" onClick={close}>Bạn có nhu cầu hợp tác? <i className="fa-solid fa-arrow-right" /></Link></div></div></details>
         <NavLink to="/news" onClick={close}>Tin tức</NavLink>
         <NavLink to="/tuyen-dung" onClick={close}>Tuyển dụng</NavLink>
         <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label={theme === "dark" ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối"}><i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`} /><span>{theme === "dark" ? "Sáng" : "Tối"}</span></button>

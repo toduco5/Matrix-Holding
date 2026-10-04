@@ -19,6 +19,10 @@ const thematicGalleries = {
     { src:"photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=82", alt:"Chuyên gia phân tích hồ sơ và dữ liệu", caption:"Phân tích chuyên môn" },
     { src:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=82", alt:"Đối tác thống nhất phạm vi làm việc", caption:"Đối thoại trực tiếp" },
   ],
+  academy: [
+    { src:"photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=82", alt:"Học viên trao đổi trong chương trình đào tạo", caption:"Học tập thực tiễn" },
+    { src:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=82", alt:"Đội ngũ cùng thảo luận kế hoạch phát triển", caption:"Cộng đồng tinh hoa" },
+  ],
   technology: [
     { src:"photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=82", alt:"Hạ tầng công nghệ và vi mạch", caption:"Nền tảng công nghệ" },
     { src:"photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=82", alt:"Đội ngũ phát triển giải pháp số", caption:"Giải pháp thực tế" },
@@ -40,7 +44,7 @@ export default function EcosystemDetail(){
   if(!item)return <main className="not-found"><h1>Nội dung chưa có</h1><Link className="btn" to="/">Về trang chủ</Link></main>;
   const gallery=[{src:item.image,alt:`Hoạt động liên quan đến ${item.title}`,caption:item.title},...(thematicGalleries[slug] || thematicGalleries.connect)];
   return <><PageMeta title={item.title} description={item.intro}/><TopBar/><Header/><main>
-    <div className="title-band ecosystem-detail-hero" style={{backgroundImage:`linear-gradient(90deg,#00081ddd,#0f276588),url(https://images.unsplash.com/${item.image})`}}><div><p className="eyebrow">{item.label}</p><h1>{item.title}</h1><p>{item.tagline}</p></div></div>
+    <div className="title-band ecosystem-detail-hero" style={{backgroundImage:`linear-gradient(90deg,#1f0d26dd,#592b509c),url(https://images.unsplash.com/${item.image})`}}><div><p className="eyebrow">{item.label}</p><h1>{item.title}</h1><p>{item.tagline}</p></div></div>
     <section className="section"><div className="container about-grid"><div><p className="eyebrow">VAI TRÒ TRONG HỆ SINH THÁI</p><h2 className="detail-heading">{item.tagline}</h2><p>{item.intro}</p><p className="detail-note"><i className="fa-solid fa-circle-info"/> Nội dung có mục đích giới thiệu kết nối. Mỗi bên tự chịu trách nhiệm kiểm chứng và thẩm định trước quyết định.</p><Link className="btn" to="/contact">Đăng ký kết nối <i className="fa-solid fa-arrow-right"/></Link></div><img className="detail-image" src={`https://images.unsplash.com/${item.image}`} alt={`Hình ảnh chủ đề ${item.title}`}/></div></section>
     {slug === "property" && <PropertyMarketOverview />}
     <section className="section services-section"><div className="container"><div className="section-heading"><p className="eyebrow">AI CÓ THỂ THAM GIA</p><h2>Ba vai trò cùng tạo nên giá trị</h2><p>Mỗi bên tham gia bằng thế mạnh riêng và cùng chịu trách nhiệm về thông tin mình cung cấp.</p></div><div className="pillar-grid">{audiences.map((audience,index)=><article className="pillar-card audience-card" key={audience.title}><span className="pillar-icon"><i className={`fa-solid ${audience.icon}`}/></span><span className="eyebrow">0{index+1}</span><h3>{audience.title}</h3><p>{audience.text}</p></article>)}</div></div></section>

@@ -9,12 +9,15 @@ import News from "./pages/News.jsx";
 import Sectors from "./pages/Sectors.jsx";
 import EcosystemDetail from "./pages/EcosystemDetail.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
+import NewsDetail from "./pages/NewsDetail.jsx";
+import CareerDetail from "./pages/CareerDetail.jsx";
 import { Link } from "react-router-dom";
 import "./styles/tokens.css";
 import { initScrollAnimations } from "./utils/behavior.js";
 import ProgressScroll from "./components/ProgressScroll.jsx";
 import Skills from "./components/Skills.jsx";
 import DesignGallery from "./components/DesignGallery.jsx";
+import ContactWidget from "./components/ContactWidget.jsx";
 
 function RouteEffects() {
   const { pathname } = useLocation();
@@ -68,7 +71,7 @@ function ScrollToTop() {
   if (!visible) return null;
 
   return (
-    <button className="scroll-top-btn" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Về đầu trang">
+    <button className="scroll-top-btn visible" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Về đầu trang">
       <i className="fa-solid fa-chevron-up" />
     </button>
   );
@@ -86,8 +89,10 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/tuyen-dung" element={<Careers />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="/community" element={<Community />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/sectors" element={<Sectors />} />
           <Route path="/ecosystem/:slug" element={<EcosystemDetail />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
@@ -95,6 +100,7 @@ export default function App() {
         </Routes>
       </PageTransition>
       <ScrollToTop />
+      <ContactWidget />
     </BrowserRouter>
   );
 }

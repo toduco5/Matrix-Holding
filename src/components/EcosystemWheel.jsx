@@ -6,6 +6,7 @@ const coreBusinesses = [
   { name:"Network", path:"/ecosystem/network", icon:"fa-circle-nodes", description:"Mạng lưới hợp tác và thị trường" },
   { name:"Connect", path:"/ecosystem/connect", icon:"fa-link", description:"Kết nối năng lực chuyên môn" },
   { name:"Ventures", path:"/ecosystem/ventures", icon:"fa-arrow-trend-up", description:"Phát triển danh mục kinh doanh" },
+  { name:"Academy", path:"/ecosystem/academy", icon:"fa-graduation-cap", description:"Đào tạo năng lực lãnh đạo và chuyên môn" },
 ];
 
 export default function EcosystemWheel() {
@@ -13,8 +14,8 @@ export default function EcosystemWheel() {
   const paused = manualPaused;
   return <section className="ecosystem-section" aria-labelledby="ecosystem-title">
     <div className="container ecosystem-heading">
-      <div><p className="eyebrow">HỆ SINH THÁI MATRIX</p><h2 id="ecosystem-title">Năm lĩnh vực đầu tư. <em>Ba năng lực kết nối.</em></h2></div>
-      <div className="ecosystem-intro"><p>Vòng ngoài thể hiện các lĩnh vực trọng tâm. Network, Connect và Ventures là ba năng lực cốt lõi giúp đưa con người, chuyên môn và dự án đến gần nhau.</p><button type="button" className="ecosystem-toggle" aria-pressed={manualPaused} onClick={() => setManualPaused(value => !value)}><i className={`fa-solid ${manualPaused ? "fa-play" : "fa-pause"}`} /> {manualPaused ? "Tiếp tục xoay" : "Tạm dừng"}</button></div>
+      <div><p className="eyebrow">HỆ SINH THÁI MATRIX</p><h2 id="ecosystem-title">Năm lĩnh vực đầu tư. <em>Bốn năng lực cộng hưởng.</em></h2></div>
+      <div className="ecosystem-intro"><p>Vòng ngoài thể hiện các lĩnh vực trọng tâm. Network, Connect, Ventures và Academy là bốn năng lực cốt lõi đưa con người, chuyên môn và dự án đến gần nhau.</p><button type="button" className="ecosystem-toggle" aria-pressed={manualPaused} onClick={() => setManualPaused(value => !value)}><i className={`fa-solid ${manualPaused ? "fa-play" : "fa-pause"}`} /> {manualPaused ? "Tiếp tục xoay" : "Tạm dừng"}</button></div>
     </div>
     <div className={`ecosystem-stage${paused ? " is-paused" : ""}`}>
       <div className="ecosystem-glow" aria-hidden="true" />

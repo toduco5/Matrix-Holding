@@ -2,16 +2,13 @@ import TopBar from "../components/TopBar.jsx";
 import Header from "../components/Header.jsx";
 import Banner from "../components/Banner.jsx";
 import AudiencePaths from "../components/AudiencePaths.jsx";
-import Features from "../components/Features.jsx";
 import About from "../components/About.jsx";
 import EcosystemWheel from "../components/EcosystemWheel.jsx";
-import Testimonials from "../components/Testimonials.jsx";
 import Services from "../components/Services.jsx";
 import BusinessGrowth from "../components/BusinessGrowth.jsx";
 import Blog from "../components/Blog.jsx";
-import CommunityProjects from "../components/CommunityProjects.jsx";
-import Skills from "../components/Skills.jsx";
-import DesignGallery from "../components/DesignGallery.jsx";
+import HomeFAQ from "../components/HomeFAQ.jsx";
+import HomeCareers from "../components/HomeCareers.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 
@@ -22,16 +19,13 @@ export default function Home() {
     <main>
       <Banner />
       <AudiencePaths />
-      <Features />
       <About />
       <EcosystemWheel />
-      <Testimonials />
       <Services />
-      <Skills />
-      <DesignGallery />
       <BusinessGrowth />
-      <CommunityProjects />
       <Blog />
+      <HomeCareers />
+      <HomeFAQ />
     </main>
     <Footer />
   </>;

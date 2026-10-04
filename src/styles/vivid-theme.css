@@ -1,0 +1,34 @@
+/* Raycast-inspired principles: graphite surfaces, high-contrast type, restrained blue light. */
+:root{
+  --ink:#18181b;--navy:#18181b;--blue:#2563eb;--gold:#2563eb;--muted:#64748b;--line:#e2e8f0;--paper:#f8fafc;
+  --site-bg:#ffffff;--surface:#ffffff;--surface-soft:#f8fafc;--surface-raised:#eff6ff;
+  --button-primary:#2563eb;--button-primary-hover:#1d4ed8;--button-secondary:#eff6ff;--button-secondary-text:#1e3a8a;
+  --control-border:#cbd5e1;--heading-blue:#1e3a8a;
+}
+html,body,#root{background:var(--site-bg)}body{color:var(--muted)}
+.topbar,.footer,.leadership,.ecosystem-cta{background:#18181b!important;color:#f8fafc}
+.header{background:#ffffff!important;border-bottom-color:#e2e8f0!important;box-shadow:0 4px 18px #18181b0a}
+.logo,.burger{color:#18181b!important}.logo-light,.eyebrow,.news-meta,.meta{color:#2563eb!important}
+.nav{color:#334155!important}.nav a:hover,.nav a.active,.text-link{color:#2563eb!important}.nav a::after{background:#2563eb!important}
+.btn,.nav-cta,.contact-form button,.mega-contact{background:#2563eb!important;color:#fff!important;border:0!important;box-shadow:0 6px 16px #2563eb2e!important}
+.btn:hover,.nav-cta:hover,.contact-form button:hover,.mega-contact:hover{background:#1d4ed8!important;box-shadow:0 9px 20px #2563eb3d!important}
+.career-search span,.project-tag{background:#eff6ff!important;color:#1e3a8a!important}
+.pillars,.services-section,.career-content,.insights-content,.team-section{background:#f8fafc!important}
+.pillar-card,.sector-card,.team-card,.news-card,.career-aside,.job-card,.insights-cards article,.knowledge-card,.cv-form,.item-box .item{background:#fff!important;border-color:#e2e8f0!important}
+.pillar-card:hover,.sector-card:hover,.team-card:hover,.news-card:hover{border-color:#93c5fd!important;box-shadow:0 16px 34px #18181b12!important}
+.pillar-icon{background:#eff6ff!important;color:#2563eb!important}.about-photo:before{background:#dbeafe!important}.about-photo>span{background:#18181b!important}
+.sector-arrow,.office-info .icon,.detail-note i{color:#2563eb!important}.detail-note{border-left-color:#2563eb!important;background:#f8fafc!important}
+.title-band,.detail-hero,.career-hero,.insights-heading{background-color:#18181b!important}.title-band,.detail-hero{position:relative;isolation:isolate;background-blend-mode:luminosity!important}
+.title-band::before,.detail-hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(115deg,#18181be8,#1e3a8acc)}.title-band>*,.detail-hero>.container{position:relative;z-index:1}
+.career-hero{background-image:radial-gradient(circle at 85% 20%,#2563eb88 0,transparent 30%),linear-gradient(115deg,#18181b,#1e3a8a)!important}
+.ecosystem-section{background:radial-gradient(circle at 50% 48%,#1e3a8a 0,#18181b 70%)!important}
+.ecosystem-node:hover>span,.ecosystem-node:focus-visible>span,.ecosystem-node--inner:hover>span,.ecosystem-node--inner:focus-visible>span{background:#2563eb!important;border-color:#bfdbfe!important;box-shadow:0 0 0 3px #2563eb33,0 0 24px #2563eb70!important}
+.ecosystem-core{box-shadow:0 0 0 12px #18181be0,0 0 30px #2563eb77!important}
+.form-control,.cv-form input{background:#fff!important;border-color:#cbd5e1!important;color:#18181b!important}.form-control:focus,.cv-form input:focus{border-color:#2563eb!important;box-shadow:0 0 0 3px #2563eb24!important}
+.career-filters button,.insights-categories button{background:#fff!important;border-color:#cbd5e1!important;color:#1e3a8a!important}.career-filters button.is-active,.insights-categories button.is-active{background:#2563eb!important;border-color:#2563eb!important;color:#fff!important}
+.theme-toggle{background:#eff6ff!important;border-color:#cbd5e1!important;color:#2563eb!important}.scroll-progress,.scroll-progress-inner{background:#2563eb!important}
+:root[data-theme="dark"]{--ink:#f7f7f8;--navy:#09090b;--blue:#60a5fa;--gold:#60a5fa;--muted:#a1a1aa;--line:#27272a;--paper:#18181b;--site-bg:#09090b;--surface:#18181b;--surface-soft:#09090b;--surface-raised:#27272a;--button-primary:#60a5fa;--button-primary-hover:#93c5fd;--control-border:#3f3f46;--heading-blue:#f7f7f8}
+:root[data-theme="dark"] .header,:root[data-theme="dark"] .pillar-card,:root[data-theme="dark"] .sector-card,:root[data-theme="dark"] .team-card,:root[data-theme="dark"] .news-card,:root[data-theme="dark"] .career-aside,:root[data-theme="dark"] .job-card,:root[data-theme="dark"] .insights-cards article,:root[data-theme="dark"] .knowledge-card,:root[data-theme="dark"] .cv-form,:root[data-theme="dark"] .item-box .item{background:#18181b!important;border-color:#27272a!important}
+:root[data-theme="dark"] .pillars,:root[data-theme="dark"] .services-section,:root[data-theme="dark"] .career-content,:root[data-theme="dark"] .insights-content,:root[data-theme="dark"] .team-section{background:#09090b!important}
+:root[data-theme="dark"] .nav{color:#d4d4d8!important}:root[data-theme="dark"] .form-control,:root[data-theme="dark"] .cv-form input,:root[data-theme="dark"] .career-filters button,:root[data-theme="dark"] .insights-categories button{background:#09090b!important;color:#f7f7f8!important;border-color:#3f3f46!important}
+:root[data-theme="dark"] .header{background:#09090b!important}:root[data-theme="dark"] .logo,:root[data-theme="dark"] .burger{color:#f7f7f8!important}

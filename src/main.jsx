@@ -6,10 +6,15 @@ import "./styles/careers-news.css";
 import "./styles/theme.css";
 import "./styles/capabilities.css";
 import "./styles/audience-paths.css";
+import "./styles/matrix-expansion.css";
+import "./styles/brand-refresh.css";
+import "./styles/vivid-theme.css";
+import "./styles/contact-widget.css";
 import CursorGlow from "./components/CursorGlow.jsx";
 
 const savedTheme = localStorage.getItem("matrix-theme");
-const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+// Dark is the default visual direction; visitors can still switch to light mode.
+const preferredTheme = "dark";
 document.documentElement.dataset.theme = savedTheme || preferredTheme;
 
 createRoot(document.getElementById("root")).render(
