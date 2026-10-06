@@ -2,6 +2,7 @@
 export const NEWS_CATEGORIES = ["Tất cả", "Matrix Holding", "Matrix Network", "Matrix Connect", "Matrix Ventures", "Matrix Academy"];
 
 export const FEATURED_NEWS = {
+  id: "featured-news",
   slug:"matrix-holding-he-sinh-thai-da-nganh", category:"Matrix Holding", date:"01/08/2026", title:"Matrix Holding: Hệ sinh thái kinh doanh đa ngành", excerpt:"Matrix Holding kết nối năng lực dịch vụ, kinh doanh, đầu tư và đào tạo để hỗ trợ hành trình phát triển doanh nghiệp.", image:"photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1300&q=88", body:["Matrix Holding phát triển một nền tảng để các đơn vị, doanh nghiệp và chuyên gia có thể tìm thấy điểm giao về năng lực và nhu cầu.","Bốn nhánh Matrix Network, Matrix Connect, Matrix Ventures và Matrix Academy đảm nhiệm các vai trò bổ trợ: cung cấp dịch vụ, tạo kết nối kinh doanh, kết nối đầu tư và phát triển năng lực.","Phạm vi hoạt động cụ thể của từng đơn vị được xác định theo năng lực thực tế và các thỏa thuận riêng với đối tác."]
 };
 

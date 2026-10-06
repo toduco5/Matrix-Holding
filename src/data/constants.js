@@ -18,7 +18,7 @@ export const TOPBAR_INFO = [
   { icon:"fa-mobile-alt", text:"(+84) 332 318 460", href:"tel:+84332318460" },
 ];
 export const BANNER_SLIDES = [
-  { key:"holding", image:"photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=88", title:"Kiến tạo giá trị qua hệ sinh thái đa ngành.", subtitle:"Matrix Holding phát triển các lĩnh vực trọng tâm bằng năng lực đầu tư, vận hành và hợp tác dài hạn." },
+  { key:"holding", image:"photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=88", title:"Kiến tạo hệ sinh thái kinh doanh đa ngành", subtitle:"Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả, nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tiếp cận thị trường bền vững." },
   { key:"property", image:"photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=88", title:"Bất động sản & hạ tầng cho tương lai", subtitle:"Phát triển tài sản, không gian và hạ tầng dựa trên quy hoạch, hiệu quả vận hành và giá trị bền vững." },
   { key:"technology", image:"photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=88", title:"Công nghệ thúc đẩy hiệu quả", subtitle:"Ứng dụng dữ liệu, tự động hóa và đổi mới để nâng cao năng lực cạnh tranh của từng ngành kinh doanh." },
   { key:"energy", image:"photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2000&q=88", title:"Năng lượng cho tăng trưởng bền vững", subtitle:"Kết hợp hiệu quả kinh tế với trách nhiệm môi trường trong các quyết định phát triển dài hạn." },
@@ -54,9 +54,9 @@ export const BLOG_POSTS = [
 ];
 
 export const CONTACT_INFO = [
-  { icon:"fa-map-marker-alt", label:"Văn phòng Matrix Holding", detail:"107 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội, Việt Nam." },
+  { icon:"fa-location-dot", label:"Văn phòng Matrix Holding", detail:"107 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội, Việt Nam." },
   { icon:"fa-clock", label:"Thời gian làm việc", detail:"Thứ Hai – Thứ Sáu, 08:00 – 18:00." },
   { icon:"fa-envelope-open", label:"Email", detail:"tminhduc1302@gmail.com", href:"mailto:tminhduc1302@gmail.com" },
-  { icon:"fa-mobile-alt", label:"Điện thoại", detail:"(+84) 332 318 460", href:"tel:+84332318460" },
+  { icon:"fa-mobile-screen-button", label:"Điện thoại", detail:"(+84) 332 318 460", href:"tel:+84332318460" },
 ];
 
