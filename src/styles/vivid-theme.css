@@ -507,17 +507,17 @@ body { color: #1d1d1f; }
   color: #000000 !important;
 }
 
-/* Header overlays floating on top of hero image */
+/* Glassmorphism Header positioning (no overlap with TopBar) */
 .header, :root[data-theme="dark"] .header {
-  position: absolute !important;
-  top: 0 !important;
+  position: relative !important;
+  top: auto !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 100 !important;
-  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%) !important;
+  background: rgba(5, 7, 15, 0.88) !important;
   border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
 }
 
 /* Full screen Hero section spanning from top 0 */
