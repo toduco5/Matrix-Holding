@@ -149,7 +149,6 @@ export default function About() {
         title="Giới thiệu Tập Đoàn | Matrix Holding"
         description="Giới thiệu chính thức về Matrix Holding: Lời chủ tịch, định vị, sứ mệnh, mô hình 3 hệ sinh thái, quy trình làm việc, lợi thế và cam kết đối tác."
       />
-      <TopBar />
       <Header />
 
       <main style={{ background: "#05070f", color: "#ffffff", fontFamily: "'Be Vietnam Pro', sans-serif", overflow: "hidden" }}>

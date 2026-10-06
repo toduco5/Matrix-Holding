@@ -9,7 +9,7 @@ import EcosystemShowcase from "../components/EcosystemShowcase.jsx";
 export default function Sectors() {
   return <>
     <PageMeta title="Hệ sinh thái | Matrix Holding" description="Khám phá hệ sinh thái Matrix Holding gồm Network, Connect, Ventures và Academy." />
-    <TopBar /><Header />
+    <Header />
     <main>
       <div className="title-band" style={{backgroundImage:"linear-gradient(90deg,#1f0d26ee,#592b50b8),url(https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1800&q=86)"}}><h1>Hệ sinh thái Matrix Holding</h1></div>
       <EcosystemShowcase />

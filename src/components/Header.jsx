@@ -5,6 +5,7 @@ import { ECOSYSTEM_UNITS } from "../data/ecosystem-units.js";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "light");
   const headerRef = useRef(null);
   const dropdownRef = useRef(null);
@@ -18,13 +19,20 @@ export default function Header() {
   };
 
   useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     const outside = event => { if (headerRef.current && !headerRef.current.contains(event.target)) close(); };
     document.addEventListener("pointerdown", outside);
     return () => document.removeEventListener("pointerdown", outside);
   }, []);
 
   return (
-    <header ref={headerRef} className="header" onKeyDown={event => { if (event.key === "Escape") close(); }}>
+    <header ref={headerRef} className={`header ${scrolled ? "is-scrolled" : "is-transparent"}`} onKeyDown={event => { if (event.key === "Escape") close(); }}>
       <div className="header-inner container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Link className="logo" to="/" onClick={close} aria-label="Trang chủ Matrix Holding">
           <img src="/assets/matrix-holding-logo.png" alt="Matrix Holding" style={{ height: 34, width: "auto" }} />

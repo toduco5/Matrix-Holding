@@ -17,7 +17,7 @@ export default function News() {
 
   return <>
     <PageMeta title="Tin tức & Góc nhìn | Matrix Holding" description="Câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding." />
-    <TopBar /><Header />
+    <Header />
     <main className="insights-page">
       <section className="insights-heading section"><div className="container"><p className="eyebrow">MATRIX HOLDING · INSIGHTS</p><h1>Tin tức & Góc nhìn</h1><p>Những câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding.</p><div className="insights-crumb">Trang chủ <i className="fa-solid fa-chevron-right" /> Tin tức</div></div></section>
       <section className="insights-content"><div className="container">

@@ -13,21 +13,23 @@ import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 
 export default function Home() {
-  return <>
-    <PageMeta title="Matrix Holding | Hệ sinh thái đầu tư đa ngành" description="Matrix Holding kết nối vốn, dự án và năng lực triển khai trong một hệ sinh thái đa ngành minh bạch." />
-    <Header />
-    <main>
-      <Banner />
-      <About />
-      <FourEcosystems />
-      <Services />
-      <BusinessGrowth />
-      <Blog />
-      <HomeNews />
-      <HomeCareers />
-      <EcosystemWheel />
-      <HomeFAQ />
-    </main>
-    <Footer />
-  </>;
+  return (
+    <div className="page-home">
+      <PageMeta title="Matrix Holding | Hệ sinh thái đầu tư đa ngành" description="Matrix Holding kết nối vốn, dự án và năng lực triển khai trong một hệ sinh thái đa ngành minh bạch." />
+      <Header />
+      <main>
+        <Banner />
+        <About />
+        <FourEcosystems />
+        <Services />
+        <BusinessGrowth />
+        <Blog />
+        <HomeNews />
+        <HomeCareers />
+        <EcosystemWheel />
+        <HomeFAQ />
+      </main>
+      <Footer />
+    </div>
+  );
 }

@@ -22,7 +22,7 @@ export default function Contact() {
   };
   return <>
     <PageMeta title="Kết nối với Matrix Holding" description="Chia sẻ nhu cầu đầu tư, dự án hoặc năng lực triển khai để bắt đầu một cuộc trao đổi phù hợp với Matrix Holding." />
-    <TopBar /><Header />
+    <Header />
     <main>
       <div className="title-band" style={{ backgroundImage: "linear-gradient(90deg,#1f0d26ee,#592b50b8),url(https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1800&q=86)" }}><h1>Kết nối với chúng tôi</h1></div>
       <section className="contact-form-area default-padding"><div className="container"><div className="row">

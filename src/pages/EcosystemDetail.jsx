@@ -43,7 +43,7 @@ export default function EcosystemDetail(){
   const { slug }=useParams(), item=ECOSYSTEM_CONTENT[slug];
   if(!item)return <main className="not-found"><h1>Nội dung chưa có</h1><Link className="btn" to="/">Về trang chủ</Link></main>;
   const gallery=[{src:item.image,alt:`Hoạt động liên quan đến ${item.title}`,caption:item.title},...(thematicGalleries[slug] || thematicGalleries.connect)];
-  return <><PageMeta title={item.title} description={item.intro}/><TopBar/><Header/><main>
+  return <><PageMeta title={item.title} description={item.intro}/><Header/><main>
     <div className="title-band ecosystem-detail-hero" style={{backgroundImage:`linear-gradient(90deg,#1f0d26dd,#592b509c),url(https://images.unsplash.com/${item.image})`}}><div><p className="eyebrow">{item.label}</p><h1>{item.title}</h1><p>{item.tagline}</p></div></div>
     <section className="section"><div className="container about-grid"><div><p className="eyebrow">VAI TRÒ TRONG HỆ SINH THÁI</p><h2 className="detail-heading">{item.tagline}</h2><p>{item.intro}</p><p className="detail-note"><i className="fa-solid fa-circle-info"/> Nội dung có mục đích giới thiệu kết nối. Mỗi bên tự chịu trách nhiệm kiểm chứng và thẩm định trước quyết định.</p><Link className="btn" to="/contact">Đăng ký kết nối <i className="fa-solid fa-arrow-right"/></Link></div><img className="detail-image" src={`https://images.unsplash.com/${item.image}`} alt={`Hình ảnh chủ đề ${item.title}`}/></div></section>
     {slug === "property" && <PropertyMarketOverview />}

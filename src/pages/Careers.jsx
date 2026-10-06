@@ -16,7 +16,7 @@ export default function Careers() {
 
   return <>
     <PageMeta title="Tuyển dụng | Matrix Holding" description="Khám phá cơ hội nghề nghiệp tại Matrix Holding." />
-    <TopBar /><Header />
+    <Header />
     <main className="careers-page">
       <section className="career-hero">
         <div className="container">
