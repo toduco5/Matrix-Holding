@@ -507,17 +507,25 @@ body { color: #1d1d1f; }
   color: #000000 !important;
 }
 
-/* Glassmorphism Header positioning (no overlap with TopBar) */
+/* Glassmorphism Header positioning (Transparent floating on Homepage, relative below TopBar on subpages) */
 .header, :root[data-theme="dark"] .header {
-  position: relative !important;
-  top: auto !important;
+  position: absolute !important;
+  top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 100 !important;
-  background: rgba(5, 7, 15, 0.88) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
+  background: linear-gradient(180deg, rgba(5,7,15,0.85) 0%, rgba(5,7,15,0.1) 100%) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* When TopBar is present right above Header, sit relatively below TopBar without overlapping */
+.topbar + .header,
+.topbar ~ .header {
+  position: relative !important;
+  top: auto !important;
+  background: rgba(5, 7, 15, 0.95) !important;
 }
 
 /* Full screen Hero section spanning from top 0 */

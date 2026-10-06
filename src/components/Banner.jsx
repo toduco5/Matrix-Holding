@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BANNER_SLIDES, IMG } from "../data/constants.js";
 import ParticleBackground from "./ParticleBackground.jsx";
@@ -35,7 +36,7 @@ function LiveTicker() {
 }
 
 export default function Banner() {
-  // Use skyscraper photo from property slide (photo-1486406146926-c627a92ad1ab) exactly like user screenshot
+  const [showVideoModal, setShowVideoModal] = useState(false);
   const heroImg = BANNER_SLIDES[1]?.image || "photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=88";
 
   return (
@@ -44,7 +45,7 @@ export default function Banner() {
         className="hero hero-centered"
         aria-labelledby="home-hero-title"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(5,7,15,0.65) 45%, rgba(0,0,0,0.95) 100%), url(${IMG}/${heroImg})`,
+          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(5,7,15,0.6) 45%, rgba(0,0,0,0.95) 100%), url(${IMG}/${heroImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
           display: "flex",
@@ -52,7 +53,7 @@ export default function Banner() {
           justifyContent: "center",
           position: "relative",
           textAlign: "center",
-          padding: "100px 20px 80px",
+          padding: "120px 20px 90px",
         }}
       >
         {/* Particle Network Animation */}
@@ -121,7 +122,7 @@ export default function Banner() {
           }}>
             <Link
               to="/sectors"
-              className="hero-btn-primary"
+              className="hero-btn-primary glowing-pill-btn"
               style={{
                 background: "#ffffff",
                 color: "#000000",
@@ -132,7 +133,7 @@ export default function Banner() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
-                boxShadow: "0 0 35px rgba(255,255,255,0.25)",
+                boxShadow: "0 0 35px rgba(255,255,255,0.35)",
                 transition: "all 0.25s ease",
                 textDecoration: "none"
               }}
@@ -140,38 +141,116 @@ export default function Banner() {
               Xem Thương Vụ <i className="fa-solid fa-chevron-right" style={{ fontSize: 11 }} />
             </Link>
 
-            <Link
-              to="/contact"
+            <button
+              type="button"
+              onClick={() => setShowVideoModal(true)}
               className="hero-btn-secondary"
               style={{
+                background: "none",
+                border: "none",
                 color: "#ffffff",
                 fontWeight: 600,
                 fontSize: "13px",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 12,
-                textDecoration: "none"
+                cursor: "pointer",
+                padding: "8px 16px",
+                borderRadius: "50px",
+                transition: "all 0.25s ease"
               }}
             >
               <div style={{
-                width: 38,
-                height: 38,
+                width: 40,
+                height: 40,
                 borderRadius: "50%",
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.25)",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.35)",
                 display: "grid",
                 placeItems: "center",
-                color: "#ffffff"
+                color: "#ffffff",
+                boxShadow: "0 0 20px rgba(255,255,255,0.2)"
               }}>
-                <i className="fa-solid fa-play" style={{ fontSize: 11, marginLeft: 2 }} />
+                <i className="fa-solid fa-play" style={{ fontSize: 12, marginLeft: 2 }} />
               </div>
               Xem Tuyên Ngôn (60s)
-            </Link>
+            </button>
           </div>
         </div>
       </section>
 
       <LiveTicker />
+
+      {/* Video Modal Popup */}
+      {showVideoModal && (
+        <div style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 9999,
+          background: "rgba(5, 7, 15, 0.92)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 24
+        }} onClick={() => setShowVideoModal(false)}>
+          <div style={{
+            position: "relative",
+            width: "100%",
+            maxWidth: 860,
+            background: "#0f172a",
+            borderRadius: 24,
+            overflow: "hidden",
+            border: "1px solid rgba(56, 189, 248, 0.4)",
+            boxShadow: "0 25px 70px rgba(0,0,0,0.9), 0 0 40px rgba(41, 151, 255, 0.3)"
+          }} onClick={e => e.stopPropagation()}>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "18px 24px",
+              borderBottom: "1px solid rgba(255,255,255,0.1)",
+              background: "rgba(15, 23, 42, 0.9)"
+            }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <i className="fa-solid fa-circle-play" style={{ color: "#38bdf8", fontSize: 18 }} />
+                <strong style={{ color: "#ffffff", fontSize: "15px", fontWeight: 800 }}>
+                  Tuyên Ngôn Tập Đoàn Matrix Holding (60s)
+                </strong>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowVideoModal(false)}
+                style={{
+                  background: "rgba(255,255,255,0.1)",
+                  border: "none",
+                  color: "#ffffff",
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  display: "grid",
+                  placeItems: "center",
+                  fontSize: 14
+                }}
+              >
+                <i className="fa-solid fa-xmark" />
+              </button>
+            </div>
+
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, background: "#000000" }}>
+              <iframe
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
+                title="Tuyên Ngôn Matrix Holding"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
