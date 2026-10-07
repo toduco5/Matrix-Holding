@@ -3468,6 +3468,156 @@ i[class*="fa-"], .fa-solid, .fas, .far, .fab, .fa {
   color: #ffffff !important;
 }
 
+/* -------------------------------------------------------------
+ * FOOTER MAP SECTION STYLING
+ * ------------------------------------------------------------- */
+.footer-map-section {
+  padding: 30px 0 40px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: relative !important;
+}
+
+:root[data-theme="light"] .footer-map-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.footer-map-card {
+  display: grid !important;
+  grid-template-columns: 1fr 1.3fr !important;
+  gap: 30px !important;
+  align-items: center !important;
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+:root[data-theme="light"] .footer-map-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+}
+
+@media (max-width: 850px) {
+  .footer-map-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 18px !important;
+  }
+}
+
+.map-info-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 5px 12px !important;
+  background: rgba(0, 136, 255, 0.15) !important;
+  border: 1px solid rgba(0, 136, 255, 0.3) !important;
+  border-radius: 30px !important;
+  color: #0088ff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
+
+:root[data-theme="light"] .map-info-badge {
+  color: #0066cc !important;
+}
+
+.map-address-text {
+  color: #cbd5e1 !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  margin: 0 0 18px 0 !important;
+}
+
+:root[data-theme="light"] .map-address-text {
+  color: #334155 !important;
+}
+
+.map-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.footer-map-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 9px 18px !important;
+  background: #0066d6 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(0, 102, 214, 0.35) !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-map-btn:hover {
+  background: #0077efff !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 102, 214, 0.5) !important;
+}
+
+.footer-map-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 9px 18px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-map-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+:root[data-theme="light"] .footer-map-btn-secondary {
+  background: rgba(15, 23, 42, 0.06) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+.footer-map-wrapper {
+  position: relative !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.footer-map-iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 200px !important;
+  border: 0 !important;
+  filter: grayscale(30%) contrast(1.1) invert(90%) hue-rotate(180deg) !important;
+  transition: filter 0.3s ease !important;
+}
+
+.footer-map-wrapper:hover .footer-map-iframe {
+  filter: grayscale(0%) contrast(1) invert(0%) hue-rotate(0deg) !important;
+}
+
+:root[data-theme="light"] .footer-map-iframe {
+  filter: grayscale(0%) contrast(1) !important;
+}
+
 
 
 
