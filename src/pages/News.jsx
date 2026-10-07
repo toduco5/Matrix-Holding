@@ -4,6 +4,7 @@ import { FEATURED_NEWS, NEWS_CATEGORIES, NEWS_ITEMS, UPCOMING_EVENTS, SIDEBAR_AD
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
+import ParticleBackground from "../components/ParticleBackground.jsx";
 
 const imageUrl = image => `https://images.unsplash.com/${image}`;
 
@@ -26,15 +27,38 @@ export default function News() {
   };
 
   return <>
-    <PageMeta title="Tin tức & Góc nhìn | Matrix Holding" description="Câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding." />
+    <PageMeta title="Tin tức | Matrix Holding" description="Câu chuyện, hoạt động và thông tin cập nhật từ hệ sinh thái Matrix Holding." />
     <Header />
     <main className="insights-page">
-      <section className="insights-heading section" style={{ paddingTop: 130 }}>
-        <div className="container">
-          <p className="eyebrow">MATRIX HOLDING · INSIGHTS</p>
-          <h1>Tin tức & Góc nhìn</h1>
-          <p>Những câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding.</p>
-          <div className="insights-crumb">Trang chủ <i className="fa-solid fa-chevron-right" /> Tin tức</div>
+      {/* Dynamic Animated Hero Banner */}
+      <section 
+        className="vivid-page-hero"
+        style={{
+          backgroundImage: "linear-gradient(180deg, rgba(5,7,15,0.75) 0%, rgba(5,7,15,0.96) 100%), url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=85)"
+        }}
+      >
+        <ParticleBackground />
+
+        <div className="vivid-hero-content">
+          <span className="vivid-hero-badge">
+            <i className="fa-solid fa-bolt" /> MATRIX HOLDING · INSIGHTS
+          </span>
+          <h1><span className="text-gradient">Tin tức</span></h1>
+          <p className="vivid-hero-desc">
+            Cập nhật những chuyển động mới nhất, phân tích chuyên sâu và góc nhìn tăng trưởng từ 04 hệ sinh thái thuộc Matrix Holding.
+          </p>
+
+          <div className="vivid-hero-stats">
+            <div className="vivid-hero-stat-item">
+              <i className="fa-solid fa-newspaper" /> <strong>50+</strong> Bài viết & Phân tích
+            </div>
+            <div className="vivid-hero-stat-item">
+              <i className="fa-solid fa-sitemap" /> <strong>04</strong> Hệ sinh thái
+            </div>
+            <div className="vivid-hero-stat-item">
+              <i className="fa-solid fa-clock-rotate-left" /> Cập nhật Hàng tuần
+            </div>
+          </div>
         </div>
       </section>
 
@@ -51,25 +75,6 @@ export default function News() {
               <i className="fa-solid fa-magnifying-glass" />
               <input value={query} onChange={event => setQuery(event.target.value)} placeholder="Tìm trong chuyên mục" />
             </label>
-          </div>
-
-          {/* Banner Quảng Cáo Hệ Sinh Thái (Full-width Top Banner) */}
-          <div className="news-promo-banner">
-            <div className="news-promo-banner__content">
-              <span className="news-promo-badge"><i className="fa-solid fa-bolt" /> {ECOSYSTEM_PROMO.badge}</span>
-              <h2>{ECOSYSTEM_PROMO.title}</h2>
-              <p>{ECOSYSTEM_PROMO.description}</p>
-              <div className="news-promo-highlights">
-                {ECOSYSTEM_PROMO.highlights.map((h, i) => (
-                  <span key={i}><i className={`fa-solid ${h.icon}`} /> {h.text}</span>
-                ))}
-              </div>
-            </div>
-            <div className="news-promo-banner__cta">
-              <Link to={ECOSYSTEM_PROMO.link} className="btn-promo-glowing">
-                {ECOSYSTEM_PROMO.cta} <i className="fa-solid fa-arrow-right" />
-              </Link>
-            </div>
           </div>
 
           {/* Main Grid: Featured News + Sidebar with Hot Investment Project Ad */}
@@ -118,6 +123,25 @@ export default function News() {
                 </div>
               </div>
             </aside>
+          </div>
+
+          {/* Banner Quảng Cáo Hệ Sinh Thái (Full-width Promo Banner) */}
+          <div className="news-promo-banner">
+            <div className="news-promo-banner__content">
+              <span className="news-promo-badge"><i className="fa-solid fa-bolt" /> {ECOSYSTEM_PROMO.badge}</span>
+              <h2>{ECOSYSTEM_PROMO.title}</h2>
+              <p>{ECOSYSTEM_PROMO.description}</p>
+              <div className="news-promo-highlights">
+                {ECOSYSTEM_PROMO.highlights.map((h, i) => (
+                  <span key={i}><i className={`fa-solid ${h.icon}`} /> {h.text}</span>
+                ))}
+              </div>
+            </div>
+            <div className="news-promo-banner__cta">
+              <Link to={ECOSYSTEM_PROMO.link} className="btn-promo-glowing">
+                {ECOSYSTEM_PROMO.cta} <i className="fa-solid fa-arrow-right" />
+              </Link>
+            </div>
           </div>
 
           {/* Banner CTA Giữa các bài viết (Newsletter & Investment Registration Bar) */}

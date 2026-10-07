@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { CAREER_DEPARTMENTS, CAREER_JOBS } from "../data/careers.js";
-import TopBar from "../components/TopBar.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
+import ParticleBackground from "../components/ParticleBackground.jsx";
 
 export default function Careers() {
   const [query, setQuery] = useState("");
@@ -18,13 +18,45 @@ export default function Careers() {
     <PageMeta title="Tuyển dụng | Matrix Holding" description="Khám phá cơ hội nghề nghiệp tại Matrix Holding." />
     <Header />
     <main className="careers-page">
-      <section className="career-hero">
-        <div className="container">
-          <p className="eyebrow">MATRIX HOLDING CAREERS</p>
-          <h1>Cơ hội phù hợp cho hành trình tiếp theo của bạn.</h1>
-          <p>Khám phá các vị trí tại Matrix Holding và những doanh nghiệp trong hệ sinh thái đối tác.</p>
-          <label className="career-search"><i className="fa-solid fa-magnifying-glass" /><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Tìm vị trí, công ty hoặc phòng ban" /><span>{jobs.length} vị trí <i className="fa-solid fa-arrow-right" /></span></label>
-          <div className="career-hero__stats"><strong>{CAREER_JOBS.length} vị trí được đăng tải</strong><strong>Cơ hội từ các đơn vị trong hệ sinh thái</strong></div>
+      {/* Dynamic Vivid Hero Banner */}
+      <section 
+        className="vivid-page-hero"
+        style={{
+          backgroundImage: "linear-gradient(180deg, rgba(5,7,15,0.72) 0%, rgba(5,7,15,0.96) 100%), url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=85)"
+        }}
+      >
+        <ParticleBackground />
+
+        <div className="vivid-hero-content">
+          <span className="vivid-hero-badge">
+            <i className="fa-solid fa-users-gear" /> MATRIX HOLDING CAREERS
+          </span>
+          <h1>Cơ hội <span className="text-gradient">bứt phá sự nghiệp</span> tại Matrix Holding</h1>
+          <p className="vivid-hero-desc">
+            Gia nhập đội ngũ kiến tạo hệ sinh thái, khai phá tiềm năng bản thân và cùng xây dựng các dự án trọng điểm trong tập đoàn.
+          </p>
+
+          <label className="career-search-vivid">
+            <i className="fa-solid fa-magnifying-glass" />
+            <input 
+              value={query} 
+              onChange={event => setQuery(event.target.value)} 
+              placeholder="Tìm theo vị trí, từ khóa hoặc phòng ban..." 
+            />
+            <span>{jobs.length} vị trí <i className="fa-solid fa-arrow-right" /></span>
+          </label>
+
+          <div className="vivid-hero-stats">
+            <div className="vivid-hero-stat-item">
+              <i className="fa-solid fa-briefcase" /> <strong>{CAREER_JOBS.length}</strong> Vị trí đang đăng tuyển
+            </div>
+            <div className="vivid-hero-stat-item">
+              <i className="fa-solid fa-building" /> <strong>04</strong> Đơn vị Hệ sinh thái
+            </div>
+            <div className="vivid-hero-stat-item">
+              <i className="fa-solid fa-shield-halved" /> Môi trường chuẩn Quốc tế
+            </div>
+          </div>
         </div>
       </section>
 

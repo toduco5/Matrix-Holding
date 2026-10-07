@@ -12,14 +12,16 @@ import "./styles/vivid-theme.css";
 import "./styles/contact-widget.css";
 import CursorGlow from "./components/CursorGlow.jsx";
 
+import { LanguageProvider } from "./context/LanguageContext.jsx";
+
 const savedTheme = localStorage.getItem("matrix-theme");
 // Dark is the default visual direction; visitors can still switch to light mode.
 const preferredTheme = "dark";
 document.documentElement.dataset.theme = savedTheme || preferredTheme;
 
 createRoot(document.getElementById("root")).render(
-  <>
+  <LanguageProvider>
     <App />
     <CursorGlow />
-  </>
+  </LanguageProvider>
 );
