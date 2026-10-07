@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CONTACT_INFO, SECTORS } from "../data/constants.js";
-import TopBar from "../components/TopBar.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
@@ -44,7 +43,6 @@ export default function Contact() {
         </div></div>
         <aside className="col-md-5 office-info"><div className="tab-content pad-all-20p"><h3>Thông tin doanh nghiệp</h3><ul><li><div className="icon"><i className="fa-solid fa-building" /></div><div className="info"><strong>Tên doanh nghiệp</strong><p>Matrix Holding</p></div></li>{CONTACT_INFO.map(item => <li key={item.label}><div className="icon"><i className={`fa-solid ${item.icon}`} /></div><div className="info"><strong>{item.label}</strong><p>{item.href ? <a href={item.href}>{item.detail}</a> : item.detail}</p></div></li>)}</ul></div></aside>
       </div></div></section>
-      <div className="maps-area-items"><div className="maps-box oh"><div className="google-maps"><iframe title="Bản đồ văn phòng Matrix Holding tại 107 Ngụy Như Kon Tum" src="https://www.google.com/maps?q=107%20Ng%E1%BB%A5y%20Nh%C6%B0%20Kon%20Tum%2C%20Thanh%20Xu%C3%A2n%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vi%E1%BB%87t%20Nam&output=embed" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div></div></div>
     </main><Footer />
   </>;
 }
