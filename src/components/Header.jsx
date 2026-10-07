@@ -9,23 +9,25 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "dark");
-  const { lang, toggleLanguage, t } = useLanguage();
+  const { lang, setLanguage, t } = useLanguage();
   const location = useLocation();
 
   const headerRef = useRef(null);
   const dropdownRef = useRef(null);
+  const settingsRef = useRef(null);
 
   const close = () => { 
     setOpen(false); 
-    dropdownRef.current?.removeAttribute("open"); 
+    dropdownRef.current?.removeAttribute("open");
+    setIsSettingsOpen(false);
   };
 
-  const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
-    localStorage.setItem("matrix-theme", next);
-    setTheme(next);
+  const setThemeMode = (mode) => {
+    document.documentElement.dataset.theme = mode;
+    localStorage.setItem("matrix-theme", mode);
+    setTheme(mode);
   };
 
   useEffect(() => {
@@ -67,7 +69,16 @@ export default function Header() {
         <div className="header-inner container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           {/* Logo with M Icon + Divider + Matrix Holding Title */}
           <Link className="header-logo" to="/" onClick={close} aria-label="Trang chủ Matrix Holding">
-            <img src="/assets/matrix-holding-logo.png" alt="Matrix Holding" style={{ height: 32, width: "auto" }} />
+            <img 
+              src="/assets/matrix-holding-logo.png" 
+              alt="Matrix Holding" 
+              className="header-logo-img"
+              style={{ 
+                height: 32, 
+                width: "auto",
+                display: "block" 
+              }} 
+            />
             <span className="header-logo-divider">|</span>
             <span className="header-logo-text">Matrix Holding</span>
           </Link>
@@ -130,41 +141,110 @@ export default function Header() {
 
           {/* Right Header Tools & Blue Login Button */}
           <div className="header-right-tools">
-            {/* Search CMD+K */}
-            <button 
-              type="button" 
-              className="nav-pill-tool"
-              onClick={() => setIsSearchOpen(true)}
-              title={lang === "vi" ? "Mở tìm kiếm nhanh (Ctrl+K)" : "Open quick search (Ctrl+K)"}
-            >
-              <i className="fa-solid fa-magnifying-glass" />
-              <span>CMD+K</span>
-            </button>
+            {/* Compact Settings & Search Icon Button */}
+            <div className="settings-dropdown-container" ref={settingsRef}>
+              <button 
+                type="button" 
+                className={`settings-icon-btn ${isSettingsOpen ? "is-active" : ""}`}
+                onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+                aria-expanded={isSettingsOpen}
+                aria-label={lang === "vi" ? "Cài đặt & Tìm kiếm" : "Settings & Search"}
+                title={lang === "vi" ? "Cài đặt & Tìm kiếm" : "Settings & Search"}
+              >
+                <i className="fa-solid fa-gear" style={{ fontSize: 15 }} />
+              </button>
 
-            {/* Language Switcher */}
-            <button 
-              type="button" 
-              className="lang-toggle-btn"
-              onClick={toggleLanguage}
-              title={lang === "vi" ? "Chuyển sang Tiếng Anh (English)" : "Chuyển sang Tiếng Việt"}
-            >
-              <i className="fa-solid fa-globe" />
-              <span>{lang.toUpperCase()}</span>
-            </button>
+              {isSettingsOpen && (
+                <div className="settings-popover-menu">
+                  <div className="settings-popover-header">
+                    <span><i className="fa-solid fa-sliders" style={{ marginRight: 6 }} /> Cài đặt & Công cụ</span>
+                    <button type="button" onClick={() => setIsSettingsOpen(false)} aria-label="Đóng">
+                      <i className="fa-solid fa-xmark" />
+                    </button>
+                  </div>
 
-            {/* Theme Toggle */}
-            <button 
-              type="button" 
-              className="theme-toggle-vivid" 
-              onClick={toggleTheme} 
-              aria-label={theme === "dark" ? t("theme_light") : t("theme_dark")}
-              title={theme === "dark" ? t("theme_light") : t("theme_dark")}
-            >
-              <i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`} style={{ color: theme === "dark" ? "#f59e0b" : "#38bdf8" }} />
-            </button>
+                  {/* Search Action */}
+                  <div className="settings-group">
+                    <span className="settings-group-label">Tìm kiếm</span>
+                    <button 
+                      type="button" 
+                      onClick={() => {
+                        setIsSettingsOpen(false);
+                        setIsSearchOpen(true);
+                      }}
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        padding: "10px 14px",
+                        background: "rgba(41, 151, 255, 0.12)",
+                        border: "1px solid rgba(41, 151, 255, 0.35)",
+                        borderRadius: "10px",
+                        color: "#ffffff",
+                        fontSize: "13px",
+                        fontWeight: 600,
+                        cursor: "pointer",
+                        transition: "all 0.2s ease"
+                      }}
+                    >
+                      <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <i className="fa-solid fa-magnifying-glass" style={{ color: "#38bdf8" }} />
+                        <span>Tìm kiếm thông minh</span>
+                      </span>
+                      <span style={{ fontSize: "10px", background: "rgba(255,255,255,0.15)", padding: "2px 6px", borderRadius: "4px", color: "#e2e8f0" }}>
+                        CMD+K
+                      </span>
+                    </button>
+                  </div>
+
+                  {/* Theme Settings */}
+                  <div className="settings-group">
+                    <span className="settings-group-label">Giao diện (Theme)</span>
+                    <div className="settings-btn-grid">
+                      <button 
+                        type="button" 
+                        className={`settings-opt-btn ${theme === "light" ? "is-active" : ""}`}
+                        onClick={() => setThemeMode("light")}
+                      >
+                        <i className="fa-solid fa-sun" style={{ color: "#f59e0b" }} /> Sáng
+                      </button>
+                      <button 
+                        type="button" 
+                        className={`settings-opt-btn ${theme === "dark" ? "is-active" : ""}`}
+                        onClick={() => setThemeMode("dark")}
+                      >
+                        <i className="fa-solid fa-moon" style={{ color: "#38bdf8" }} /> Tối
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Language Settings */}
+                  <div className="settings-group" style={{ marginBottom: 0 }}>
+                    <span className="settings-group-label">Ngôn ngữ (Language)</span>
+                    <div className="settings-btn-grid">
+                      <button 
+                        type="button" 
+                        className={`settings-opt-btn ${lang === "vi" ? "is-active" : ""}`}
+                        onClick={() => setLanguage("vi")}
+                      >
+                        🇻🇳 Tiếng Việt
+                      </button>
+                      <button 
+                        type="button" 
+                        className={`settings-opt-btn ${lang === "en" ? "is-active" : ""}`}
+                        onClick={() => setLanguage("en")}
+                      >
+                        🇬🇧 English
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Electric Blue Login Button (exact match with user image) */}
-            <Link className="header-login-btn" to="/contact" onClick={close}>
+            <Link className="header-login-btn" to="/login" onClick={close}>
               <i className="fa-solid fa-right-to-bracket" style={{ fontSize: 13 }} /> Đăng nhập
             </Link>
           </div>

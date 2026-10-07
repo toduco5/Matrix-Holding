@@ -118,9 +118,20 @@
 
 /* ===== EXISTING CONTENT (preserved) ===== */
 
-.reveal-item{opacity:0;filter:blur(5px);transform:translateY(36px);transition:opacity .72s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms),transform .72s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms),filter .65s ease var(--reveal-delay,0ms)}
-.reveal-item.is-visible{opacity:1;transform:none}
-.reveal-item.is-visible{filter:none}
+.reveal-item {
+  opacity: 0 !important;
+  filter: blur(8px) !important;
+  transform: translateY(42px) scale(0.97) !important;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s ease !important;
+  will-change: opacity, transform, filter;
+}
+.reveal-item.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) !important;
+}
 .reveal-item.pillar-card,.reveal-item.sector-card,.reveal-item.news-card,.reveal-item.team-card{transform:translateY(28px) scale(.985)}
 .reveal-item.pillar-card.is-visible,.reveal-item.sector-card.is-visible,.reveal-item.news-card.is-visible,.reveal-item.team-card.is-visible{transform:none}
 .about-grid>.reveal-item:first-child,.project-grid>.reveal-item:first-child{transform:translateX(-42px)}
@@ -139,7 +150,7 @@
 @keyframes detail-image-in{from{opacity:0;transform:translateX(34px) scale(.98)}to{opacity:1;transform:none}}
 @keyframes core-pulse{0%,100%{box-shadow:0 0 0 12px #00081de0,0 0 32px #d8eb4866}50%{box-shadow:0 0 0 16px #00081db8,0 0 52px #d8eb48aa}}
 
-.property-dashboard{padding:92px 0;background:linear-gradient(145deg,#07172f 0%,#0d2850 58%,#102f5d 100%);color:#fff;position:relative;overflow:hidden}
+.property-dashboard{padding:92px 0;background:linear-gradient(180deg,#05070f 0%,#091325 50%,#05070f 100%);color:#fff;position:relative;overflow:hidden}
 .property-dashboard:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,#c6a46a2e,transparent 28%),linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:auto,48px 48px,48px 48px;pointer-events:none}
 .property-dashboard .container{position:relative;z-index:1}
 .property-dashboard__heading{display:grid;grid-template-columns:1.05fr .7fr;align-items:end;gap:70px;margin-bottom:38px}

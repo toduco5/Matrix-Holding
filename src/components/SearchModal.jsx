@@ -29,7 +29,7 @@ export default function SearchModal({ isOpen, onClose }) {
     {
       id: "page-about",
       type: "pages",
-      title: lang === "vi" ? "Về Tập Đoàn (Giới thiệu Matrix)" : "About Matrix Holding",
+      title: lang === "vi" ? "Giới thiệu Matrix Holding" : "About Matrix Holding",
       desc: lang === "vi" ? "Tầm nhìn, sứ mệnh và cơ cấu lãnh đạo tập đoàn" : "Vision, mission and executive leadership structure",
       url: "/gioi-thieu",
       icon: "fa-solid fa-building-columns",

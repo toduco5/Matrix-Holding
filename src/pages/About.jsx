@@ -41,14 +41,54 @@ const TIMELINE_DATA = [
 ];
 
 const STRATEGIC_PARTNERS = [
-  { name: "Techcombank", category: "Tài chính - Ngân hàng", logo: "🏛️" },
-  { name: "Heros Group", category: "Bảo mật & Công nghệ", logo: "🛡️" },
-  { name: "Samie Studio", category: "Truyền thông & Sáng tạo", logo: "✨" },
-  { name: "Infinity Capital", category: "Quỹ đầu tư", logo: "♾️" },
-  { name: "Trống Đồng Palace", category: "Trung tâm Sự kiện", logo: "👑" },
-  { name: "Matrix Capital", category: "Quản lý tài sản", logo: "💎" },
-  { name: "Vua Nệm", category: "Chuỗi bán lẻ", logo: "🛏️" },
-  { name: "Dream Pool Fitness", category: "Sức khỏe & Lifestyle", logo: "🏊" }
+  {
+    name: "Techcombank",
+    category: "Tài chính - Ngân hàng",
+    logo: "🏛️",
+    img: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Heros Group",
+    category: "Bảo mật & Công nghệ",
+    logo: "🛡️",
+    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Samie Studio",
+    category: "Truyền thông & Sáng tạo",
+    logo: "✨",
+    img: "https://images.unsplash.com/photo-1542744094-3a31727202b0?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Infinity Capital",
+    category: "Quỹ đầu tư",
+    logo: "♾️",
+    img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Trống Đồng Palace",
+    category: "Trung tâm Sự kiện",
+    logo: "👑",
+    img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Matrix Capital",
+    category: "Quản lý tài sản",
+    logo: "💎",
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Vua Nệm",
+    category: "Chuỗi bán lẻ",
+    logo: "🛏️",
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    name: "Dream Pool Fitness",
+    category: "Sức khỏe & Lifestyle",
+    logo: "🏊",
+    img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80"
+  }
 ];
 
 function PartnerMarquee() {
@@ -120,17 +160,23 @@ function PartnerMarquee() {
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
               borderRadius: 18,
-              padding: "24px 18px",
+              padding: "16px 14px",
               textAlign: "center",
               boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)",
               border: "1px solid rgba(255, 255, 255, 0.08)",
               transition: "all 0.3s ease",
-              cursor: "pointer"
+              cursor: "pointer",
+              overflow: "hidden"
             }}
             className="partner-logo-card member-company-card"
           >
-            <div style={{ fontSize: "32px", marginBottom: 8 }}>{p.logo}</div>
-            <strong style={{ color: "#ffffff", fontSize: "14px", display: "block", marginBottom: 4 }}>{p.name}</strong>
+            {p.img && (
+              <div style={{ width: "100%", height: 80, borderRadius: 12, overflow: "hidden", marginBottom: 12 }}>
+                <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              </div>
+            )}
+            <div style={{ fontSize: "22px", marginBottom: 4 }}>{p.logo}</div>
+            <strong style={{ color: "#ffffff", fontSize: "14px", display: "block", marginBottom: 2 }}>{p.name}</strong>
             <span style={{ color: "#38bdf8", fontSize: "11px" }}>{p.category}</span>
           </div>
         ))}

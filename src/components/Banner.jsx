@@ -15,23 +15,68 @@ const TICKER_ITEMS = [
 ];
 
 function LiveTicker() {
-  const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS];
+  const [isOpen, setIsOpen] = useState(() => {
+    return localStorage.getItem("matrix-ticker-open") === "true";
+  });
+
+  const toggleTicker = () => {
+    const nextState = !isOpen;
+    setIsOpen(nextState);
+    localStorage.setItem("matrix-ticker-open", nextState ? "true" : "false");
+  };
+
+  const tickerData = [...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS];
+
   return (
-    <div className="live-ticker" role="marquee" aria-label="Thông tin hệ sinh thái">
-      <div className="live-ticker__badge">
-        <span className="live-ticker__dot" />
-        <span>LIVE TICKER</span>
-      </div>
-      <div className="live-ticker__track">
-        <div className="live-ticker__inner">
-          {doubled.map((item, i) => (
-            <span key={i} className="live-ticker__item">
-              ▲ {item.label}:&nbsp;<strong className={item.cls}>{item.value}</strong>
-            </span>
-          ))}
+    <>
+      {/* Floating Pill Button to reveal Live Ticker when hidden */}
+      {!isOpen && (
+        <button 
+          type="button" 
+          className="live-ticker-toggle-btn"
+          onClick={toggleTicker}
+          aria-label="Mở Live Ticker"
+          title="Mở Live Ticker thông tin thị trường & hệ sinh thái"
+        >
+          <span className="live-ticker__dot" style={{ width: 6, height: 6 }} />
+          <span>LIVE TICKER</span>
+          <i className="fa-solid fa-chevron-up" style={{ fontSize: 9, marginLeft: 2 }} />
+        </button>
+      )}
+
+      {/* Main Live Ticker Bar */}
+      <div 
+        className={`live-ticker ${isOpen ? "is-open" : "is-hidden"}`} 
+        role="marquee" 
+        aria-label="Thông tin thị trường & hệ sinh thái"
+      >
+        <div className="live-ticker__badge">
+          <span className="live-ticker__dot" />
+          <span>LIVE TICKER</span>
         </div>
+        <div className="live-ticker__track">
+          <div className="live-ticker__inner">
+            {tickerData.map((item, i) => (
+              <span key={i} className="live-ticker__item">
+                <span className="arrow">▲</span>
+                <span className="ticker-label">{item.label}:</span>
+                &nbsp;
+                <strong className={item.cls}>{item.value}</strong>
+              </span>
+            ))}
+          </div>
+        </div>
+        <button 
+          type="button" 
+          className="live-ticker__close-btn"
+          onClick={toggleTicker}
+          aria-label="Ẩn Live Ticker"
+          title="Ẩn Live Ticker"
+        >
+          <i className="fa-solid fa-xmark" style={{ fontSize: 13 }} />
+        </button>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -87,7 +132,17 @@ export default function Banner() {
           backgroundSize: "40px 40px",
         }} />
 
-        <div className="hero-centered-content" style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto" }}>
+        <div className="hero-centered-content" style={{
+          position: "relative",
+          zIndex: 2,
+          maxWidth: 980,
+          width: "100%",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center"
+        }}>
           {/* Eyebrow badge with decorative lines */}
           <div style={{
             display: "flex",
@@ -112,26 +167,30 @@ export default function Banner() {
           <h1 id="home-hero-title" style={{
             color: "#ffffff",
             fontFamily: "'Be Vietnam Pro', sans-serif",
-            fontSize: "clamp(28px, 4.2vw, 56px)",
+            fontSize: "clamp(32px, 4.8vw, 60px)",
             fontWeight: 800,
-            lineHeight: 1.24,
+            lineHeight: 1.2,
             letterSpacing: "-0.02em",
             margin: "0 0 20px",
-            textShadow: "0 10px 35px rgba(0,0,0,0.7)"
+            textShadow: "0 10px 35px rgba(0,0,0,0.7)",
+            textAlign: "center",
+            width: "100%"
           }}>
-            <span style={{ display: "block" }}>Kiến Tạo Hệ Sinh Thái</span>
-            <span className="text-gradient" style={{ display: "block" }}>Kinh Doanh Đa Ngành</span>
+            Kinh Doanh Đa Ngành
           </h1>
 
           <p className="hero-copy-centered" style={{
-            color: "rgba(255,255,255,0.8)",
+            color: "rgba(255,255,255,0.85)",
             fontSize: "clamp(14px, 1.5vw, 17px)",
-            lineHeight: 1.65,
-            maxWidth: 760,
+            lineHeight: 1.75,
+            maxWidth: 960,
+            width: "100%",
             margin: "0 auto 36px",
-            fontWeight: 400
+            fontWeight: 400,
+            textAlign: "center"
           }}>
-            Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả, nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tiếp cận thị trường bền vững.
+            Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả,<br className="hero-desktop-br" />
+            nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tiếp cận thị trường bền vững.
           </p>
 
           <div className="hero-actions-centered" style={{
@@ -165,36 +224,39 @@ export default function Banner() {
             <button
               type="button"
               onClick={() => setShowVideoModal(true)}
-              className="hero-btn-secondary"
+              className="hero-btn-secondary video-pill-btn"
               style={{
-                background: "none",
-                border: "none",
+                background: "rgba(255, 255, 255, 0.06)",
+                border: "1px solid rgba(255, 255, 255, 0.35)",
                 color: "#ffffff",
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: "13px",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 12,
                 cursor: "pointer",
-                padding: "8px 16px",
+                padding: "14px 28px",
                 borderRadius: "50px",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
                 transition: "all 0.25s ease"
               }}
             >
               <div style={{
-                width: 40,
-                height: 40,
+                width: 32,
+                height: 32,
                 borderRadius: "50%",
-                background: "rgba(255,255,255,0.12)",
-                border: "1px solid rgba(255,255,255,0.35)",
+                background: "rgba(255,255,255,0.18)",
+                border: "1px solid rgba(255,255,255,0.4)",
                 display: "grid",
                 placeItems: "center",
                 color: "#ffffff",
-                boxShadow: "0 0 20px rgba(255,255,255,0.2)"
+                flexShrink: 0
               }}>
-                <i className="fa-solid fa-play" style={{ fontSize: 12, marginLeft: 2 }} />
+                <i className="fa-solid fa-play" style={{ fontSize: 11, marginLeft: 2 }} />
               </div>
-              Xem Tuyên Ngôn (60s)
+              <span>Xem Tuyên Ngôn (60s)</span>
             </button>
           </div>
         </div>

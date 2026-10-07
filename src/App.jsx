@@ -11,6 +11,7 @@ import EcosystemDetail from "./pages/EcosystemDetail.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
 import NewsDetail from "./pages/NewsDetail.jsx";
 import CareerDetail from "./pages/CareerDetail.jsx";
+import Login from "./pages/Login.jsx";
 import { Link } from "react-router-dom";
 import "./styles/tokens.css";
 import { initScrollAnimations } from "./utils/behavior.js";
@@ -88,6 +89,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/gioi-thieu" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/tuyen-dung" element={<Careers />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:id" element={<CareerDetail />} />

@@ -268,31 +268,34 @@ export default function HomeCareers() {
                 {/* Badges */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, marginBottom: 24 }}>
                   <span style={{
-                    background: "rgba(0,0,0,0.6)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    color: "#ffffff",
-                    fontSize: "11px",
-                    fontWeight: 700,
-                    padding: "6px 16px",
+                    background: "rgba(41, 151, 255, 0.16)",
+                    border: "1px solid rgba(56, 189, 248, 0.45)",
+                    color: "#38bdf8",
+                    fontSize: "12px",
+                    fontWeight: 800,
+                    padding: "6px 18px",
                     borderRadius: "50px",
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: 6
+                    boxShadow: "0 0 16px rgba(56, 189, 248, 0.25)"
                   }}>
-                    💼 5 việc làm
+                    5 việc làm
                   </span>
 
                   <span style={{
-                    background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-                    color: "#000000",
-                    fontSize: "10px",
+                    background: "linear-gradient(135deg, #ffde8a 0%, #f5ab35 50%, #e08b18 100%)",
+                    color: "#4a1d05",
+                    fontSize: "12px",
                     fontWeight: 800,
-                    padding: "4px 14px",
+                    padding: "6px 20px",
                     borderRadius: "50px",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase"
+                    letterSpacing: "0.02em",
+                    boxShadow: "0 4px 14px rgba(245, 171, 53, 0.4)",
+                    border: "1px solid rgba(255, 255, 255, 0.4)",
+                    display: "inline-block",
+                    fontFamily: "'Be Vietnam Pro', sans-serif"
                   }}>
-                    PRO COMPANY
+                    Pro Company
                   </span>
                 </div>
               </div>
@@ -383,14 +386,17 @@ export default function HomeCareers() {
                         {company.desc}
                       </p>
                       <span style={{
-                        color: "rgba(255,255,255,0.8)",
+                        background: "rgba(41, 151, 255, 0.12)",
+                        border: "1px solid rgba(56, 189, 248, 0.35)",
+                        color: "#38bdf8",
                         fontSize: "10px",
-                        fontWeight: 600,
+                        fontWeight: 700,
+                        padding: "3px 10px",
+                        borderRadius: "50px",
                         display: "inline-flex",
-                        alignItems: "center",
-                        gap: 4
+                        alignItems: "center"
                       }}>
-                        💼 {company.jobsCount} việc làm
+                        {company.jobsCount} việc làm
                       </span>
                     </div>
                   </div>

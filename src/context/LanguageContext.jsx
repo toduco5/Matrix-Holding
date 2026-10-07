@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const translations = {
   vi: {
     nav_home: "Trang chủ",
-    nav_about: "Về Tập Đoàn",
+    nav_about: "Giới thiệu",
     nav_ecosystem: "Hệ sinh thái",
     nav_news: "Tin tức",
     nav_careers: "Tuyển dụng",
