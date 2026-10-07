@@ -217,20 +217,107 @@ header, main, footer, section {
 
 /* Glassmorphism sticky header */
 :root[data-theme="dark"] .header {
-  background: rgba(5, 7, 15, 0.75) !important;
+  background: rgba(5, 7, 15, 0.78) !important;
   backdrop-filter: saturate(180%) blur(20px) !important;
   -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
   border-bottom: 1px solid rgba(255,255,255,0.06) !important;
   box-shadow: none !important;
 }
-:root[data-theme="dark"] .logo,
-:root[data-theme="dark"] .burger { color: #f5f5f7 !important; }
-:root[data-theme="dark"] .logo-light { color: #86868b !important; }
-:root[data-theme="dark"] .nav { color: #86868b !important; }
-:root[data-theme="dark"] .nav a { color: #86868b !important; }
-:root[data-theme="dark"] .nav a:hover,
-:root[data-theme="dark"] .nav a.active { color: #ffffff !important; }
-:root[data-theme="dark"] .nav a::after { background: #2997ff !important; }
+
+.header-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+}
+.header-logo-divider {
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+}
+.header-logo-text {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
+}
+:root[data-theme="light"] .header-logo-text {
+  color: #1d1d1f !important;
+}
+
+/* Nav links & Active Underline Indicator */
+.nav a, .nav-dropdown summary {
+  position: relative !important;
+  padding: 8px 0 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+  cursor: pointer !important;
+}
+:root[data-theme="light"] .nav a,
+:root[data-theme="light"] .nav-dropdown summary {
+  color: #515154 !important;
+}
+
+.nav a:hover, .nav-dropdown summary:hover {
+  color: #ffffff !important;
+}
+:root[data-theme="light"] .nav a:hover,
+:root[data-theme="light"] .nav-dropdown summary:hover {
+  color: #1d1d1f !important;
+}
+
+.nav a.active, .nav-dropdown.is-active summary {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+:root[data-theme="light"] .nav a.active,
+:root[data-theme="light"] .nav-dropdown.is-active summary {
+  color: #1d1d1f !important;
+}
+
+/* White active underline indicator matching user reference */
+.nav a.active::after, .nav-dropdown.is-active summary::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -6px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: #ffffff !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6) !important;
+}
+:root[data-theme="light"] .nav a.active::after,
+:root[data-theme="light"] .nav-dropdown.is-active summary::after {
+  background: #2997ff !important;
+  box-shadow: 0 0 10px rgba(41, 151, 255, 0.5) !important;
+}
+
+/* Electric Blue Login Button (exact match with user image) */
+.header-login-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 20px !important;
+  background: #0056b3 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(0, 86, 179, 0.35) !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+.header-login-btn:hover {
+  background: #0066d6 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(0, 102, 214, 0.5) !important;
+}
 
 /* White pill CTA button (exact Matrix Ventures style) */
 :root[data-theme="dark"] .btn,

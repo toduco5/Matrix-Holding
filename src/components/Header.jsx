@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { SECTORS } from "../data/constants.js";
 import { ECOSYSTEM_UNITS } from "../data/ecosystem-units.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
@@ -11,6 +11,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "dark");
   const { lang, toggleLanguage, t } = useLanguage();
+  const location = useLocation();
 
   const headerRef = useRef(null);
   const dropdownRef = useRef(null);
@@ -54,6 +55,8 @@ export default function Header() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  const isEcosystemActive = location.pathname.startsWith("/ecosystem") || location.pathname.startsWith("/sectors");
+
   return (
     <>
       <header 
@@ -62,8 +65,11 @@ export default function Header() {
         onKeyDown={event => { if (event.key === "Escape") close(); }}
       >
         <div className="header-inner container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link className="logo" to="/" onClick={close} aria-label="Trang chủ Matrix Holding">
-            <img src="/assets/matrix-holding-logo.png" alt="Matrix Holding" style={{ height: 34, width: "auto" }} />
+          {/* Logo with M Icon + Divider + Matrix Holding Title */}
+          <Link className="header-logo" to="/" onClick={close} aria-label="Trang chủ Matrix Holding">
+            <img src="/assets/matrix-holding-logo.png" alt="Matrix Holding" style={{ height: 32, width: "auto" }} />
+            <span className="header-logo-divider">|</span>
+            <span className="header-logo-text">Matrix Holding</span>
           </Link>
 
           <button 
@@ -76,16 +82,17 @@ export default function Header() {
             <i className={`fa-solid ${open ? "fa-xmark" : "fa-bars"}`} />
           </button>
 
+          {/* Navigation Menu with Underline Active Indicator */}
           <nav 
             id="main-nav" 
             className={`nav${open ? " nav--open" : ""}`} 
             aria-label="Điều hướng chính" 
-            style={{ display: "flex", alignItems: "center", gap: 24 }}
+            style={{ display: "flex", alignItems: "center", gap: 28 }}
           >
             <NavLink to="/" end onClick={close}>{t("nav_home")}</NavLink>
             <NavLink to="/gioi-thieu" onClick={close}>{t("nav_about")}</NavLink>
             
-            <details ref={dropdownRef} className="nav-dropdown">
+            <details ref={dropdownRef} className={`nav-dropdown ${isEcosystemActive ? "is-active" : ""}`}>
               <summary>{t("nav_ecosystem")} <i className="fa-solid fa-chevron-down" style={{ fontSize: 9, marginLeft: 4 }} /></summary>
               <div className="dropdown-menu ecosystem-mega">
                 <div className="mega-groups">
@@ -118,10 +125,12 @@ export default function Header() {
 
             <NavLink to="/news" onClick={close}>{t("nav_news")}</NavLink>
             <NavLink to="/tuyen-dung" onClick={close}>{t("nav_careers")}</NavLink>
+            <NavLink to="/contact" onClick={close}>Liên hệ</NavLink>
           </nav>
 
+          {/* Right Header Tools & Blue Login Button */}
           <div className="header-right-tools">
-            {/* 1. CMD+K Search Trigger Pill */}
+            {/* Search CMD+K */}
             <button 
               type="button" 
               className="nav-pill-tool"
@@ -132,7 +141,7 @@ export default function Header() {
               <span>CMD+K</span>
             </button>
 
-            {/* 2. Language Switcher (VI / EN) */}
+            {/* Language Switcher */}
             <button 
               type="button" 
               className="lang-toggle-btn"
@@ -141,10 +150,9 @@ export default function Header() {
             >
               <i className="fa-solid fa-globe" />
               <span>{lang.toUpperCase()}</span>
-              <span className="lang-badge">{lang === "vi" ? "VN" : "EN"}</span>
             </button>
 
-            {/* 3. Theme Toggle Pill (Sun / Moon) */}
+            {/* Theme Toggle */}
             <button 
               type="button" 
               className="theme-toggle-vivid" 
@@ -155,9 +163,9 @@ export default function Header() {
               <i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`} style={{ color: theme === "dark" ? "#f59e0b" : "#38bdf8" }} />
             </button>
 
-            {/* 4. Join Community CTA */}
-            <Link className="nav-cta-contact" to="/contact" onClick={close}>
-              <i className="fa-solid fa-users" /> {t("nav_community")}
+            {/* Electric Blue Login Button (exact match with user image) */}
+            <Link className="header-login-btn" to="/contact" onClick={close}>
+              <i className="fa-solid fa-right-to-bracket" style={{ fontSize: 13 }} /> Đăng nhập
             </Link>
           </div>
         </div>
