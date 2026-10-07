@@ -43,7 +43,7 @@ body { color: #1d1d1f; }
 .nav a::after { background: #2997ff !important; }
 
 /* Primary CTA button → white pill */
-.btn, .nav-cta, .contact-form button, .mega-contact {
+.btn, .nav-cta, .contact-form button {
   background: #f5f5f7 !important;
   color: #1d1d1f !important;
   border: 0 !important;
@@ -55,7 +55,7 @@ body { color: #1d1d1f; }
   box-shadow: 0 0 0 1px rgba(0,0,0,0.08) !important;
   transition: all 0.25s ease !important;
 }
-.btn:hover, .nav-cta:hover, .contact-form button:hover, .mega-contact:hover {
+.btn:hover, .nav-cta:hover, .contact-form button:hover {
   background: #ffffff !important;
   box-shadow: 0 4px 18px rgba(0,0,0,0.12) !important;
   transform: translateY(-1px) !important;
@@ -235,8 +235,7 @@ header, main, footer, section {
 /* White pill CTA button (exact Matrix Ventures style) */
 :root[data-theme="dark"] .btn,
 :root[data-theme="dark"] .nav-cta,
-:root[data-theme="dark"] .contact-form button,
-:root[data-theme="dark"] .mega-contact {
+:root[data-theme="dark"] .contact-form button {
   background: #f5f5f7 !important;
   color: #000000 !important;
   border: 0 !important;
@@ -250,8 +249,7 @@ header, main, footer, section {
 }
 :root[data-theme="dark"] .btn:hover,
 :root[data-theme="dark"] .nav-cta:hover,
-:root[data-theme="dark"] .contact-form button:hover,
-:root[data-theme="dark"] .mega-contact:hover {
+:root[data-theme="dark"] .contact-form button:hover {
   background: #ffffff !important;
   box-shadow: 0 0 28px rgba(255,255,255,0.25) !important;
   transform: translateY(-1px) scale(1.02) !important;
@@ -308,15 +306,63 @@ header, main, footer, section {
   background: transparent !important;
 }
 
-:root[data-theme="dark"] .dropdown-menu {
-  background: rgba(13, 21, 32, 0.92) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(255,255,255,0.08) !important;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+/* Mega Dropdown Solid Background & Glass Styling */
+.ecosystem-mega {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 16px !important;
+  z-index: 1000 !important;
+}
+.mega-groups {
+  background: #ffffff !important;
+}
+.ecosystem-mega .dropdown-projects {
+  background: #f5f6f8 !important;
+}
+
+:root[data-theme="dark"] .dropdown-menu,
+:root[data-theme="dark"] .ecosystem-mega {
+  background: #0d1520 !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(41, 151, 255, 0.3) !important;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 35px rgba(41, 151, 255, 0.15) !important;
+  border-radius: 16px !important;
+}
+:root[data-theme="dark"] .mega-groups {
+  background: #0d1520 !important;
+}
+:root[data-theme="dark"] .ecosystem-mega .dropdown-projects {
+  background: #121c2d !important;
 }
 :root[data-theme="dark"] .dropdown-project { border-color: rgba(255,255,255,0.06) !important; }
-:root[data-theme="dark"] .mega-group:hover { background: rgba(255,255,255,0.04) !important; }
+:root[data-theme="dark"] .mega-group:hover { background: rgba(41,151,255,0.1) !important; }
+
+/* Mega Contact CTA Button → Sleek Blue Button */
+.mega-contact {
+  background: #2997ff !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 50px !important;
+  padding: 10px 18px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-shadow: 0 0 15px rgba(41, 151, 255, 0.4) !important;
+  transition: all 0.2s ease !important;
+  margin-top: 16px !important;
+}
+.mega-contact:hover {
+  background: #0a84ff !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) scale(1.01) !important;
+  box-shadow: 0 0 22px rgba(41, 151, 255, 0.6) !important;
+}
 
 /* Forms */
 :root[data-theme="dark"] .form-control,
