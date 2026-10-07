@@ -45,17 +45,38 @@ export default function Banner() {
         className="hero hero-centered"
         aria-labelledby="home-hero-title"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(5,7,15,0.6) 45%, rgba(0,0,0,0.95) 100%), url(${IMG}/${heroImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center 40%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
           textAlign: "center",
-          padding: "120px 20px 90px",
+          padding: "130px 20px 100px",
+          overflow: "hidden",
+          backgroundColor: "#05070f"
         }}
       >
+        {/* 100% Monochrome Grayscale Architecture Background Layer */}
+        <div 
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url(${IMG}/${heroImg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center 40%",
+            filter: "grayscale(100%) contrast(1.2) brightness(0.55)",
+            zIndex: 0
+          }}
+        />
+
+        {/* Neutral Deep Obsidian Dark Overlay */}
+        <div 
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(5,7,15,0.78) 0%, rgba(5,7,15,0.88) 50%, rgba(5,7,15,0.98) 100%)",
+            zIndex: 1
+          }}
+        />
         {/* Particle Network Animation */}
         <ParticleBackground />
 
