@@ -13,9 +13,9 @@ export const QUICK_LINKS = [
 ];
 
 export const TOPBAR_INFO = [
-  { icon:"fa-location-dot", text:"107 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội, Việt Nam", href:null },
-  { icon:"fa-envelope-open", text:"tminhduc1302@gmail.com", href:"mailto:tminhduc1302@gmail.com" },
-  { icon:"fa-mobile-alt", text:"(+84) 332 318 460", href:"tel:+84332318460" },
+  { icon:"fa-location-dot", text:"KĐT Bắc Linh Đàm, Phường Hoàng Liệt, Hà Nội", href:null },
+  { icon:"fa-envelope-open", text:"matrixholding.support@gmail.com", href:"mailto:matrixholding.support@gmail.com" },
+  { icon:"fa-mobile-alt", text:"(+84) 964 243 026", href:"tel:+84964243026" },
 ];
 export const BANNER_SLIDES = [
   { key:"holding", image:"photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=88", title:"Kiến tạo hệ sinh thái kinh doanh đa ngành", subtitle:"Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả, nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tiếp cận thị trường bền vững." },
@@ -54,9 +54,9 @@ export const BLOG_POSTS = [
 ];
 
 export const CONTACT_INFO = [
-  { icon:"fa-location-dot", label:"Văn phòng Matrix Holding", detail:"107 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội, Việt Nam." },
-  { icon:"fa-clock", label:"Thời gian làm việc", detail:"Thứ Hai – Thứ Sáu, 08:00 – 18:00." },
-  { icon:"fa-envelope-open", label:"Email", detail:"tminhduc1302@gmail.com", href:"mailto:tminhduc1302@gmail.com" },
-  { icon:"fa-mobile-screen-button", label:"Điện thoại", detail:"(+84) 332 318 460", href:"tel:+84332318460" },
+  { icon:"fa-location-dot", label:"Văn phòng Matrix Holding", detail:"KĐT Bắc Linh Đàm, Phường Hoàng Liệt, Hà Nội" },
+  { icon:"fa-clock", label:"Thời gian làm việc", detail:"Thứ Hai – Thứ Sáu (08:30 - 17:30)" },
+  { icon:"fa-envelope-open", label:"Email", detail:"matrixholding.support@gmail.com", href:"mailto:matrixholding.support@gmail.com" },
+  { icon:"fa-mobile-screen-button", label:"Điện thoại", detail:"(+84) 964 243 026", href:"tel:+84964243026" },
 ];
 

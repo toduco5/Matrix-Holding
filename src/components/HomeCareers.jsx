@@ -17,6 +17,7 @@ const MEMBER_COMPANIES = [
     id: "network",
     name: "MATRIX NETWORK",
     desc: "Dịch vụ doanh nghiệp",
+    subDesc: "Cung cấp hạ tầng vận hành và giải pháp quản trị doanh nghiệp toàn diện.",
     jobsCount: 1,
     categories: ["Vận hành", "Kinh doanh"],
     slug: "network"
@@ -25,6 +26,7 @@ const MEMBER_COMPANIES = [
     id: "connect",
     name: "MATRIX CONNECT",
     desc: "Kết nối doanh nghiệp",
+    subDesc: "Mạng lưới kết nối đối tác, mở rộng cơ hội thương mại & hợp tác chiến lược.",
     jobsCount: 1,
     categories: ["Kinh doanh", "Truyền thông"],
     slug: "connect"
@@ -33,6 +35,7 @@ const MEMBER_COMPANIES = [
     id: "ventures",
     name: "MATRIX VENTURES",
     desc: "Đầu tư và đổi mới",
+    subDesc: "Ươm tạo dự án đổi mới sáng tạo và tối ưu danh mục đầu tư tăng trưởng.",
     jobsCount: 1,
     categories: ["Tài chính", "Công nghệ"],
     slug: "ventures"
@@ -40,7 +43,8 @@ const MEMBER_COMPANIES = [
   {
     id: "strategy",
     name: "MATRIX STRATEGY",
-    desc: "Chiến lược",
+    desc: "Tư vấn chiến lược",
+    subDesc: "Hoạch định chiến lược tái cấu trúc và định hướng phát triển bền vững.",
     jobsCount: 1,
     categories: ["Chiến lược", "Pháp lý"],
     slug: "strategy"
@@ -48,7 +52,8 @@ const MEMBER_COMPANIES = [
   {
     id: "research",
     name: "MATRIX RESEARCH",
-    desc: "Nghiên cứu",
+    desc: "Nghiên cứu & phát triển",
+    subDesc: "Nghiên cứu thị trường, xu hướng công nghệ và mô hình kinh doanh mới.",
     jobsCount: 1,
     categories: ["Công nghệ", "Chiến lược"],
     slug: "research"
@@ -56,7 +61,8 @@ const MEMBER_COMPANIES = [
   {
     id: "legal",
     name: "MATRIX LEGAL",
-    desc: "Pháp lý",
+    desc: "Tư vấn pháp lý",
+    subDesc: "Đảm bảo tuân thủ pháp lý, quản trị rủi ro và tư vấn giao dịch M&A.",
     jobsCount: 1,
     categories: ["Pháp lý"],
     slug: "legal"
@@ -64,7 +70,8 @@ const MEMBER_COMPANIES = [
   {
     id: "finance",
     name: "MATRIX FINANCE",
-    desc: "Tài chính",
+    desc: "Quản lý tài chính",
+    subDesc: "Hoạch định cấu trúc vốn, quản trị dòng tiền và tối ưu nguồn lực tài chính.",
     jobsCount: 1,
     categories: ["Tài chính"],
     slug: "finance"
@@ -72,7 +79,8 @@ const MEMBER_COMPANIES = [
   {
     id: "accounting",
     name: "MATRIX ACCOUNTING",
-    desc: "Kế toán",
+    desc: "Kế toán & kiểm toán",
+    subDesc: "Cung cấp giải pháp báo cáo tài chính minh bạch và kiểm soát rủi ro.",
     jobsCount: 1,
     categories: ["Tài chính", "Vận hành"],
     slug: "accounting"
@@ -81,6 +89,7 @@ const MEMBER_COMPANIES = [
 
 export default function HomeCareers() {
   const [activeTab, setActiveTab] = useState("Tất cả");
+  const [isFollowing, setIsFollowing] = useState(false);
 
   const filteredCompanies = MEMBER_COMPANIES.filter(comp => {
     if (activeTab === "Tất cả") return true;
@@ -90,8 +99,8 @@ export default function HomeCareers() {
   return (
     <section className="section ecosystem-hiring-section" style={{ padding: "80px 0", background: "var(--navy, #05070f)" }}>
       <div className="container">
-        {/* Section Header */}
-        <div className="section-heading" style={{ maxWidth: 840, marginBottom: 36 }}>
+        {/* Section Header (Centered) */}
+        <div className="section-heading" style={{ maxWidth: 840, margin: "0 auto 36px", textAlign: "center" }}>
           <span style={{
             display: "inline-block",
             color: "#38bdf8",
@@ -111,15 +120,16 @@ export default function HomeCareers() {
             margin: "0 0 12px",
             fontFamily: "'Be Vietnam Pro', sans-serif"
           }}>
-            CÁC DOANH NGHIỆP TRONG HỆ SINH THÁI
+            DOANH NGHIỆP TRONG HỆ SINH THÁI
           </h2>
           <p style={{
             color: "rgba(255, 255, 255, 0.7)",
             fontSize: "15px",
-            margin: 0,
+            margin: "0 auto",
+            maxWidth: 500,
             lineHeight: 1.6
           }}>
-            Khám phá các doanh nghiệp đang tuyển dụng trong hệ sinh thái Matrix.
+            Khám phá các doanh nghiệp đang tuyển dụng  Matrix.
           </p>
         </div>
 
@@ -217,114 +227,169 @@ export default function HomeCareers() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               border: "1px solid rgba(255,255,255,0.15)",
-              padding: "36px 24px 28px",
+              padding: "40px 24px",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               textAlign: "center",
-              justifyContent: "space-between",
+              justifyContent: "center",
+              gap: 16,
               boxShadow: "0 15px 35px rgba(0,0,0,0.4)"
             }}>
-              <div>
-                {/* Logo Square */}
-                <div style={{
-                  width: 80,
-                  height: 80,
-                  borderRadius: 16,
-                  background: "rgba(0,0,0,0.75)",
-                  border: "2px solid rgba(41,151,255,0.4)",
-                  display: "grid",
-                  placeItems: "center",
-                  margin: "0 auto 20px",
-                  boxShadow: "0 0 25px rgba(41,151,255,0.25)"
-                }}>
-                  <img
-                    src="/assets/matrix-holding-logo.png"
-                    alt="Matrix Holding"
-                    style={{ height: 50, width: "auto" }}
-                  />
-                </div>
+              {/* White Square Logo Container (Image 1 style) */}
+              <div style={{
+                width: 76,
+                height: 76,
+                borderRadius: 16,
+                background: "#ffffff",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+                display: "grid",
+                placeItems: "center",
+                margin: "0 auto",
+                padding: 8
+              }}>
+                <img
+                  src="/assets/matrix-holding-logo.png"
+                  alt="Matrix Holding"
+                  style={{ height: 42, width: "auto", objectFit: "contain" }}
+                />
+              </div>
 
+              {/* Company Info Header */}
+              <div style={{ maxWidth: 260 }}>
+                {/* Company Name (Centered) */}
                 <h3 style={{
                   color: "#ffffff",
-                  fontSize: "16px",
+                  fontSize: "16.5px",
                   fontWeight: 800,
-                  letterSpacing: "0.02em",
-                  margin: "0 0 12px",
-                  lineHeight: 1.35
+                  letterSpacing: "0.01em",
+                  margin: "0 0 8px",
+                  lineHeight: 1.35,
+                  fontFamily: "'Be Vietnam Pro', sans-serif"
                 }}>
                   CÔNG TY TNHH MATRIX HOLDING
                 </h3>
 
+                {/* Subtitle / Category (Centered) */}
                 <p style={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  fontSize: "12px",
-                  lineHeight: 1.6,
-                  margin: "0 0 22px"
+                  color: "rgba(255, 255, 255, 0.75)",
+                  fontSize: "12.5px",
+                  lineHeight: 1.55,
+                  margin: 0
                 }}>
                   Công ty trung tâm quản trị, kết nối và phát triển toàn bộ hệ sinh thái Matrix Holding.
                 </p>
-
-                {/* Badges */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, marginBottom: 24 }}>
-                  <span style={{
-                    background: "rgba(41, 151, 255, 0.16)",
-                    border: "1px solid rgba(56, 189, 248, 0.45)",
-                    color: "#38bdf8",
-                    fontSize: "12px",
-                    fontWeight: 800,
-                    padding: "6px 18px",
-                    borderRadius: "50px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    boxShadow: "0 0 16px rgba(56, 189, 248, 0.25)"
-                  }}>
-                    5 việc làm
-                  </span>
-
-                  <span style={{
-                    background: "linear-gradient(135deg, #ffde8a 0%, #f5ab35 50%, #e08b18 100%)",
-                    color: "#4a1d05",
-                    fontSize: "12px",
-                    fontWeight: 800,
-                    padding: "6px 20px",
-                    borderRadius: "50px",
-                    letterSpacing: "0.02em",
-                    boxShadow: "0 4px 14px rgba(245, 171, 53, 0.4)",
-                    border: "1px solid rgba(255, 255, 255, 0.4)",
-                    display: "inline-block",
-                    fontFamily: "'Be Vietnam Pro', sans-serif"
-                  }}>
-                    Pro Company
-                  </span>
-                </div>
               </div>
 
-              {/* Action Link Button */}
+              {/* Stacked Badges & Buttons (Image 1 vertical flow: Job count -> Pro Company -> Follow button) */}
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 12,
+                width: "100%",
+                maxWidth: 220,
+                marginTop: 4
+              }}>
+                {/* Dark Capsule Job Count with Briefcase Icon */}
+                <div style={{
+                  background: "rgba(0, 0, 0, 0.55)",
+                  border: "1px solid rgba(255, 255, 255, 0.14)",
+                  color: "#ffffff",
+                  fontSize: "12.5px",
+                  fontWeight: 700,
+                  padding: "8px 24px",
+                  borderRadius: "50px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 8,
+                  width: "100%",
+                  backdropFilter: "blur(6px)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.25)"
+                }}>
+                  <i className="fa-solid fa-briefcase" style={{ fontSize: 12, opacity: 0.9 }} />
+                  <span>5 việc làm</span>
+                </div>
+
+                {/* Champagne Gold Pro Company Badge */}
+                <span style={{
+                  background: "linear-gradient(135deg, #ffde8a 0%, #f5ab35 50%, #e08b18 100%)",
+                  color: "#4a1d05",
+                  fontSize: "12.5px",
+                  fontWeight: 800,
+                  padding: "8px 24px",
+                  borderRadius: "50px",
+                  letterSpacing: "0.02em",
+                  boxShadow: "0 4px 16px rgba(245, 171, 53, 0.35)",
+                  border: "1px solid rgba(255, 255, 255, 0.4)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "100%",
+                  fontFamily: "'Be Vietnam Pro', sans-serif"
+                }}>
+                  Pro Company
+                </span>
+
+                {/* White Follow Pill Button (+ Theo dõi) */}
+                <button
+                  type="button"
+                  onClick={() => setIsFollowing(!isFollowing)}
+                  style={{
+                    background: isFollowing ? "rgba(16, 185, 129, 0.18)" : "#ffffff",
+                    color: isFollowing ? "#10b981" : "#0f172a",
+                    border: isFollowing ? "1px solid #10b981" : "1px solid #ffffff",
+                    fontWeight: 800,
+                    fontSize: "13px",
+                    borderRadius: "50px",
+                    padding: "10px 24px",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 8,
+                    transition: "all 0.25s ease",
+                    width: "100%",
+                    boxShadow: isFollowing ? "0 0 16px rgba(16,185,129,0.35)" : "0 4px 16px rgba(255,255,255,0.2)"
+                  }}
+                >
+                  {isFollowing ? (
+                    <>
+                      <i className="fa-solid fa-check" style={{ fontSize: 12 }} /> Đã theo dõi
+                    </>
+                  ) : (
+                    <>
+                      <i className="fa-solid fa-plus" style={{ fontSize: 12 }} /> Theo dõi
+                    </>
+                  )}
+                </button>
+              </div>
+
+              {/* Secondary Link */}
               <Link
                 to="/tuyen-dung"
                 style={{
-                  background: "#ffffff",
-                  color: "#000000",
-                  fontWeight: 800,
+                  color: "rgba(255, 255, 255, 0.75)",
                   fontSize: "12px",
-                  borderRadius: "50px",
-                  padding: "12px 24px",
+                  fontWeight: 600,
                   textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 8,
-                  boxShadow: "0 0 20px rgba(255,255,255,0.25)",
-                  transition: "all 0.25s ease",
-                  width: "100%",
-                  justifyContent: "center"
+                  gap: 6,
+                  marginTop: 4,
+                  transition: "color 0.2s"
                 }}
+                onMouseEnter={e => e.currentTarget.style.color = "#38bdf8"}
+                onMouseLeave={e => e.currentTarget.style.color = "rgba(255, 255, 255, 0.75)"}
               >
                 Khám phá việc làm <i className="fa-solid fa-arrow-right" style={{ fontSize: 10 }} />
               </Link>
             </div>
 
-            {/* Right Member Companies Cards (2x4 Grid) */}
+            {/* Right Member Com
+            panies Cards (2x4 Grid matching reference design) */}
             <div style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
@@ -334,87 +399,106 @@ export default function HomeCareers() {
                 <Link
                   key={company.id}
                   to="/tuyen-dung"
+                  className="member-company-card"
                   style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    borderRadius: 14,
-                    padding: "18px 20px",
+                    position: "relative",
+                    borderRadius: 16,
+                    padding: "20px 22px",
                     textDecoration: "none",
                     display: "flex",
-                    alignItems: "center",
+                    flexDirection: "column",
                     justifyContent: "space-between",
-                    gap: 16,
+                    minHeight: 145,
                     transition: "all 0.3s ease"
                   }}
-                  className="member-company-card"
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    {/* Small Square Logo */}
+                  {/* Top Row: White Square Logo + Info */}
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+                    {/* White Square Logo Container */}
                     <div style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
-                      background: "rgba(0,0,0,0.6)",
-                      border: "1px solid rgba(255,255,255,0.12)",
+                      width: 54,
+                      height: 54,
+                      borderRadius: 12,
+                      background: "#ffffff",
+                      border: "1px solid rgba(0, 0, 0, 0.08)",
+                      boxShadow: "0 4px 14px rgba(0, 0, 0, 0.18)",
                       display: "grid",
                       placeItems: "center",
-                      flexShrink: 0
+                      flexShrink: 0,
+                      padding: 5
                     }}>
                       <img
                         src="/assets/matrix-holding-logo.png"
                         alt={company.name}
-                        style={{ height: 26, width: "auto" }}
+                        style={{ height: 28, width: "auto", objectFit: "contain" }}
                       />
                     </div>
 
-                    <div>
-                      <h4 style={{
-                        color: "#ffffff",
-                        fontSize: "13px",
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <h4 className="member-company-title" style={{
+                        fontSize: "13.5px",
                         fontWeight: 800,
-                        letterSpacing: "0.04em",
-                        margin: "0 0 3px",
+                        letterSpacing: "0.02em",
+                        margin: "0 0 3px 0",
+                        lineHeight: 1.35,
                         fontFamily: "'Be Vietnam Pro', sans-serif"
                       }}>
                         {company.name}
                       </h4>
-                      <p style={{
-                        color: "rgba(255,255,255,0.6)",
-                        fontSize: "11px",
-                        margin: "0 0 6px"
+                      <p className="member-company-desc" style={{
+                        fontSize: "11.5px",
+                        color: "#38bdf8",
+                        fontWeight: 700,
+                        margin: "0 0 4px 0"
                       }}>
                         {company.desc}
                       </p>
-                      <span style={{
-                        background: "rgba(41, 151, 255, 0.12)",
-                        border: "1px solid rgba(56, 189, 248, 0.35)",
-                        color: "#38bdf8",
-                        fontSize: "10px",
-                        fontWeight: 700,
-                        padding: "3px 10px",
-                        borderRadius: "50px",
-                        display: "inline-flex",
-                        alignItems: "center"
-                      }}>
-                        {company.jobsCount} việc làm
-                      </span>
+                      {company.subDesc && (
+                        <p className="member-company-subdesc" style={{
+                          fontSize: "11px",
+                          margin: 0,
+                          lineHeight: 1.45,
+                          textAlign: "justify"
+                        }}>
+                          {company.subDesc}
+                        </p>
+                      )}
                     </div>
                   </div>
 
-                  {/* Arrow indicator */}
-                  <span style={{
-                    width: 30,
-                    height: 30,
-                    borderRadius: "50%",
-                    background: "rgba(255,255,255,0.06)",
-                    color: "#2997ff",
-                    display: "grid",
-                    placeItems: "center",
-                    flexShrink: 0,
-                    fontSize: 11
+                  {/* Bottom Row: Briefcase Icon + Job Count & Arrow */}
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginTop: 14,
+                    paddingTop: 12,
+                    borderTop: "1px solid rgba(255, 255, 255, 0.08)"
                   }}>
-                    <i className="fa-solid fa-arrow-right" />
-                  </span>
+                    <div className="member-company-jobs" style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 7,
+                      fontSize: "12.5px",
+                      fontWeight: 700
+                    }}>
+                      <i className="fa-solid fa-briefcase" style={{ fontSize: 13 }} />
+                      <span>{company.jobsCount} việc làm</span>
+                    </div>
+
+                    <span className="member-company-arrow" style={{
+                      width: 26,
+                      height: 26,
+                      borderRadius: "50%",
+                      background: "rgba(56, 189, 248, 0.12)",
+                      color: "#38bdf8",
+                      display: "grid",
+                      placeItems: "center",
+                      fontSize: 10
+                    }}>
+                      <i className="fa-solid fa-arrow-right" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>

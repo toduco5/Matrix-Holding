@@ -131,18 +131,13 @@ body { color: #1d1d1f; }
 }
 
 /* ── GLOBAL DYNAMIC ANIMATED BACKGROUND ── */
-body, #root {
-  position: relative;
-  overflow-x: hidden;
+/* Default & Dark mode base background (Matching Deep Obsidian Footer #05070f) */
+html, body, #root {
+  background: #05070f !important;
+  color: #ffffff;
 }
 
-:root[data-theme="dark"] body,
-:root[data-theme="dark"] #root {
-  background-color: #05070f !important;
-  color: #86868b;
-}
-
-/* 1. Dynamic Moving Ambient Grid Dots Pattern (Light & Dark) */
+/* 1. Dynamic Moving Ambient Grid Dots Pattern */
 body::before {
   content: "";
   position: fixed;
@@ -150,23 +145,23 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(rgba(41, 151, 255, 0.15) 1.2px, transparent 1.2px),
-    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 36px 36px, 36px 36px;
+    radial-gradient(rgba(56, 189, 248, 0.28) 1.2px, transparent 1.2px),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
   animation: ambientGridMotion 30s linear infinite;
-  opacity: 0.75;
+  opacity: 0.95;
 }
 
 :root[data-theme="dark"] body::before {
   background-image:
-    radial-gradient(rgba(41, 151, 255, 0.25) 1.2px, transparent 1.2px),
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  opacity: 0.95;
+    radial-gradient(rgba(56, 189, 248, 0.3) 1.2px, transparent 1.2px),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  opacity: 1;
 }
 
 @keyframes ambientGridMotion {
   0% { background-position: 0 0, 0 0; }
-  100% { background-position: 36px 36px, 36px 36px; }
+  100% { background-position: 24px 24px, 24px 24px; }
 }
 
 /* 2. Floating Ambient Aurora Light Orbs Mesh (Light & Dark) */
@@ -213,6 +208,57 @@ body::after {
 header, main, footer, section {
   position: relative;
   z-index: 1;
+}
+
+/* Glass Frame & Card Containers matching User Reference Image (Dark Navy Solid Fill + Gold Amber Border) */
+.glass-frame-container,
+.member-company-card,
+.pillar-card,
+.sector-card,
+.team-card,
+.news-card,
+.career-aside,
+.job-card,
+.insights-cards article,
+.knowledge-card,
+.cv-form,
+.item-box .item,
+.skill-card,
+.design-card,
+.bento-card,
+.trust-pillar-card,
+.step-card,
+.leadership-card,
+.partner-card,
+.about-card,
+.recruitment-card,
+.recruitment-job-card,
+.company-pill,
+.company-horizontal-card {
+  background: linear-gradient(155deg, #090e1a 0%, #05070f 100%) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.65) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.glass-frame-container:hover,
+.member-company-card:hover,
+.pillar-card:hover,
+.sector-card:hover,
+.team-card:hover,
+.news-card:hover,
+.job-card:hover,
+.bento-card:hover,
+.trust-pillar-card:hover,
+.step-card:hover,
+.leadership-card:hover,
+.partner-card:hover {
+  border-color: rgba(245, 158, 11, 0.95) !important;
+  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.3) !important;
+  transform: translateY(-3px) !important;
 }
 
 /* Glassmorphism sticky header */
@@ -604,16 +650,37 @@ header, main, footer, section {
 }
 :root[data-theme="dark"] .topbar-contact i { color: #2997ff !important; }
 
-/* Footer / Leadership */
-:root[data-theme="dark"] .footer,
-:root[data-theme="dark"] .leadership { background: #000000 !important; }
+/* Footer / Leadership — Fully Synchronized with Deep Obsidian Background Theme #05070f */
+.footer,
+:root[data-theme="dark"] .footer {
+  background-color: #05070f !important;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.3) 1.2px, transparent 1.2px) !important;
+  background-size: 24px 24px !important;
+  border-top: 1px solid rgba(245, 158, 11, 0.3) !important;
+  position: relative;
+}
+.leadership,
+:root[data-theme="dark"] .leadership {
+  background: #05070f !important;
+}
 :root[data-theme="dark"] .footer-link,
 :root[data-theme="dark"] .footer-brand p,
-:root[data-theme="dark"] .footer-contact,
-:root[data-theme="dark"] .footer-bottom { color: #86868b !important; }
-:root[data-theme="dark"] .footer a:hover { color: #2997ff !important; }
-:root[data-theme="dark"] .footer h3 { color: #f5f5f7 !important; }
-:root[data-theme="dark"] .footer-bottom { border-color: rgba(255,255,255,0.06) !important; }
+:root[data-theme="dark"] .footer-contact {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+:root[data-theme="dark"] .footer a:hover {
+  color: #38bdf8 !important;
+}
+:root[data-theme="dark"] .footer h3 {
+  color: #ffffff !important;
+}
+.footer-bottom,
+:root[data-theme="dark"] .footer-bottom {
+  color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: #03050c !important;
+  backdrop-filter: blur(10px) !important;
+}
 
 /* Hero / Title bands */
 :root[data-theme="dark"] .title-band,
@@ -1300,14 +1367,11 @@ i[class*="fa-"], .fa-solid, .fas, .far, .fab, .fa {
 
 /* ── ECOSYSTEM HIRING MEMBER COMPANY CARD STYLING ── */
 .member-company-card:hover {
-  background: rgba(41, 151, 255, 0.1) !important;
-  border-color: rgba(41, 151, 255, 0.45) !important;
+  border-color: rgba(245, 158, 11, 0.85) !important;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(41, 151, 255, 0.2) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.25) !important;
 }
 .member-company-card:hover span:last-child {
-  background: #2997ff !important;
-  color: #ffffff !important;
   transform: translateX(3px);
 }
 
@@ -3618,6 +3682,202 @@ i[class*="fa-"], .fa-solid, .fas, .far, .fab, .fa {
   filter: grayscale(0%) contrast(1) !important;
 }
 
+:root[data-theme="dark"] .member-company-subdesc {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+:root[data-theme="light"] .member-company-subdesc {
+  color: #64748b !important;
+}
+
+/* =========================================================
+   UNIFIED CYBER MATRIX DOT-GRID BACKGROUND (BODY SECTIONS)
+   PRESERVING HERO BANNERS & PARTICLE BACKGROUNDS AS BEFORE
+   ========================================================= */
+html,
+body,
+#root,
+main,
+section:not(.page-banner-hero):not(.hero):not(.detail-hero):not(.career-hero):not(.news-detail-hero):not(.ecosystem-detail-hero):not(.title-band),
+.section,
+.bg-gray,
+.pillars,
+.services-section,
+.project-highlight,
+.leadership,
+.home-careers,
+.footer,
+.ecosystem-section,
+.about-area,
+.blog-area,
+.contact-form-area,
+.manifesto,
+.services-item,
+.service-item {
+  background-color: #05070f !important;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.22) 1.5px, transparent 1.5px) !important;
+  background-size: 28px 28px !important;
+  background-position: center top !important;
+}
+
+.page-banner-hero,
+.hero,
+.detail-hero,
+.career-hero,
+.news-detail-hero,
+.ecosystem-detail-hero,
+.title-band {
+  background-color: transparent !important;
+}
+
+/* =========================================================
+   CENTER ALIGN ALL SECTION HEADINGS & TITLES ACROSS WEBSITE
+   ========================================================= */
+.section-heading,
+.site-heading,
+.business-capabilities .section-heading,
+.skills-section .section-heading,
+.design-section .section-heading,
+.timeline-section .section-heading,
+.partners-section .section-heading {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 820px !important;
+}
+
+.section-heading h2,
+.site-heading h2,
+.section-heading p,
+.site-heading p,
+.section-heading .eyebrow,
+.site-heading .eyebrow {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-heading-row {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  max-width: 820px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-heading-row > div {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-heading-row > div > p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.vertical-image-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 22px 55px rgba(56, 189, 248, 0.35) !important;
+}
+
+.vertical-image-card:hover .card-bg-img {
+  transform: scale(1.08) !important;
+}
+
+.vertical-image-card:hover i.fa-arrow-right {
+  transform: translateX(4px) !important;
+}
+
+.overview-pill-link:hover {
+  background: rgba(56, 189, 248, 0.25) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (max-width: 1024px) {
+  .four-ecosystem-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .four-ecosystem-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Format all description content paragraphs with text-align justify */
+.member-company-subdesc,
+.member-company-card p,
+.vertical-image-card p,
+.card-desc,
+.job-card p,
+.sector-card p,
+.pillar-card p,
+.news-card p,
+.about-intro-copy p,
+.about-preview p,
+.item-box p,
+blockquote {
+  text-align: justify !important;
+}
+
+@media (max-width: 1024px) {
+  .news-top-editorial-grid,
+  .dark-event-split-grid,
+  .podcast-poll-newsletter-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .event-calendar-grid,
+  .editorial-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .event-calendar-grid,
+  .editorial-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── REMOVE ALL HOVER COLOR SHIFTS ON CONTENT & CARDS SITE-WIDE ── */
+.member-company-card:hover,
+.partner-logo-card:hover,
+.vertical-image-card:hover,
+.pillar-card:hover,
+.sector-card:hover,
+.team-card:hover,
+.news-card:hover,
+.step-card:hover,
+.bento-card:hover,
+.leadership-card:hover {
+  border-color: rgba(245, 158, 11, 0.85) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.25) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Ensure inner badges, spans, headings, and paragraphs NEVER change background or text color on hover */
+.member-company-card:hover span:last-child,
+.member-company-card:hover span,
+.partner-logo-card:hover span,
+.vertical-image-card:hover span,
+.overview-pill-link:hover span {
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 992px) {
+  .contact-page-main-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 
 

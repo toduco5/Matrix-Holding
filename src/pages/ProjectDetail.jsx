@@ -4,6 +4,8 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 
+import PageBanner from "../components/PageBanner.jsx";
+
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = PROJECTS[slug];
@@ -28,32 +30,11 @@ export default function ProjectDetail() {
       <Header />
       <main>
         {/* Synchronized Hero Section */}
-        <section 
-          className="detail-hero" 
-          style={{
-            backgroundImage: `linear-gradient(135deg, rgba(5,7,15,0.92) 0%, rgba(10,26,58,0.88) 55%, rgba(41,151,255,0.25) 100%), url(https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=1800&q=86)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}
-        >
-          <div className="container">
-            <p className="eyebrow">DỰ ÁN ĐẦU TƯ & HẠ TẦNG · {project.field}</p>
-            <h1>{project.title}</h1>
-            <p>{project.summary}</p>
-            {project.capital && (
-              <div className="vivid-hero-stats" style={{ justifyContent: "flex-start", marginTop: 16 }}>
-                <div className="vivid-hero-stat-item">
-                  <i className="fa-solid fa-vault" /> Quy mô vốn: <strong>{project.capital}</strong>
-                </div>
-                {project.location && (
-                  <div className="vivid-hero-stat-item">
-                    <i className="fa-solid fa-location-dot" /> Địa điểm: <strong>{project.location}</strong>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </section>
+        <PageBanner
+          eyebrow={`DỰ ÁN ĐẦU TƯ & HẠ TẦNG · ${project.field}`}
+          titlePrefix={project.title}
+          subtitle={project.summary}
+        />
 
         {/* Project Details Grid */}
         <section className="section">

@@ -33,6 +33,15 @@ export default function HomeNews() {
             }}>
               Tin Tức Mới Nhất <span className="text-gradient">Matrix Holding</span>
             </h2>
+            <p style={{
+            color: "rgba(255, 255, 255, 0.7)",
+            fontSize: "15px",
+            margin: "0 auto",
+            maxWidth: 500,
+            lineHeight: 1.6
+          }}>
+           Cập nhật hoạt động và những bước phát triển của Matrix Holding
+          </p>
           </div>
 
           <Link

@@ -105,31 +105,26 @@ export default function Header() {
             
             <details ref={dropdownRef} className={`nav-dropdown ${isEcosystemActive ? "is-active" : ""}`}>
               <summary>{t("nav_ecosystem")} <i className="fa-solid fa-chevron-down" style={{ fontSize: 9, marginLeft: 4 }} /></summary>
-              <div className="dropdown-menu ecosystem-mega">
-                <div className="mega-groups">
-                  <div className="mega-heading">
-                    <span>{t("nav_sectors_overview")}</span>
-                    <Link to="/sectors" onClick={close}>{t("nav_view_overview")} <i className="fa-solid fa-arrow-right" /></Link>
+              <div className="dropdown-menu ecosystem-mega" style={{ gridTemplateColumns: "1fr", width: 440, padding: 0 }}>
+                <div className="mega-groups" style={{ padding: "20px 22px" }}>
+                  <div className="mega-heading" style={{ marginBottom: 14 }}>
+                    <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+                      04 HỆ SINH THÁI THÀNH VIÊN
+                    </span>
+                    <Link to="/sectors" onClick={close} style={{ color: "#38bdf8", fontSize: "12px", fontWeight: 700 }}>
+                      Xem tổng quan <i className="fa-solid fa-arrow-right" />
+                    </Link>
                   </div>
                   {ECOSYSTEM_UNITS.map(unit => (
                     <Link className="mega-group" key={unit.id} to={`/ecosystem/${unit.id}`} onClick={close}>
-                      <b>{unit.number}</b>
-                      <span><strong>{unit.name}</strong><small>{unit.label}</small></span>
-                      <i className="fa-solid fa-arrow-right" />
+                      <b style={{ color: "#38bdf8", fontSize: "13px" }}>{unit.number}</b>
+                      <span>
+                        <strong style={{ fontSize: "14px", fontWeight: 700 }}>{unit.name}</strong>
+                        <small style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.65)" }}>{unit.label}</small>
+                      </span>
+                      <i className="fa-solid fa-arrow-right" style={{ color: "#38bdf8" }} />
                     </Link>
                   ))}
-                </div>
-                <div className="dropdown-projects">
-                  <p>{t("nav_priority_fields")}</p>
-                  {SECTORS.slice(0,3).map(sector => (
-                    <Link className="dropdown-project" key={sector.id} to={`/ecosystem/${sector.slug}`} onClick={close}>
-                      <span>{sector.name}</span>
-                      <small>{sector.desc}</small>
-                    </Link>
-                  ))}
-                  <Link className="mega-contact" to="/contact" onClick={close}>
-                    {t("nav_cooperate_prompt")} <i className="fa-solid fa-arrow-right" />
-                  </Link>
                 </div>
               </div>
             </details>

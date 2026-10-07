@@ -18,7 +18,8 @@ export default function ContactWidget() {
     const data = new FormData(event.currentTarget);
     const subject = encodeURIComponent("Yêu cầu liên hệ từ Matrix Holding");
     const body = encodeURIComponent(`Email: ${data.get("email")}\n\nNhu cầu: ${data.get("message") || "Tôi muốn được tư vấn thêm."}`);
-    window.location.href = `mailto:tminhduc1302@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:
+matrixholding.support@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return <>

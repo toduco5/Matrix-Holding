@@ -6,6 +6,8 @@ import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 import PropertyMarketOverview from "../components/PropertyMarketOverview.jsx";
 
+import PageBanner from "../components/PageBanner.jsx";
+
 const audiences = [
   { icon:"fa-chart-line", title:"Nhà đầu tư", text:"Tìm hiểu lĩnh vực, đối chiếu mức độ phù hợp và chủ động thực hiện thẩm định trước quyết định." },
   { icon:"fa-lightbulb", title:"Chủ dự án", text:"Trình bày vấn đề, giải pháp, giai đoạn hiện tại và nhu cầu nguồn lực bằng thông tin có thể kiểm chứng." },
@@ -40,20 +42,11 @@ export default function EcosystemDetail() {
       <Header />
       <main>
         {/* Unified Matrix Navy/Blue Glass Hero Banner */}
-        <div 
-          className="title-band ecosystem-detail-hero" 
-          style={{
-            backgroundImage: `linear-gradient(135deg, rgba(5,7,15,0.92) 0%, rgba(10,26,58,0.88) 55%, rgba(41,151,255,0.25) 100%), url(https://images.unsplash.com/${item.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}
-        >
-          <div>
-            <p className="eyebrow">{item.label}</p>
-            <h1>{item.title}</h1>
-            <p>{item.tagline}</p>
-          </div>
-        </div>
+        <PageBanner
+          eyebrow={item.label || "HỆ SINH THÁI MATRIX"}
+          titlePrefix={item.title}
+          subtitle={item.tagline}
+        />
 
         {/* Overview Section */}
         <section className="section">

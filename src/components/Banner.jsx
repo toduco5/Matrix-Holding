@@ -90,17 +90,21 @@ export default function Banner() {
         className="hero hero-centered"
         aria-labelledby="home-hero-title"
         style={{
+          height: "100vh",
+          minHeight: "660px",
+          width: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
           textAlign: "center",
-          padding: "130px 20px 100px",
+          padding: "100px 24px 50px",
+          boxSizing: "border-box",
           overflow: "hidden",
           backgroundColor: "#05070f"
         }}
       >
-        {/* 100% Monochrome Grayscale Architecture Background Layer */}
+        {/* Fullscreen Grayscale High-Contrast Architecture Background Layer */}
         <div 
           style={{
             position: "absolute",
@@ -108,34 +112,35 @@ export default function Banner() {
             backgroundImage: `url(${IMG}/${heroImg})`,
             backgroundSize: "cover",
             backgroundPosition: "center 40%",
-            filter: "grayscale(100%) contrast(1.2) brightness(0.55)",
+            filter: "grayscale(100%) contrast(1.35) brightness(0.42)",
             zIndex: 0
           }}
         />
 
-        {/* Neutral Deep Obsidian Dark Overlay */}
+        {/* High-Contrast Radial Spotlight Dark Overlay */}
         <div 
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(5,7,15,0.78) 0%, rgba(5,7,15,0.88) 50%, rgba(5,7,15,0.98) 100%)",
+            background: "radial-gradient(circle at 50% 50%, rgba(5,7,15,0.45) 0%, rgba(5,7,15,0.85) 65%, rgba(5,7,15,0.98) 100%)",
             zIndex: 1
           }}
         />
-        {/* Particle Network Animation */}
+        {/* Particle Network Animation (Full Viewport Height) */}
         <ParticleBackground />
 
-        {/* Subtle grid pattern overlay */}
+        {/* Subtle matrix grid pattern overlay */}
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
+          zIndex: 1
         }} />
 
         <div className="hero-centered-content" style={{
           position: "relative",
           zIndex: 2,
-          maxWidth: 980,
+          maxWidth: 1280,
           width: "100%",
           margin: "0 auto",
           display: "flex",
@@ -143,7 +148,7 @@ export default function Banner() {
           alignItems: "center",
           textAlign: "center"
         }}>
-          {/* Eyebrow badge with decorative lines */}
+          {/* Eyebrow badge with gold border & decorative lines */}
           <div style={{
             display: "flex",
             alignItems: "center",
@@ -151,46 +156,61 @@ export default function Banner() {
             gap: 14,
             marginBottom: 20
           }}>
-            <span style={{ height: 1, width: 40, background: "rgba(255,255,255,0.3)" }} />
+            <span style={{ height: 1, width: 44, background: "rgba(245, 158, 11, 0.6)" }} />
             <span style={{
-              color: "rgba(255,255,255,0.85)",
-              fontSize: "11px",
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase"
+              color: "#f59e0b",
+              background: "rgba(245, 158, 11, 0.12)",
+              border: "1px solid rgba(245, 158, 11, 0.35)",
+              padding: "5px 18px",
+              borderRadius: "50px",
+              fontSize: "12px",
+              fontWeight: 800,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              boxShadow: "0 0 15px rgba(245, 158, 11, 0.2)"
             }}>
               MATRIX HOLDING • VIETNAM
             </span>
-            <span style={{ height: 1, width: 40, background: "rgba(255,255,255,0.3)" }} />
+            <span style={{ height: 1, width: 44, background: "rgba(245, 158, 11, 0.6)" }} />
           </div>
 
           <h1 id="home-hero-title" style={{
             color: "#ffffff",
             fontFamily: "'Be Vietnam Pro', sans-serif",
-            fontSize: "clamp(32px, 4.8vw, 60px)",
-            fontWeight: 800,
+            fontSize: "clamp(34px, 4.6vw, 56px)",
+            fontWeight: 900,
             lineHeight: 1.2,
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.025em",
             margin: "0 0 20px",
-            textShadow: "0 10px 35px rgba(0,0,0,0.7)",
+            textShadow: "0 10px 40px rgba(0,0,0,0.95), 0 0 30px rgba(56, 189, 248, 0.2)",
             textAlign: "center",
             width: "100%"
           }}>
-            Kinh Doanh Đa Ngành
+            <div>HỆ SINH THÁI</div>
+            <div style={{
+              background: "linear-gradient(135deg, #ffffff 30%, #38bdf8 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              whiteSpace: "nowrap"
+            }}>
+              KINH DOANH ĐA NGÀNH
+            </div>
           </h1>
 
           <p className="hero-copy-centered" style={{
-            color: "rgba(255,255,255,0.85)",
-            fontSize: "clamp(14px, 1.5vw, 17px)",
+            color: "#f1f5f9",
+            fontSize: "clamp(15px, 1.7vw, 18px)",
             lineHeight: 1.75,
-            maxWidth: 960,
+            maxWidth: 920,
             width: "100%",
-            margin: "0 auto 36px",
-            fontWeight: 400,
-            textAlign: "center"
+            margin: "0 auto 32px",
+            fontWeight: 600,
+            textAlign: "center",
+            textShadow: "0 4px 16px rgba(0,0,0,0.9)"
           }}>
-            Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả,<br className="hero-desktop-br" />
-            nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tiếp cận thị trường bền vững.
+            Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả<br className="hero-desktop-br" />
+            Nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội <br />
+            Tiếp cận thị trường bền vững.
           </p>
 
           <div className="hero-actions-centered" style={{
@@ -205,59 +225,22 @@ export default function Banner() {
               className="hero-btn-primary glowing-pill-btn"
               style={{
                 background: "#ffffff",
-                color: "#000000",
+                color: "#0f172a",
                 borderRadius: "50px",
-                fontWeight: 800,
-                fontSize: "13px",
-                padding: "16px 36px",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                boxShadow: "0 0 35px rgba(255,255,255,0.35)",
-                transition: "all 0.25s ease",
-                textDecoration: "none"
-              }}
-            >
-              Xem Thương Vụ <i className="fa-solid fa-chevron-right" style={{ fontSize: 11 }} />
-            </Link>
-
-            <button
-              type="button"
-              onClick={() => setShowVideoModal(true)}
-              className="hero-btn-secondary video-pill-btn"
-              style={{
-                background: "rgba(255, 255, 255, 0.06)",
-                border: "1px solid rgba(255, 255, 255, 0.35)",
-                color: "#ffffff",
-                fontWeight: 700,
-                fontSize: "13px",
+                fontWeight: 900,
+                fontSize: "14px",
+                padding: "18px 42px",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 12,
-                cursor: "pointer",
-                padding: "14px 28px",
-                borderRadius: "50px",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
-                transition: "all 0.25s ease"
+                boxShadow: "0 0 40px rgba(255,255,255,0.4), 0 10px 30px rgba(0,0,0,0.6)",
+                transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                textDecoration: "none"
               }}
             >
-              <div style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                background: "rgba(255,255,255,0.18)",
-                border: "1px solid rgba(255,255,255,0.4)",
-                display: "grid",
-                placeItems: "center",
-                color: "#ffffff",
-                flexShrink: 0
-              }}>
-                <i className="fa-solid fa-play" style={{ fontSize: 11, marginLeft: 2 }} />
-              </div>
-              <span>Xem Tuyên Ngôn (60s)</span>
-            </button>
+              <span>Khám phá Matrix Holding</span>
+              <i className="fa-solid fa-chevron-right" style={{ fontSize: 12 }} />
+            </Link>
           </div>
         </div>
       </section>
