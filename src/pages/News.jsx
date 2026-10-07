@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { FEATURED_NEWS, NEWS_CATEGORIES, NEWS_ITEMS } from "../data/news.js";
-import TopBar from "../components/TopBar.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
@@ -19,7 +18,14 @@ export default function News() {
     <PageMeta title="Tin tức & Góc nhìn | Matrix Holding" description="Câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding." />
     <Header />
     <main className="insights-page">
-      <section className="insights-heading section"><div className="container"><p className="eyebrow">MATRIX HOLDING · INSIGHTS</p><h1>Tin tức & Góc nhìn</h1><p>Những câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding.</p><div className="insights-crumb">Trang chủ <i className="fa-solid fa-chevron-right" /> Tin tức</div></div></section>
+      <section className="insights-heading section" style={{ paddingTop: 130 }}>
+        <div className="container">
+          <p className="eyebrow">MATRIX HOLDING · INSIGHTS</p>
+          <h1>Tin tức & Góc nhìn</h1>
+          <p>Những câu chuyện, hoạt động và góc nhìn phát triển từ hệ sinh thái Matrix Holding.</p>
+          <div className="insights-crumb">Trang chủ <i className="fa-solid fa-chevron-right" /> Tin tức</div>
+        </div>
+      </section>
       <section className="insights-content"><div className="container">
         <div className="insights-toolbar"><div className="insights-categories">{NEWS_CATEGORIES.map(item => <button className={category === item ? "is-active" : ""} onClick={() => setCategory(item)} key={item}>{item}</button>)}</div><label><i className="fa-solid fa-magnifying-glass" /><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Tìm trong chuyên mục" /></label></div>
         <div className="insights-grid">
