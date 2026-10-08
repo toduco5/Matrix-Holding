@@ -661,13 +661,14 @@ header, main, footer, section {
 }
 :root[data-theme="dark"] .topbar-contact i { color: #2997ff !important; }
 
-/* Footer / Leadership — Pure Deep Minimalist Theme */
+/* Footer / Leadership — Fully Synchronized with Header #05070f */
 .footer,
 :root[data-theme="dark"] .footer {
-  background: #020409 !important;
+  background: #05070f !important;
   background-image: none !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   position: relative;
+  z-index: 2;
 }
 .leadership,
 :root[data-theme="dark"] .leadership {
@@ -687,8 +688,8 @@ header, main, footer, section {
 .footer-bottom,
 :root[data-theme="dark"] .footer-bottom {
   color: rgba(255, 255, 255, 0.5) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  background: #03050c !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: #05070f !important;
   backdrop-filter: blur(10px) !important;
 }
 
@@ -3736,7 +3737,6 @@ section:not(.page-banner-hero):not(.hero):not(.detail-hero):not(.career-hero):no
 .project-highlight,
 .leadership,
 .home-careers,
-.footer,
 .ecosystem-section,
 .about-area,
 .blog-area,

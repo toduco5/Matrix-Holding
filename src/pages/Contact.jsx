@@ -72,7 +72,7 @@ export default function Contact() {
     <>
       <PageMeta
         title="Gặp gỡ & Kết nối | Matrix Holding"
-        description="Bắt đầu cuộc trao đổi kết nối đối tác, đầu tư và tuyển dụng với Matrix Holding. Trụ sở KĐT Bắc Linh Đàm, Phường Hoàng Liệt, Quận Hoàng Mai, Hà Nội."
+        description="Bắt đầu cuộc trao đổi kết nối đối tác, đầu tư và tuyển dụng với Matrix Holding. Trụ sở KĐT Bắc Linh Đàm, Phường Hoàng Liệt, Hà Nội."
       />
       <Header />
 
@@ -155,7 +155,7 @@ export default function Contact() {
                     Văn phòng Matrix Holding
                   </h3>
                   <p style={{ color: "rgba(255, 255, 255, 0.72)", fontSize: "13px", margin: "0 0 18px", lineHeight: 1.55 }}>
-                    KĐT Bắc Linh Đàm, Phường Hoàng Liệt, Quận Hoàng Mai, Hà Nội
+                    KĐT Bắc Linh Đàm, Phường Hoàng Liệt, Hà Nội
                   </p>
 
                   {/* Embedded Google Maps Container */}
