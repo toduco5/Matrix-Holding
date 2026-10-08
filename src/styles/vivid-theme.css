@@ -133,63 +133,43 @@ body { color: #1d1d1f; }
 /* ── GLOBAL DYNAMIC ANIMATED BACKGROUND ── */
 /* Default & Dark mode base background (Matching Deep Obsidian Footer #05070f) */
 html, body, #root {
-  background: #05070f !important;
+  background: #03060f !important;
   color: #ffffff;
 }
 
-/* 1. Dynamic Moving Ambient Grid Dots Pattern */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(rgba(56, 189, 248, 0.28) 1.2px, transparent 1.2px),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 24px 24px, 24px 24px;
-  animation: ambientGridMotion 30s linear infinite;
-  opacity: 0.95;
+body {
+  background: radial-gradient(circle at 50% 0%, #091024 0%, #040711 48%, #02040a 100%) fixed !important;
+  color: #ffffff;
+  min-height: 100vh;
 }
 
+/* Option 2: Pure Deep Minimalist — Remove all noisy dot patterns */
+body::before,
 :root[data-theme="dark"] body::before {
-  background-image:
-    radial-gradient(rgba(56, 189, 248, 0.3) 1.2px, transparent 1.2px),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  opacity: 1;
+  display: none !important;
+  background-image: none !important;
 }
 
-@keyframes ambientGridMotion {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 24px 24px, 24px 24px; }
-}
-
-/* 2. Floating Ambient Aurora Light Orbs Mesh (Light & Dark) */
+/* Subtle, Soft Deep Atmospheric Ambient Light (Pure Depth without noise) */
 body::after {
   content: "";
   position: fixed;
-  top: -15%;
-  left: -15%;
-  width: 130vw;
-  height: 130vh;
+  top: -20%;
+  left: -20%;
+  width: 140vw;
+  height: 140vh;
   z-index: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 20% 25%, rgba(41, 151, 255, 0.15) 0%, transparent 45%),
-    radial-gradient(circle at 80% 35%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 35% 75%, rgba(37, 99, 235, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 75% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
-  filter: blur(80px);
-  animation: ambientAuroraMotion 18s ease-in-out infinite alternate;
+    radial-gradient(circle at 50% 12%, rgba(56, 189, 248, 0.045) 0%, transparent 55%),
+    radial-gradient(circle at 85% 55%, rgba(30, 58, 138, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(30, 58, 138, 0.035) 0%, transparent 50%);
+  filter: blur(120px);
+  opacity: 0.9;
 }
 
 :root[data-theme="dark"] body::after {
-  background: 
-    radial-gradient(circle at 20% 25%, rgba(41, 151, 255, 0.28) 0%, transparent 45%),
-    radial-gradient(circle at 80% 35%, rgba(14, 165, 233, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 35% 75%, rgba(37, 99, 235, 0.25) 0%, transparent 45%),
-    radial-gradient(circle at 75% 80%, rgba(56, 189, 248, 0.18) 0%, transparent 40%);
-  filter: blur(90px);
+  opacity: 1;
 }
 
 @keyframes ambientAuroraMotion {
@@ -650,13 +630,12 @@ header, main, footer, section {
 }
 :root[data-theme="dark"] .topbar-contact i { color: #2997ff !important; }
 
-/* Footer / Leadership — Fully Synchronized with Deep Obsidian Background Theme #05070f */
+/* Footer / Leadership — Pure Deep Minimalist Theme */
 .footer,
 :root[data-theme="dark"] .footer {
-  background-color: #05070f !important;
-  background-image: radial-gradient(rgba(56, 189, 248, 0.3) 1.2px, transparent 1.2px) !important;
-  background-size: 24px 24px !important;
-  border-top: 1px solid rgba(245, 158, 11, 0.3) !important;
+  background: #020409 !important;
+  background-image: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   position: relative;
 }
 .leadership,
@@ -3734,10 +3713,15 @@ section:not(.page-banner-hero):not(.hero):not(.detail-hero):not(.career-hero):no
 .manifesto,
 .services-item,
 .service-item {
-  background-color: #05070f !important;
-  background-image: radial-gradient(rgba(56, 189, 248, 0.22) 1.5px, transparent 1.5px) !important;
-  background-size: 28px 28px !important;
-  background-position: center top !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.ecosystem-section::before,
+.property-dashboard::before,
+.hero::after {
+  background-image: none !important;
+  display: none !important;
 }
 
 .page-banner-hero,
