@@ -113,7 +113,7 @@ export default function WorkflowProcess() {
           <div style={{ textAlign: "center", maxWidth: 740, margin: "0 auto 44px" }}>
             <span
               style={{
-                color: "#f59e0b",
+                color: "#38bdf8",
                 fontSize: "11px",
                 fontWeight: 800,
                 letterSpacing: "0.22em",
@@ -128,7 +128,7 @@ export default function WorkflowProcess() {
                 marginBottom: 14
               }}
             >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#f59e0b", boxShadow: "0 0 10px #f59e0b" }} />
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 10px #38bdf8" }} />
               QUY TRÌNH LÀM VIỆC
             </span>
 

@@ -156,22 +156,22 @@ export default function Banner() {
             gap: 14,
             marginBottom: 20
           }}>
-            <span style={{ height: 1, width: 44, background: "rgba(245, 158, 11, 0.6)" }} />
+            <span style={{ height: 1, width: 44, background: "rgba(56, 189, 248, 0.6)" }} />
             <span style={{
-              color: "#f59e0b",
-              background: "rgba(245, 158, 11, 0.12)",
-              border: "1px solid rgba(245, 158, 11, 0.35)",
+              color: "#38bdf8",
+              background: "rgba(56, 189, 248, 0.12)",
+              border: "1px solid rgba(56, 189, 248, 0.35)",
               padding: "5px 18px",
               borderRadius: "50px",
               fontSize: "12px",
               fontWeight: 800,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
-              boxShadow: "0 0 15px rgba(245, 158, 11, 0.2)"
+              boxShadow: "0 0 15px rgba(56, 189, 248, 0.2)"
             }}>
               MATRIX HOLDING • VIETNAM
             </span>
-            <span style={{ height: 1, width: 44, background: "rgba(245, 158, 11, 0.6)" }} />
+            <span style={{ height: 1, width: 44, background: "rgba(56, 189, 248, 0.6)" }} />
           </div>
 
           <h1 id="home-hero-title" style={{
