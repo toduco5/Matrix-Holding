@@ -3,33 +3,37 @@ import { Link } from "react-router-dom";
 const FOUR_UNITS = [
   {
     number: "01",
-    name: "Matrix Network",
-    tagline: "Hệ sinh thái dịch vụ toàn diện",
-    desc: "Mô hình dịch vụ khép kín, nơi các doanh nghiệp chia sẻ nguồn lực, khai thác thế mạnh và cùng phát triển.",
+    name: "MATRIX NETWORK",
+    subline: "Hệ sinh thái dịch vụ toàn diện",
+    desc: "Xây dựng, quản lý và điều phối các đơn vị dịch vụ chuyên nghiệp cho doanh nghiệp.",
+    actionText: "KHÁM PHÁ NGAY",
     link: "/ecosystem/network",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85"
   },
   {
     number: "02",
-    name: "Matrix Connect",
-    tagline: "Hệ sinh thái kết nối kinh doanh",
-    desc: "Cộng đồng kết nối kinh doanh, tạo cơ hội hợp tác và thúc đẩy doanh thu phát triển bền vững.",
+    name: "MATRIX CONNECT",
+    subline: "Hệ sinh thái kết nối kinh doanh",
+    desc: "Kết nối giao thương, mở rộng mạng lưới hợp tác và gia tăng cơ hội kinh doanh bền vững.",
+    actionText: "KHÁM PHÁ NGAY",
     link: "/ecosystem/connect",
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=85"
   },
   {
     number: "03",
-    name: "Matrix Ventures",
-    tagline: "Hệ sinh thái kết nối đầu tư",
-    desc: "Mô hình kết nối đầu tư, tiếp cận các nguồn vốn chiến lược và nâng cao định giá doanh nghiệp.",
+    name: "MATRIX VENTURES",
+    subline: "Hệ sinh thái kết nối đầu tư",
+    desc: "Thẩm định dự án, kết nối các nguồn vốn chiến lược và nâng cao định giá doanh nghiệp.",
+    actionText: "KHÁM PHÁ NGAY",
     link: "/ecosystem/ventures",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85"
   },
   {
     number: "04",
-    name: "Matrix Academy",
-    tagline: "Hệ sinh thái đào tạo tinh hoa",
-    desc: "Nền tảng đào tạo nhân sự chất lượng cao, chia sẻ tri thức quản trị và ươm mầm tài năng trẻ.",
+    name: "MATRIX ACADEMY",
+    subline: "Hệ sinh thái đào tạo tinh hoa",
+    desc: "Đào tạo nhân lực chất lượng cao, chia sẻ tri thức quản trị và ươm mầm tài năng trẻ.",
+    actionText: "KHÁM PHÁ NGAY",
     link: "/ecosystem/academy",
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85"
   }
@@ -38,107 +42,56 @@ const FOUR_UNITS = [
 export default function FourEcosystems() {
   return (
     <section className="section four-ecosystems-section" style={{ padding: "85px 0", background: "#05070f", position: "relative", overflow: "hidden" }}>
-      {/* Background SVG connecting wave lines (Image 1 Style) */}
-      <svg
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: 0,
-          width: "100%",
-          height: "220px",
-          pointerEvents: "none",
-          zIndex: 1,
-          opacity: 0.35,
-          transform: "translateY(-50%)"
-        }}
-        viewBox="0 0 1440 220"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M-100,110 C200,30 400,190 720,110 C1040,30 1240,190 1540,110" stroke="url(#wave-grad-1)" strokeWidth="2.5" />
-        <path d="M-100,130 C220,50 420,170 720,130 C1020,90 1220,170 1540,130" stroke="url(#wave-grad-2)" strokeWidth="1.5" strokeDasharray="6 6" />
-        <defs>
-          <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#2997ff" stopOpacity="0.1" />
-            <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#2997ff" stopOpacity="0.1" />
-          </linearGradient>
-          <linearGradient id="wave-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#60a5fa" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.2" />
-          </linearGradient>
-        </defs>
-      </svg>
-
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        {/* Header section with Title & "Xem tổng quan" CTA button */}
+        {/* Header Section - Clean & Balanced */}
         <div style={{
           textAlign: "center",
           maxWidth: 780,
-          margin: "0 auto 44px"
+          margin: "0 auto 48px"
         }}>
           <span style={{
+            display: "inline-block",
             color: "#38bdf8",
             fontSize: "11px",
             fontWeight: 800,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            display: "block",
-            marginBottom: 8
+            marginBottom: 10
           }}>
-            04 HỆ SINH THÁI THÀNH VIÊN
+            ⚡ HỆ SINH THÁI THÀNH VIÊN
           </span>
+
           <h2 style={{
             color: "#ffffff",
-            fontSize: "clamp(28px, 3.5vw, 40px)",
-            fontWeight: 800,
+            fontSize: "clamp(26px, 3.2vw, 38px)",
+            fontWeight: 900,
+            letterSpacing: "-0.02em",
             margin: "0 0 12px",
-            letterSpacing: "-0.02em"
+            lineHeight: 1.25,
+            fontFamily: "'Be Vietnam Pro', sans-serif"
           }}>
-            Hệ sinh thái, mạng lưới nguồn lực.
+            Hệ Sinh Thái & Nền Tảng Phát Triển.
           </h2>
+
           <p style={{
             color: "rgba(255, 255, 255, 0.72)",
-            fontSize: "14px",
-            margin: "0 auto 20px",
-            maxWidth: 640,
+            fontSize: "14.5px",
+            margin: "0 auto",
+            maxWidth: 580,
             lineHeight: 1.6
           }}>
-            Mỗi hệ sinh thái đảm nhận một vai trò chuyên biệt, nhưng cùng chung mục tiêu tạo ra giá trị lâu dài cho doanh nghiệp.
+            Kết nối dịch vụ, cộng đồng, đầu tư & đào tạo
           </p>
-
-          <Link
-            to="/sectors"
-            style={{
-              background: "rgba(56, 189, 248, 0.12)",
-              border: "1px solid rgba(56, 189, 248, 0.35)",
-              color: "#38bdf8",
-              padding: "10px 24px",
-              borderRadius: "50px",
-              fontSize: "13px",
-              fontWeight: 700,
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              transition: "all 0.25s ease",
-              boxShadow: "0 4px 16px rgba(56, 189, 248, 0.15)",
-              whiteSpace: "nowrap"
-            }}
-            className="overview-pill-link"
-          >
-            <span>Xem tổng quan</span>
-            <i className="fa-solid fa-chevron-right" style={{ fontSize: 11 }} />
-          </Link>
         </div>
 
-        {/* 4 Vertical Banner Image Cards Grid (Image 1 Style) */}
+        {/* 2x2 Grid Layout of 4 Cards (Symmetrical OCD Alignment) */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 20
-        }} className="four-ecosystem-cards-grid">
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: 24,
+          maxWidth: 1100,
+          margin: "0 auto"
+        }} className="ecosystem-2x2-grid">
           {FOUR_UNITS.map((unit) => (
             <Link
               key={unit.number}
@@ -146,15 +99,16 @@ export default function FourEcosystems() {
               className="vertical-image-card"
               style={{
                 position: "relative",
-                height: 400,
+                height: 320,
                 borderRadius: 22,
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-between",
-                padding: "24px 22px",
+                justify: "space-between",
+                padding: "28px 28px",
+                textAlign: "left",
                 textDecoration: "none",
-                border: "1px solid rgba(255, 255, 255, 0.14)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
                 boxShadow: "0 14px 40px rgba(0, 0, 0, 0.6)",
                 transition: "all 0.35s cubic-bezier(0.16, 1, 0.3, 1)"
               }}
@@ -172,76 +126,91 @@ export default function FourEcosystems() {
                 }}
               />
 
-              {/* Dark Gradient Overlay for text contrast (like Image 1) */}
+              {/* Dark Gradient Overlay */}
               <div style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(180deg, rgba(5,7,15,0.15) 0%, rgba(5,7,15,0.65) 45%, rgba(5,7,15,0.96) 100%)"
+                background: "linear-gradient(180deg, rgba(5,7,15,0.2) 0%, rgba(5,7,15,0.7) 45%, rgba(5,7,15,0.96) 100%)"
               }} />
 
-              {/* Top Badge: Number Pill */}
+              {/* Top Badge: Number Circle */}
               <div style={{ position: "relative", zIndex: 2 }}>
                 <span style={{
-                  background: "rgba(5, 7, 15, 0.75)",
+                  background: "rgba(255, 255, 255, 0.22)",
                   backdropFilter: "blur(10px)",
                   WebkitBackdropFilter: "blur(10px)",
-                  color: "#38bdf8",
+                  color: "#ffffff",
                   fontSize: "12px",
                   fontWeight: 800,
-                  padding: "5px 14px",
-                  borderRadius: 30,
-                  border: "1px solid rgba(56, 189, 248, 0.3)",
-                  display: "inline-block"
+                  width: 36,
+                  height: 36,
+                  borderRadius: "50%",
+                  display: "grid",
+                  placeItems: "center",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)"
                 }}>
                   {unit.number}
                 </span>
               </div>
 
-              {/* Bottom Content Overlay (matching Image 1 typography & placement) */}
-              <div style={{ position: "relative", zIndex: 2 }}>
-                <span style={{
-                  color: "#38bdf8",
-                  fontSize: "11px",
-                  fontWeight: 800,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  display: "block",
-                  marginBottom: 6
-                }}>
-                  {unit.tagline}
-                </span>
-
+              {/* Bottom Content Overlay (Symmetrically aligned typography) */}
+              <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%" }}>
+                {/* Main Title (ALL CAPS) */}
                 <h3 style={{
                   color: "#ffffff",
-                  fontSize: "22px",
+                  fontSize: "25px",
                   fontWeight: 900,
-                  margin: "0 0 8px",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.25,
-                  textShadow: "0 2px 8px rgba(0,0,0,0.8)"
+                  margin: "0 0 4px",
+                  letterSpacing: "0.02em",
+                  lineHeight: 1.2,
+                  textTransform: "uppercase"
                 }}>
                   {unit.name}
                 </h3>
 
+                {/* Subline in Cyan */}
+                <span style={{
+                  color: "#38bdf8",
+                  fontSize: "12px",
+                  fontWeight: 800,
+                  letterSpacing: "0.05em",
+                  display: "block",
+                  marginBottom: 10
+                }}>
+                  — {unit.subline}
+                </span>
+
+                {/* Description - Equalized 2-line height */}
                 <p style={{
-                  color: "rgba(255, 255, 255, 0.8)",
-                  fontSize: "12.5px",
-                  lineHeight: 1.5,
-                  margin: "0 0 14px"
+                  color: "rgba(255, 255, 255, 0.85)",
+                  fontSize: "13px",
+                  lineHeight: 1.6,
+                  margin: "0 0 16px",
+                  maxWidth: "96%",
+                  minHeight: 42,
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden"
                 }}>
                   {unit.desc}
                 </p>
 
+                {/* Action Link with underline */}
                 <div style={{
-                  color: "#38bdf8",
+                  color: "#ffffff",
                   fontSize: "12.5px",
                   fontWeight: 800,
+                  letterSpacing: "0.05em",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6
+                  gap: 6,
+                  borderBottom: "1.5px solid rgba(255, 255, 255, 0.8)",
+                  paddingBottom: 3
                 }}>
-                  <span>Khám phá ngay</span>
-                  <i className="fa-solid fa-arrow-right" style={{ fontSize: 11, transition: "transform 0.25s ease" }} />
+                  <span>{unit.actionText}</span>
+                  <span style={{ fontSize: "13px", fontWeight: 900 }}>↗</span>
                 </div>
               </div>
             </Link>
@@ -251,3 +220,5 @@ export default function FourEcosystems() {
     </section>
   );
 }
+
+

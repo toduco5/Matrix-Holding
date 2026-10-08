@@ -16,12 +16,7 @@ const FEATURED_COMPANIES = [
 ];
 
 const QUICK_INDUSTRY_PILLS = [
-  { label: "Công nghệ Thông tin", icon: "💻", dept: "Công nghệ" },
-  { label: "Tài chính - Ngân hàng", icon: "🏛️", dept: "Tài chính" },
-  { label: "Pháp lý Doanh nghiệp", icon: "⚖️", dept: "Pháp lý" },
-  { label: "Kế toán - Kiểm toán", icon: "📊", dept: "Tài chính" },
-  { label: "Marketing - PR - Sự kiện", icon: "📣", dept: "Truyền thông" },
-  { label: "Nhân sự - Tuyển dụng", icon: "👥", dept: "Nhân sự" }
+ 
 ];
 
 const FEATURED_BANNERS = [

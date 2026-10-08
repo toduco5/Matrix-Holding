@@ -4,6 +4,7 @@ import {
   FEATURED_NEWS,
   NEWS_CATEGORIES,
   NEWS_ITEMS,
+  OLDER_NEWS,
   QUICK_BREAKING_NEWS,
   EXPERT_QUOTE,
   UPCOMING_EVENTS,
@@ -55,9 +56,8 @@ export default function News() {
         {/* HERO PAGE BANNER */}
         <PageBanner
           eyebrow="TIN TỨC 24H • MATRIX HOLDING"
-          titlePrefix="Cổng thông tin &"
-          titleHighlight="Sự kiện tiêu điểm"
-          subtitle="Cập nhật dòng chảy thông tin thị trường, góc nhìn chuyên gia và hoạt động nổi bật từ hệ sinh thái Matrix Holding."
+          titlePrefix="TIN TỨC & SỰ KIỆN"
+          subtitle="Cập nhật dòng chảy thông tin thị trường, góc nhìn chuyên gia và hoạt động nổi bật."
         />
 
         <section style={{ padding: "60px 0 90px", background: "#05070f" }}>
@@ -101,9 +101,7 @@ export default function News() {
                       TIN TỨC MỚI NHẤT
                     </span>
                   </div>
-                  <span style={{ color: "rgba(255, 255, 255, 0.75)", fontSize: "13px", fontWeight: 600 }}>
-                    Cập nhật liên tục dòng chảy sự kiện & báo chí tiêu điểm
-                  </span>
+                  
                 </div>
 
                 {/* Category Filter Pills inside same frame */}
@@ -243,31 +241,7 @@ export default function News() {
                   gap: 14,
                   justifyContent: "space-between"
                 }}>
-                  {/* Cyan Blue Title Header on top of 4 news items */}
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    paddingBottom: 8,
-                    marginBottom: 2,
-                    borderBottom: "1px solid rgba(56, 189, 248, 0.25)"
-                  }}>
-                    <span style={{
-                      color: "#38bdf8",
-                      fontSize: "13px",
-                      fontWeight: 900,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6
-                    }}>
-                      ⚡ CẬP NHẬT MỚI NHẤT
-                    </span>
-                    <span style={{ color: "rgba(255, 255, 255, 0.45)", fontSize: "11px" }}>
-                      Live Stream • 24/7
-                    </span>
-                  </div>
+                
 
                   {(stories.slice(1, 5).length > 0 ? stories.slice(1, 5) : NEWS_ITEMS.slice(0, 4)).map(item => (
                     <div
@@ -350,149 +324,6 @@ export default function News() {
 
             </div>
 
-            {/* SECTION 2: SỰ KIỆN & TIÊU ĐIỂM TRONG NƯỚC - QUỐC TẾ (Matches Reference Image Row 2 Dark Block) */}
-            <div style={{
-              background: "rgba(12, 18, 32, 0.95)",
-              borderRadius: 26,
-              padding: "36px 32px",
-              border: "1px solid rgba(56, 189, 248, 0.25)",
-              boxShadow: "0 25px 70px rgba(0,0,0,0.8)",
-              marginBottom: 64
-            }}>
-              {/* Category Filter Tabs */}
-              <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: 28,
-                flexWrap: "wrap",
-                gap: 16
-              }}>
-                <div>
-                  <span style={{ color: "#ef4444", fontSize: "11px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 4 }}>
-                    ★ SỰ KIỆN NỔI BẬT NĂM 2026
-                  </span>
-                  <h2 style={{ color: "#ffffff", fontSize: "28px", fontWeight: 900, margin: 0 }}>
-                    Sự Kiện & Tiêu Điểm Matrix Holding  
-                  </h2>
-                </div>
-
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {["Tất cả tiêu điểm", "Báo chí nói về Matrix", "Đổi mới sáng tạo & AI", "Thị trường mạo hiểm"].map((tab, idx) => (
-                    <button
-                      key={tab}
-                      type="button"
-                      style={{
-                        background: idx === 0 ? "#1d4ed8" : "rgba(255,255,255,0.06)",
-                        color: "#ffffff",
-                        border: idx === 0 ? "1px solid #3b82f6" : "1px solid rgba(255,255,255,0.12)",
-                        fontSize: "12px",
-                        fontWeight: 700,
-                        padding: "6px 16px",
-                        borderRadius: "30px",
-                        cursor: "pointer"
-                      }}
-                    >
-                      {tab}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* 2-Column Main Dark Event Layout */}
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "1.2fr 0.8fr",
-                gap: 28
-              }} className="dark-event-split-grid">
-                
-                {/* Left: Main Big Featured Event Banner */}
-                <div style={{
-                  position: "relative",
-                  borderRadius: 20,
-                  overflow: "hidden",
-                  minHeight: 380,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-end",
-                  padding: "36px",
-                  backgroundImage: `linear-gradient(180deg, rgba(5,7,15,0.2) 0%, rgba(5,7,15,0.92) 80%), url(https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&w=1200&q=85)`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  border: "1px solid rgba(255,255,255,0.15)"
-                }}>
-                  <div style={{ display: "flex", gap: 10, marginBottom: 12 }}>
-                    <span style={{ background: "#ef4444", color: "#ffffff", fontSize: "11px", fontWeight: 900, padding: "3px 10px", borderRadius: 4 }}>
-                      TRỰC TIẾP CHÍNH
-                    </span>
-                    <span style={{ color: "#38bdf8", fontSize: "12px", fontWeight: 800 }}>Hội thảo Đổi mới Sáng tạo 2026</span>
-                  </div>
-
-                  <h3 style={{ color: "#ffffff", fontSize: "24px", fontWeight: 900, lineHeight: 1.3, margin: "0 0 16px" }}>
-                    Diễn đàn Đổi mới Sáng tạo & Phát triển Bền vững Quốc gia 2026: Đột phá chiến lược từ thể chế thử nghiệm số
-                  </h3>
-
-                  <div style={{
-                    borderTop: "1px solid rgba(255,255,255,0.15)",
-                    paddingTop: 16,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 8,
-                    color: "rgba(255,255,255,0.85)",
-                    fontSize: "13px"
-                  }}>
-                    <div>⚡ <strong>Doanh thu toàn hệ sinh thái tăng trưởng bứt phá Q3/2026</strong></div>
-                    <div>⚡ <strong>Quỹ đầu tư Matrix Ventures rót thêm vốn cho dự án AI</strong></div>
-                  </div>
-                </div>
-
-                {/* Right: Media Photo Grid + Featured Video Card */}
-                <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                  {/* Photo Gallery Grid 4 Thumbs */}
-                  <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2, 1fr)",
-                    gap: 12
-                  }}>
-                    {[
-                      "photo-1511578314322-379afb476865?auto=format&fit=crop&w=400&q=80",
-                      "photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80",
-                      "photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80",
-                      "photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80"
-                    ].map((imgUrl, i) => (
-                      <div key={i} style={{ height: 110, borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
-                        <img src={`https://images.unsplash.com/${imgUrl}`} alt="Gallery" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Photo Featured News Card (Pure photo, no video play icon) */}
-                  <div style={{
-                    position: "relative",
-                    borderRadius: 16,
-                    overflow: "hidden",
-                    height: 190,
-                    backgroundImage: `linear-gradient(180deg, transparent 0%, rgba(5,7,15,0.88) 100%), url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    padding: 16,
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end"
-                  }}>
-                    <div>
-                      <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, textTransform: "uppercase" }}>TIÊU ĐIỂM BÁO CHÍ</span>
-                      <h4 style={{ color: "#ffffff", fontSize: "14px", fontWeight: 800, margin: "4px 0 0" }}>
-                        Toàn cảnh ngày làm việc đầu tiên: 5 điểm nhấn chiến lược Matrix Holding
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
             {/* SECTION 3: HOẠT ĐỘNG SẮP TỚI & ĐĂNG KÝ THAM GIA (Matches Reference Image Row 3 - Calendar Badges Grid) */}
             <div style={{ marginBottom: 64 }}>
               <div style={{
@@ -508,7 +339,7 @@ export default function News() {
                     SỰ KIỆN TRONG THÁNG
                   </span>
                   <h2 style={{ color: "#ffffff", fontSize: "32px", fontWeight: 900, margin: 0 }}>
-                    Hoạt Động Sắp Tới 
+                     HOẠT ĐỘNG SẮP TỚI
                   </h2>
                 </div>
 
@@ -682,7 +513,7 @@ export default function News() {
                     GÓC NHÌN BÁO CHÍ
                   </span>
                   <h2 style={{ color: "#ffffff", fontSize: "32px", fontWeight: 900, margin: 0 }}>
-                    Dành Riêng Cho Bạn - Đề Xuất Biên Tập
+                    DÀNH RIÊNG CHO BẠN
                   </h2>
                 </div>
 
@@ -709,7 +540,7 @@ export default function News() {
                 </div>
               </div>
 
-              {/* 4 Article Cards Grid (Exact Image 4 Row) */}
+              {/* 4 Article Cards Grid (Equal Heights, Justified Text, Clean Border) */}
               <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
@@ -721,15 +552,15 @@ export default function News() {
                     style={{
                       background: "rgba(18, 24, 38, 0.85)",
                       backdropFilter: "blur(12px)",
-                      borderRadius: 20,
+                      borderRadius: 18,
                       overflow: "hidden",
-                      border: "1px solid rgba(255, 255, 255, 0.12)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
                       boxShadow: "0 14px 40px rgba(0,0,0,0.5)",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between"
                     }}
-                    className="member-company-card"
+                    className="editorial-news-card"
                   >
                     <div>
                       <div style={{ height: 170, overflow: "hidden", position: "relative" }}>
@@ -739,28 +570,183 @@ export default function News() {
                         </span>
                       </div>
 
-                      <div style={{ padding: "18px 18px 12px" }}>
+                      <div style={{ padding: "18px 16px 12px" }}>
                         <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "11px", display: "block", marginBottom: 6 }}>
                           {story.category} · {story.date}
                         </span>
 
-                        <h3 style={{ color: "#ffffff", fontSize: "15px", fontWeight: 800, margin: "0 0 8px", lineHeight: 1.4 }}>
+                        <h3 style={{
+                          color: "#ffffff",
+                          fontSize: "14.5px",
+                          fontWeight: 800,
+                          margin: "0 0 10px",
+                          lineHeight: 1.42,
+                          height: "62px",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                          textAlign: "justify",
+                          textJustify: "inter-word"
+                        }}>
                           <Link to={`/news/${story.slug}`} style={{ color: "#ffffff", textDecoration: "none" }}>
                             {story.title}
                           </Link>
                         </h3>
 
-                        <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", lineHeight: 1.55, margin: 0, textAlign: "justify" }}>
+                        <p style={{
+                          color: "rgba(255,255,255,0.72)",
+                          fontSize: "12px",
+                          lineHeight: 1.6,
+                          margin: 0,
+                          height: "58px",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                          textAlign: "justify",
+                          textJustify: "inter-word"
+                        }}>
                           {story.excerpt}
                         </p>
                       </div>
                     </div>
 
-                    <div style={{ padding: "12px 18px", borderTop: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.45)", fontSize: "11px" }}>
+                    <div style={{ padding: "12px 16px", borderTop: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.45)", fontSize: "11px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                       {story.author}
                     </div>
                   </article>
                 ))}
+              </div>
+            </div>
+
+            {/* SECTION 5: KHO LƯU TRỮ TIN TỨC CŨ HƠN */}
+            <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+              <div style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "space-between",
+                marginBottom: 28,
+                flexWrap: "wrap",
+                gap: 16
+              }}>
+                <div>
+                  <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                    Tin Trước Đó
+                  </span>
+                  <h2 style={{ color: "#ffffff", fontSize: "28px", fontWeight: 900, margin: 0 }}>
+                    TIN TỨC TRƯỚC ĐÓ
+                  </h2>
+                </div>
+
+                <span style={{ color: "rgba(255, 255, 255, 0.5)", fontSize: "13px" }}>
+                  Tổng hợp các ấn phẩm phân tích và sự kiện giai đoạn 2024 – 2025
+                </span>
+              </div>
+
+              {/* Grid 4 thẻ tin tức cũ */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
+                gap: 20
+              }} className="older-news-grid">
+                {OLDER_NEWS.map(item => (
+                  <article
+                    key={item.id}
+                    style={{
+                      background: "rgba(18, 24, 38, 0.65)",
+                      backdropFilter: "blur(12px)",
+                      borderRadius: 16,
+                      padding: "16px 18px",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                      display: "flex",
+                      gap: 18,
+                      alignItems: "center"
+                    }}
+                    className="editorial-news-card"
+                  >
+                    <div style={{
+                      width: 130,
+                      height: 95,
+                      borderRadius: 12,
+                      overflow: "hidden",
+                      flexShrink: 0
+                    }}>
+                      <img
+                        src={imageUrl(item.image)}
+                        alt={item.title}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    </div>
+
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5 }}>
+                        <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800 }}>
+                          {item.category}
+                        </span>
+                        <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px" }}>• {item.date}</span>
+                      </div>
+
+                      <h4 style={{
+                        color: "#ffffff",
+                        fontSize: "14px",
+                        fontWeight: 800,
+                        margin: "0 0 6px",
+                        lineHeight: 1.4,
+                        textAlign: "justify",
+                        textJustify: "inter-word"
+                      }}>
+                        <Link to={`/news/${item.slug}`} style={{ color: "#ffffff", textDecoration: "none" }}>
+                          {item.title}
+                        </Link>
+                      </h4>
+
+                      <p style={{
+                        color: "rgba(255, 255, 255, 0.65)",
+                        fontSize: "12px",
+                        lineHeight: 1.55,
+                        margin: 0,
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden"
+                      }}>
+                        {item.excerpt}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {/* NÚT XEM TẤT CẢ TIN TỨC Ở CUỐI TRANG */}
+              <div style={{ textAlign: "center", marginTop: 44, paddingBottom: 10 }}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCategory("Tất cả");
+                    window.scrollTo({ top: 380, behavior: "smooth" });
+                  }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "14px 38px",
+                    borderRadius: 30,
+                    background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
+                    color: "#ffffff",
+                    fontSize: "13.5px",
+                    fontWeight: 800,
+                    border: "1px solid rgba(56, 189, 248, 0.4)",
+                    boxShadow: "0 10px 30px rgba(37, 99, 235, 0.35)",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  <span>Xem tất cả tin tức & bài viết</span>
+                  <i className="fa-solid fa-arrow-up" style={{ fontSize: 12 }} />
+                </button>
               </div>
             </div>
 

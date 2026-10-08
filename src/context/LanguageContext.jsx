@@ -8,7 +8,7 @@ const translations = {
     nav_news: "Tin tức",
     nav_careers: "Tuyển dụng",
     nav_community: "THAM GIA CỘNG ĐỒNG",
-    nav_sectors_overview: "04 HỆ SINH THÁI THÀNH VIÊN",
+    nav_sectors_overview: "HỆ SINH THÁI THÀNH VIÊN",
     nav_priority_fields: "LĨNH VỰC ƯU TIÊN",
     nav_view_overview: "Xem tổng quan",
     nav_cooperate_prompt: "Bạn có nhu cầu hợp tác?",

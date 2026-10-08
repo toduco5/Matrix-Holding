@@ -9,8 +9,8 @@ export const FEATURED_NEWS = {
   views: "15,400",
   shares: "824",
   readTime: "5 phút",
-  title: "Định vị Việt Nam trong chuỗi giá trị bán dẫn & công nghệ toàn cầu: Tận dụng cơ hội vàng từ các cam kết đầu tư chiến lược 2026",
-  excerpt: "Matrix Holding kết nối năng lực dịch vụ, kinh doanh, đầu tư và đào tạo để hỗ trợ hành trình phát triển doanh nghiệp bền vững.",
+  title: "Định vị Việt Nam trong chuỗi giá trị bán dẫn và công nghệ toàn cầu 2026",
+  excerpt: "Matrix Holding kết nối đồng bộ năng lực dịch vụ, kinh doanh, nguồn vốn và đào tạo nhằm hỗ trợ hành trình phát triển doanh nghiệp bền vững.",
   image: "photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1300&q=88",
   body: [
     "Matrix Holding phát triển một nền tảng để các đơn vị, doanh nghiệp và chuyên gia có thể tìm thấy điểm giao về năng lực và nhu cầu.",
@@ -70,8 +70,8 @@ export const NEWS_ITEMS = [
     slug: "matrix-network-dich-vu-doanh-nghiep",
     category: "Matrix Network",
     date: "08/08/2026",
-    title: "Matrix Network: Hệ sinh thái dịch vụ kết nối doanh nhân",
-    excerpt: "Cách phối hợp các năng lực tư vấn, vận hành, thương hiệu, tài chính và công nghệ để hỗ trợ doanh nghiệp.",
+    title: "Matrix Network: Hệ sinh thái dịch vụ toàn diện kết nối doanh nhân",
+    excerpt: "Mô hình kết nối các năng lực tư vấn chiến lược, vận hành, thương hiệu và công nghệ số giúp doanh nghiệp bứt phá năng lực cạnh tranh.",
     image: "photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=84",
     author: "Nguyễn Tuyết Nhi · Ban Biên Tập Matrix",
     body: [
@@ -85,8 +85,8 @@ export const NEWS_ITEMS = [
     slug: "ket-noi-dau-tu-co-trach-nhiem",
     category: "Matrix Ventures",
     date: "12/08/2026",
-    title: "Cà phê đặc sản Việt Nam: Cuộc tái định giá nguồn mục sản trên bản đồ thương mại thế giới",
-    excerpt: "Chương trình kết nối nhà đầu tư và xuất khẩu đưa nông sản chất lượng cao vào siêu thị châu Âu.",
+    title: "Cà phê đặc sản Việt Nam: Tái định vị nông sản trên bản đồ thương mại",
+    excerpt: "Chương trình kết nối nhà đầu tư chiến lược và xúc tiến xuất khẩu nhằm đưa các mặt hàng nông sản tinh hoa Việt Nam vươn tầm thế giới.",
     image: "photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=84",
     author: "Nguyễn Tuyết Nhi · Ban Biên Tập Matrix",
     body: [
@@ -100,8 +100,8 @@ export const NEWS_ITEMS = [
     slug: "hop-tac-kinh-doanh-ben-vung",
     category: "Matrix Connect",
     date: "18/09/2026",
-    title: "Hồi sinh di sản kiến trúc gỗ: Khi bản sắc truyền thống hòa nhập công nghệ đô thị thông minh",
-    excerpt: "Hành trình tái thiết những công trình mang dấu ấn bản địa nước ta.",
+    title: "Hồi sinh kiến trúc gỗ: Khi bản sắc truyền thống hòa nhập đô thị số",
+    excerpt: "Hành trình phục dựng các công trình mang đậm dấu ấn bản địa kết hợp vật liệu sinh thái và giải pháp công nghệ thông minh thời đại mới.",
     image: "photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=84",
     author: "Trần Minh Đức · Chuyên gia Kiến trúc",
     body: [
@@ -115,8 +115,8 @@ export const NEWS_ITEMS = [
     slug: "hoc-tap-va-nang-luc-doanh-nghiep",
     category: "Matrix Academy",
     date: "24/09/2026",
-    title: "Bài toán nguồn lực cho đại dự án đường sắt tốc độ cao Bắc - Nam: Kinh nghiệm quốc tế và lựa chọn cho lực lượng nội địa",
-    excerpt: "Phân tích từ chuyên gia công nghệ và tài chính hàng đầu về phương án phát triển hạ tầng bền vững.",
+    title: "Bài toán nguồn lực dự án đường sắt: Kinh nghiệm quốc tế và nội địa",
+    excerpt: "Phân tích chuyên sâu từ các chuyên gia tài chính và hạ tầng về giải pháp huy động vốn và đào tạo chuyển giao công nghệ cho doanh nghiệp.",
     image: "photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=84",
     author: "Phạm Minh Hoàng · Viện Nghiên cứu Matrix",
     body: [
@@ -124,6 +124,49 @@ export const NEWS_ITEMS = [
       "Chương trình có thể kết hợp kiến thức nền, trao đổi với chuyên gia, thực hành theo tình huống và kế hoạch ứng dụng sau đào tạo.",
       "Matrix Academy hướng tới kết nối tri thức quản trị và chuyên môn với nhu cầu phát triển của lãnh đạo và cộng đồng."
     ]
+  }
+];
+
+export const OLDER_NEWS = [
+  {
+    id: "old-1",
+    slug: "chuyen-doi-so-doanh-nghiep-2025",
+    category: "Matrix Network",
+    date: "15/12/2025",
+    title: "Chuyển đổi số doanh nghiệp vừa và nhỏ: Bước đệm bứt phá năng suất 2025",
+    excerpt: "Tổng kết các mô hình ứng dụng tự động hóa quy trình quản trị giúp doanh nghiệp tối ưu chi phí vận hành và mở rộng quy mô kinh doanh.",
+    image: "photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+    author: "Đặng Thu Thảo · Ban Công Nghệ Matrix"
+  },
+  {
+    id: "old-2",
+    slug: "goi-von-hat-giong-dong-nam-a",
+    category: "Matrix Ventures",
+    date: "28/11/2025",
+    title: "Xu hướng đầu tư mạo hiểm và cơ hội gọi vốn hạt giống tại Đông Nam Á",
+    excerpt: "Phân tích khẩu vị rủi ro của các quỹ đầu tư khu vực đối với các startup công nghệ ứng dụng và giải pháp chuyển đổi xanh.",
+    image: "photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80",
+    author: "Lê Quốc Trung · Chuyên gia Đầu Tư"
+  },
+  {
+    id: "old-3",
+    slug: "dao-tao-nhan-su-quan-tri-2025",
+    category: "Matrix Academy",
+    date: "05/10/2025",
+    title: "Nâng chuẩn năng lực quản trị cấp trung: Chìa khóa giữ chân nhân tài",
+    excerpt: "Chương trình đào tạo chuyển giao khung năng lực lãnh đạo thực chiến cho hơn 200 quản lý doanh nghiệp trong hệ sinh thái.",
+    image: "photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80",
+    author: "Vũ Minh Anh · Viện Đào Tạo Matrix"
+  },
+  {
+    id: "old-4",
+    slug: "ket-noi-giao-thuong-xuyen-bien-gioi",
+    category: "Matrix Connect",
+    date: "18/09/2025",
+    title: "Diễn đàn kết nối giao thương nông sản sang thị trường Nhật Bản",
+    excerpt: "Ký kết thỏa thuận hợp tác thương mại đưa chuỗi cung ứng nông sản chế biến sâu tiếp cận các hệ thống phân phối quốc tế lớn.",
+    image: "photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80",
+    author: "Hoàng Gia Bảo · Ban Xúc Tiến Thương Mại"
   }
 ];
 

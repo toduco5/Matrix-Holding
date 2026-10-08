@@ -2,7 +2,9 @@ import Header from "../components/Header.jsx";
 import Banner from "../components/Banner.jsx";
 import About from "../components/About.jsx";
 import FourEcosystems from "../components/FourEcosystems.jsx";
-import EcosystemWheel from "../components/EcosystemWheel.jsx";
+import WorkflowProcess from "../components/WorkflowProcess.jsx";
+import Commitments from "../components/Commitments.jsx";
+import CompetitiveAdvantages from "../components/CompetitiveAdvantages.jsx";
 import HomeNews from "../components/HomeNews.jsx";
 import HomeCareers from "../components/HomeCareers.jsx";
 import HomeFAQ from "../components/HomeFAQ.jsx";
@@ -18,9 +20,11 @@ export default function Home() {
         <Banner />
         <About />
         <FourEcosystems />
+        <WorkflowProcess />
+        <Commitments />
+        <CompetitiveAdvantages />
         <HomeNews />
         <HomeCareers />
-        <EcosystemWheel />
         <HomeFAQ />
       </main>
       <Footer />

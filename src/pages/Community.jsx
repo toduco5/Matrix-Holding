@@ -10,7 +10,7 @@ const roles=[
   {icon:"fa-people-group",title:"Đối tác chuyên môn",text:"Cung cấp hồ sơ năng lực và phạm vi chuyên môn về pháp lý, tài chính, công nghệ hoặc vận hành.",benefit:"Tham gia đúng bài toán cần kinh nghiệm và năng lực của bạn."}
 ];
 const steps=[
-  ["01","Khai báo nhu cầu","Chọn vai trò, lĩnh vực quan tâm, mục tiêu kết nối và thông tin có thể chia sẻ."],
+  ["01","Khai báo nhu cầu","Chọn vai trò, lĩnh vực hoạt động, mục tiêu kết nối và thông tin có thể chia sẻ."],
   ["02","Rà soát ban đầu","Matrix Holding kiểm tra mức độ đầy đủ, tính nhất quán và đầu mối liên hệ của thông tin."],
   ["03","Kết nối phù hợp","Các bên được giới thiệu khi nhu cầu, năng lực và phạm vi trao đổi có điểm tương đồng."],
   ["04","Tự thẩm định","Mỗi bên chủ động kiểm tra pháp lý, tài chính, vận hành và thống nhất điều kiện hợp tác."]

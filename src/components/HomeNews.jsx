@@ -31,7 +31,7 @@ export default function HomeNews() {
               margin: 0,
               fontFamily: "'Be Vietnam Pro', sans-serif"
             }}>
-              Tin Tức Mới Nhất <span className="text-gradient">Matrix Holding</span>
+              TIN TỨC MỚI NHẤT
             </h2>
             <p style={{
             color: "rgba(255, 255, 255, 0.7)",
@@ -40,7 +40,7 @@ export default function HomeNews() {
             maxWidth: 500,
             lineHeight: 1.6
           }}>
-           Cập nhật hoạt động và những bước phát triển của Matrix Holding
+           Cập nhật hoạt động và những bước phát triển của Doanh Nghiệp
           </p>
           </div>
 
@@ -129,22 +129,32 @@ export default function HomeNews() {
                     color: "#ffffff",
                     fontSize: "17px",
                     fontWeight: 700,
-                    lineHeight: 1.4,
-                    margin: "0 0 10px",
+                    lineHeight: 1.45,
+                    margin: "0 0 12px",
+                    height: "50px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textAlign: "justify",
+                    textJustify: "inter-word",
                     fontFamily: "'Be Vietnam Pro', sans-serif"
                   }}>
                     {item.title}
                   </h3>
 
                   <p style={{
-                    color: "rgba(255,255,255,0.65)",
+                    color: "rgba(255, 255, 255, 0.72)",
                     fontSize: "13px",
-                    lineHeight: 1.6,
+                    lineHeight: 1.63,
                     margin: "0 0 20px",
+                    height: "64px",
                     display: "-webkit-box",
                     WebkitLineClamp: 3,
                     WebkitBoxOrient: "vertical",
-                    overflow: "hidden"
+                    overflow: "hidden",
+                    textAlign: "justify",
+                    textJustify: "inter-word"
                   }}>
                     {item.excerpt}
                   </p>

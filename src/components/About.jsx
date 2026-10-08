@@ -111,14 +111,17 @@ export default function About() {
 
             <h2 style={{
               color: "#ffffff",
-              fontSize: "clamp(32px, 3.8vw, 48px)",
+              fontSize: "clamp(24px, 3.1vw, 42px)",
               fontWeight: 800,
-              lineHeight: 1.18,
-              letterSpacing: "-0.025em",
+              lineHeight: 2,
+              letterSpacing: "-0.02em",
               margin: "0 0 24px",
+              whiteSpace: "nowrap",
               fontFamily: "'Be Vietnam Pro', sans-serif"
             }}>
-              Giới Thiệu Doanh Nghiệp
+              
+              GIỚI THIỆU DOANH NGHIỆP
+              
               
             </h2>
 
@@ -148,7 +151,7 @@ export default function About() {
                   fontSize: "12px",
                   fontWeight: 800,
                   letterSpacing: "0.06em",
-                  textTransform: "uppercase",
+                  // textTransform: "uppercase",
                   padding: "16px 36px",
                   borderRadius: "50px",
                   textDecoration: "none",
@@ -159,7 +162,7 @@ export default function About() {
                   transition: "all 0.3s ease"
                 }}
               >
-                GIỚI THIỆU MATRIX HOLDING <i className="fa-solid fa-arrow-right" style={{ fontSize: 12, transition: "transform 0.25s ease" }} />
+                Tìm hiểu thêm  <i className="fa-solid fa-arrow-right" style={{ fontSize: 12, transition: "transform 0.25s ease" }} />
               </Link>
             </div>
           </div>
