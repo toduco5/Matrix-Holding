@@ -90,8 +90,8 @@ export default function Banner() {
         className="hero hero-centered"
         aria-labelledby="home-hero-title"
         style={{
-          height: "calc(100vh - 28px)",
-          minHeight: "620px",
+          height: "clamp(470px, 32vw, 540px)",
+          minHeight: "470px",
           width: "calc(100% - 32px)",
           margin: "14px auto",
           borderRadius: "28px",
@@ -100,7 +100,7 @@ export default function Banner() {
           justifyContent: "center",
           position: "relative",
           textAlign: "center",
-          padding: "100px 24px 50px",
+          padding: "74px 24px 26px",
           boxSizing: "border-box",
           overflow: "hidden",
           backgroundColor: "var(--site-bg, #05070f)",

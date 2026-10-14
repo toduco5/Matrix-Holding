@@ -4,7 +4,7 @@ import { FEATURED_NEWS, NEWS_ITEMS } from "../data/news.js";
 const imageUrl = (image) => `https://images.unsplash.com/${image}`;
 
 export default function HomeNews() {
-  const latestStories = [FEATURED_NEWS, ...NEWS_ITEMS].slice(0, 3);
+  const latestStories = [FEATURED_NEWS, ...NEWS_ITEMS].slice(0, 4);
 
   return (
     <section
@@ -44,7 +44,7 @@ export default function HomeNews() {
                 fontFamily: "'Be Vietnam Pro', sans-serif",
               }}
             >
-              TIN TỨC
+              TIN TỨC & SỰ KIỆN
             </h2>
             <p
               style={{
@@ -60,7 +60,7 @@ export default function HomeNews() {
           </div>
         </div>
 
-        {/* 3 News Cards Grid */}
+        {/* Featured story with three supporting news cards */}
         <div
           style={{
             display: "grid",
@@ -69,7 +69,7 @@ export default function HomeNews() {
           }}
           className="home-news-grid"
         >
-          {latestStories.map((item) => (
+          {latestStories.map((item, index) => (
             <article
               key={item.id || item.slug}
               style={{
@@ -82,7 +82,7 @@ export default function HomeNews() {
                 transition: "all 0.35s ease",
                 backdropFilter: "blur(8px)",
               }}
-              className="home-news-card"
+              className={`home-news-card${index === 0 ? " home-news-card--featured" : " home-news-card--supporting"}`}
             >
               {/* Image Container */}
               <div
@@ -206,22 +206,10 @@ export default function HomeNews() {
               </div>
             </article>
           ))}
-          <Link
-            to="/news"
-            style={{
-              color: "#2997ff",
-              fontWeight: 700,
-              fontSize: "13px",
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
-            Xem toàn bộ tin tức{" "}
-            <i className="fa-solid fa-arrow-right" style={{ fontSize: 11 }} />
-          </Link>
         </div>
+        <Link className="home-news-all-link" to="/news">
+          Xem toàn bộ tin tức <i className="fa-solid fa-arrow-right" />
+        </Link>
       </div>
     </section>
   );
