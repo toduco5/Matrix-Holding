@@ -43,7 +43,7 @@ export default function FourEcosystems() {
             HỆ SINH THÁI MATRIX HOLDING
           </h2>
           <p className="ecosys-heading-sub">
-            Khám phá bốn hệ sinh thái kết nối cộng đồng, xúc tiến thương mại, phát triển kinh doanh và đầu tư.
+             Bốn hệ sinh thái kết nối cộng đồng, xúc tiến thương mại, phát triển kinh doanh và đầu tư.
           </p>
         </div>
 
