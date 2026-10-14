@@ -1,71 +1,74 @@
 import { Link } from "react-router-dom";
 import { FEATURED_NEWS, NEWS_ITEMS } from "../data/news.js";
 
-const imageUrl = image => `https://images.unsplash.com/${image}`;
+const imageUrl = (image) => `https://images.unsplash.com/${image}`;
 
 export default function HomeNews() {
   const latestStories = [FEATURED_NEWS, ...NEWS_ITEMS].slice(0, 3);
 
   return (
-    <section className="section home-news-section" style={{ padding: "80px 0", background: "var(--navy, #05070f)" }}>
+    <section
+      className="section home-news-section"
+      style={{ padding: "80px 0", background: "var(--navy, #05070f)" }}
+    >
       <div className="container">
         {/* Section Heading */}
-        <div className="section-heading-row" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 40 }}>
+        <div
+          className="section-heading-row"
+          style={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            marginBottom: 40,
+          }}
+        >
           <div>
-            <span style={{
-              display: "inline-block",
-              color: "#38bdf8",
-              fontSize: "11px",
-              fontWeight: 800,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              marginBottom: 12
-            }}>
-              TIN TỨC & GÓC NHÌN
-            </span>
-            <h2 style={{
-              color: "#ffffff",
-              fontSize: "clamp(28px, 3.6vw, 42px)",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              margin: 0,
-              fontFamily: "'Be Vietnam Pro', sans-serif"
-            }}>
-              TIN TỨC MỚI NHẤT
+            <span
+              style={{
+                display: "inline-block",
+                color: "#38bdf8",
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                marginBottom: 12,
+              }}
+            >TIN TỨC & CẬP NHẬT</span>
+            <h2
+              style={{
+                color: "#ffffff",
+                fontSize: "clamp(28px, 3.6vw, 42px)",
+                fontWeight: 800,
+                letterSpacing: "-0.02em",
+                margin: 0,
+                fontFamily: "'Be Vietnam Pro', sans-serif",
+              }}
+            >
+              TIN TỨC
             </h2>
-            <p style={{
-            color: "rgba(255, 255, 255, 0.7)",
-            fontSize: "15px",
-            margin: "0 auto",
-            maxWidth: 500,
-            lineHeight: 1.6
-          }}>
-           Cập nhật hoạt động và những bước phát triển của Doanh Nghiệp
-          </p>
+            <p
+              style={{
+                color: "rgba(255, 255, 255, 0.7)",
+                fontSize: "15px",
+                margin: "0 auto",
+                maxWidth: 500,
+                lineHeight: 1.6,
+              }}
+            >
+              Cập nhật hoạt động và những bước phát triển của Doanh Nghiệp
+            </p>
           </div>
-
-          <Link
-            to="/news"
-            style={{
-              color: "#2997ff",
-              fontWeight: 700,
-              fontSize: "13px",
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8
-            }}
-          >
-            Xem toàn bộ tin tức <i className="fa-solid fa-arrow-right" style={{ fontSize: 11 }} />
-          </Link>
         </div>
 
         {/* 3 News Cards Grid */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 24
-        }} className="home-news-grid">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 24,
+          }}
+          className="home-news-grid"
+        >
           {latestStories.map((item) => (
             <article
               key={item.id || item.slug}
@@ -77,12 +80,18 @@ export default function HomeNews() {
                 display: "flex",
                 flexDirection: "column",
                 transition: "all 0.35s ease",
-                backdropFilter: "blur(8px)"
+                backdropFilter: "blur(8px)",
               }}
               className="home-news-card"
             >
               {/* Image Container */}
-              <div style={{ height: 210, position: "relative", overflow: "hidden" }}>
+              <div
+                style={{
+                  height: 210,
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   src={imageUrl(item.image)}
                   alt={item.title}
@@ -91,71 +100,87 @@ export default function HomeNews() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    transition: "transform 0.5s ease"
+                    transition: "transform 0.5s ease",
                   }}
                 />
-                <span style={{
-                  position: "absolute",
-                  top: 14,
-                  left: 14,
-                  background: "rgba(0,0,0,0.75)",
-                  backdropFilter: "blur(6px)",
-                  color: "#ffffff",
-                  fontSize: "10px",
-                  fontWeight: 800,
-                  padding: "4px 10px",
-                  borderRadius: "50px",
-                  letterSpacing: "0.08em",
-                  border: "1px solid rgba(255,255,255,0.15)"
-                }}>
+                <span
+                  style={{
+                    position: "absolute",
+                    top: 14,
+                    left: 14,
+                    background: "rgba(0,0,0,0.75)",
+                    backdropFilter: "blur(6px)",
+                    color: "#ffffff",
+                    fontSize: "10px",
+                    fontWeight: 800,
+                    padding: "4px 10px",
+                    borderRadius: "50px",
+                    letterSpacing: "0.08em",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                >
                   {item.category}
                 </span>
               </div>
 
               {/* Content Body */}
-              <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1, justifyContent: "space-between" }}>
+              <div
+                style={{
+                  padding: "24px",
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                  justifyContent: "space-between",
+                }}
+              >
                 <div>
-                  <span style={{
-                    color: "rgba(255,255,255,0.5)",
-                    fontSize: "11px",
-                    fontWeight: 500,
-                    display: "block",
-                    marginBottom: 8
-                  }}>
-                    {item.date}
+                  <span
+                    style={{
+                      color: "#64748b",
+                      fontSize: "11px",
+                      fontWeight: 700,
+                      display: "block",
+                      marginBottom: 8,
+                    }}
+                  >
+                    {item.date}{item.time ? ` · ${item.time}` : ""}
                   </span>
 
-                  <h3 style={{
-                    color: "#ffffff",
-                    fontSize: "17px",
-                    fontWeight: 700,
-                    lineHeight: 1.45,
-                    margin: "0 0 12px",
-                    height: "50px",
-                    display: "-webkit-box",
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textAlign: "justify",
-                    textJustify: "inter-word",
-                    fontFamily: "'Be Vietnam Pro', sans-serif"
-                  }}>
+                  <h3
+                    style={{
+                      color: "#ffffff",
+                      fontSize: "17px",
+                      fontWeight: 700,
+                      lineHeight: 1.45,
+                      margin: "0 0 12px",
+                      height: "50px",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textAlign: "justify",
+                      textJustify: "inter-word",
+                      fontFamily: "'Be Vietnam Pro', sans-serif",
+                    }}
+                  >
                     {item.title}
                   </h3>
 
-                  <p style={{
-                    color: "rgba(255, 255, 255, 0.72)",
-                    fontSize: "13px",
-                    lineHeight: 1.63,
-                    margin: "0 0 20px",
-                    height: "64px",
-                    display: "-webkit-box",
-                    WebkitLineClamp: 3,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textAlign: "justify",
-                    textJustify: "inter-word"
-                  }}>
+                  <p
+                    style={{
+                      color: "rgba(255, 255, 255, 0.72)",
+                      fontSize: "13px",
+                      lineHeight: 1.63,
+                      margin: "0 0 20px",
+                      height: "64px",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textAlign: "justify",
+                      textJustify: "inter-word",
+                    }}
+                  >
                     {item.excerpt}
                   </p>
                 </div>
@@ -169,14 +194,33 @@ export default function HomeNews() {
                     textDecoration: "none",
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: 6
+                    gap: 6,
                   }}
                 >
-                  Đọc bài viết <i className="fa-solid fa-arrow-right" style={{ fontSize: 10 }} />
+                  Đọc bài viết{" "}
+                  <i
+                    className="fa-solid fa-arrow-right"
+                    style={{ fontSize: 10 }}
+                  />
                 </Link>
               </div>
             </article>
           ))}
+          <Link
+            to="/news"
+            style={{
+              color: "#2997ff",
+              fontWeight: 700,
+              fontSize: "13px",
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+            }}
+          >
+            Xem toàn bộ tin tức{" "}
+            <i className="fa-solid fa-arrow-right" style={{ fontSize: 11 }} />
+          </Link>
         </div>
       </div>
     </section>

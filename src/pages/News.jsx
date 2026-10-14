@@ -52,7 +52,7 @@ export default function News() {
       />
       <Header />
 
-      <main style={{ background: "#05070f", color: "#ffffff", fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+      <main className="news-page">
         {/* HERO PAGE BANNER */}
         <PageBanner
           eyebrow="TIN TỨC 24H • MATRIX HOLDING"
@@ -88,8 +88,8 @@ export default function News() {
                 {/* Latest News Badge (Tin tức mới nhất ở trên đầu) */}
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <div style={{
-                    background: "rgba(239, 68, 68, 0.15)",
-                    border: "1px solid rgba(239, 68, 68, 0.4)",
+                    background: "rgba(23, 105, 170, 0.10)",
+                    border: "1px solid rgba(23, 105, 170, 0.28)",
                     padding: "6px 14px",
                     borderRadius: "30px",
                     display: "flex",
@@ -97,7 +97,7 @@ export default function News() {
                     gap: 8
                   }}>
                     <span className="live-ticker__dot" />
-                    <span style={{ color: "#ef4444", fontSize: "12px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                    <span style={{ color: "#1769aa", fontSize: "12px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                       TIN TỨC MỚI NHẤT
                     </span>
                   </div>
@@ -164,7 +164,7 @@ export default function News() {
                         gap: 8
                       }}>
                         <span style={{
-                          background: "#ef4444",
+                          background: "#1769aa",
                           color: "#ffffff",
                           fontSize: "10.5px",
                           fontWeight: 900,
@@ -621,7 +621,7 @@ export default function News() {
             </div>
 
             {/* SECTION 5: KHO LƯU TRỮ TIN TỨC CŨ HƠN */}
-            <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+            <div className="older-news-section" style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
               <div style={{
                 display: "flex",
                 alignItems: "flex-end",
@@ -743,6 +743,7 @@ export default function News() {
                     cursor: "pointer",
                     transition: "all 0.3s ease"
                   }}
+                  className="older-news-all-button"
                 >
                   <span>Xem tất cả tin tức & bài viết</span>
                   <i className="fa-solid fa-arrow-up" style={{ fontSize: 12 }} />

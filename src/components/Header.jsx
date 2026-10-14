@@ -105,32 +105,16 @@ export default function Header() {
             
             <details ref={dropdownRef} className={`nav-dropdown ${isEcosystemActive ? "is-active" : ""}`}>
               <summary>{t("nav_ecosystem")} <i className="fa-solid fa-chevron-down" style={{ fontSize: 9, marginLeft: 4 }} /></summary>
-              <div className="dropdown-menu ecosystem-mega" style={{ gridTemplateColumns: "1fr", width: 440, padding: 0 }}>
-                <div className="mega-groups" style={{ padding: "20px 22px" }}>
-                  <div className="mega-heading" style={{ marginBottom: 14 }}>
-                    <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-                      HỆ SINH THÁI THÀNH VIÊN
-                    </span>
-                    <Link to="/sectors" onClick={close} style={{ color: "#38bdf8", fontSize: "12px", fontWeight: 700 }}>
-                      Xem tổng quan <i className="fa-solid fa-arrow-right" />
-                    </Link>
-                  </div>
+              <div className="dropdown-menu ecosystem-mega ecosystem-simple-menu">
+                <div className="ecosystem-simple-menu__links">
                   {ECOSYSTEM_UNITS.map(unit => (
-                    <Link className="mega-group" key={unit.id} to={`/ecosystem/${unit.id}`} onClick={close}>
-                      <b style={{ color: "#38bdf8", fontSize: "13px" }}>{unit.number}</b>
-                      <span>
-                        <strong style={{ fontSize: "14px", fontWeight: 700 }}>{unit.name}</strong>
-                        <small style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.65)" }}>{unit.label}</small>
-                      </span>
-                      <i className="fa-solid fa-arrow-right" style={{ color: "#38bdf8" }} />
-                    </Link>
+                    <Link key={unit.id} to={`/ecosystem/${unit.id}`} onClick={close}>{unit.name}</Link>
                   ))}
                 </div>
               </div>
             </details>
 
             <NavLink to="/news" onClick={close}>{t("nav_news")}</NavLink>
-            <NavLink to="/tuyen-dung" onClick={close}>{t("nav_careers")}</NavLink>
             <NavLink to="/contact" onClick={close}>Liên hệ</NavLink>
           </nav>
 
@@ -235,6 +219,7 @@ export default function Header() {
                           type="button" 
                           className={`settings-opt-btn ${theme === "light" ? "is-active" : ""}`}
                           onClick={() => setThemeMode("light")}
+                          aria-pressed={theme === "light"}
                         >
                           <i className="fa-solid fa-sun" style={{ color: "#f59e0b" }} /> Sáng
                         </button>
@@ -242,6 +227,7 @@ export default function Header() {
                           type="button" 
                           className={`settings-opt-btn ${theme === "dark" ? "is-active" : ""}`}
                           onClick={() => setThemeMode("dark")}
+                          aria-pressed={theme === "dark"}
                         >
                           <i className="fa-solid fa-moon" style={{ color: "#38bdf8" }} /> Tối
                         </button>

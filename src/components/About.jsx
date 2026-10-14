@@ -7,7 +7,7 @@ export default function About() {
   const subImage = "photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=88";
 
   return (
-    <section className="section about-preview" style={{ padding: "105px 0 115px", background: "#05070f", position: "relative", overflow: "hidden" }}>
+    <section id="about-overview" className="section about-preview" style={{ padding: "105px 0 115px", background: "#05070f", position: "relative", overflow: "hidden", scrollMarginTop: 80 }}>
       {/* Background glow circle */}
       <div style={{
         position: "absolute",
@@ -132,7 +132,10 @@ export default function About() {
               margin: "0 0 16px",
               fontWeight: 400
             }}>
-              Matrix Holding là doanh nghiệp hoạt động trong lĩnh vực đầu tư và phát triển hệ sinh thái kinh doanh đa ngành tại Việt Nam. Hướng đến mục tiêu đưa các doanh nghiệp tiềm năng trở thành kỳ lân trong lĩnh vực, chúng tôi cam kết sẽ không ngừng nỗ lực, phát huy sự sáng tạo nhằm đưa ra giải pháp phù hợp với nhu cầu của từng doanh nghiệp.
+              MATRIX HOLDING là doanh nghiệp hoạt động trong lĩnh vực tư vấn, đầu tư và phát triển hệ sinh thái kinh doanh đa ngành tại VIỆT NAM.
+              <br />
+              <br />
+              Chúng tôi tập trung xây dựng môi trường kinh doanh hiệu quả, nơi các doanh nghiệp SMEs và STARTUP có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tăng trưởng bền vững.
             </p>
             <br />
 

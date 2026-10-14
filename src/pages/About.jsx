@@ -157,7 +157,7 @@ export default function About() {
       />
       <Header />
 
-      <main style={{ background: "#05070f", color: "#ffffff", fontFamily: "'Be Vietnam Pro', sans-serif", paddingBottom: 60, overflow: "hidden" }}>
+      <main className="about-page" style={{ background: "#05070f", color: "#ffffff", fontFamily: "'Be Vietnam Pro', sans-serif", paddingBottom: 60, overflow: "hidden" }}>
         {/* HERO BANNER */}
         <PageBanner
           eyebrow="MATRIX HOLDING"
@@ -171,7 +171,7 @@ export default function About() {
         {/* 1. CÂU CHUYỆN THƯƠNG HIỆU */}
         <section className="section" style={{ padding: "80px 0", background: "#05070f", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container">
-            <div style={{
+            <div className="about-story-panel" style={{
               maxWidth: 1200,
               margin: "0 auto",
               background: "linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 15, 30, 0.9) 100%)",
@@ -326,7 +326,7 @@ export default function About() {
                 boxShadow: "0 25px 60px rgba(0, 0, 0, 0.65)",
                 padding: "36px 36px",
                 display: "grid",
-                gridTemplateColumns: "110px 1fr 340px",
+                gridTemplateColumns: "130px 1fr 340px",
                 gap: "36px",
                 alignItems: "center",
                 position: "relative",
@@ -336,6 +336,7 @@ export default function About() {
             >
               {/* 1. Left Column: iOS / Techcombank Style Year Spinner Wheel with Smooth Slide Animation */}
               <div
+                className="timeline-year-picker"
                 onWheel={handleSpinnerWheel}
                 style={{
                   display: "flex",
@@ -413,6 +414,7 @@ export default function About() {
                       return (
                         <div
                           key={item.year}
+                          className={`timeline-year-option${isActive ? " is-active" : ""}`}
                           onClick={() => setActiveIndex(idx)}
                           style={{
                             height: 44,
@@ -629,7 +631,7 @@ export default function About() {
               </div>
 
               {/* Quote text */}
-              <div>
+              <div className="chairman-quote-copy">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
                   <span style={{ height: 2, width: 24, background: "#38bdf8" }} />
                   ⚡ TUYÊN NGÔN CỦA CHỦ TỊCH

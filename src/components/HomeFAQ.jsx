@@ -29,8 +29,49 @@ const FAQ_ITEMS = [
   }
 ];
 
+const CTA_AUDIENCES = [
+  {
+    id: "customer",
+    label: "Khách hàng",
+    icon: "fa-user-check",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85",
+    title: "Giải pháp phù hợp với nhu cầu của bạn",
+    summary: "Khám phá dịch vụ, sản phẩm và nguồn lực phù hợp để giải quyết nhu cầu và tạo thêm giá trị.",
+    benefits: ["Được tư vấn theo mục tiêu cụ thể", "Kết nối đúng dịch vụ và chuyên gia", "Đồng hành trong quá trình triển khai"]
+  },
+  {
+    id: "business",
+    label: "Doanh nghiệp",
+    icon: "fa-building",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=85",
+    title: "Mở rộng nguồn lực và thị trường",
+    summary: "Dành cho doanh nghiệp tìm kiếm đối tác, khách hàng và hướng phát triển bền vững.",
+    benefits: ["Kết nối đối tác và cơ hội xúc tiến thương mại", "Tiếp cận nguồn lực tư vấn, vận hành và phát triển", "Khám phá mô hình hợp tác trong hệ sinh thái đa ngành"]
+  },
+  {
+    id: "employee",
+    label: "Nhân viên",
+    icon: "fa-people-group",
+    image: "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?auto=format&fit=crop&w=1100&q=85",
+    title: "Phát triển sự nghiệp cùng Matrix",
+    summary: "Môi trường làm việc kết nối nhiều lĩnh vực, khuyến khích chủ động, học hỏi và tạo tác động thực tế.",
+    benefits: ["Cơ hội phát triển chuyên môn và kỹ năng", "Tham gia các dự án đa ngành", "Làm việc cùng đội ngũ giàu kinh nghiệm"]
+  },
+  {
+    id: "investor",
+    label: "Nhà đầu tư",
+    icon: "fa-chart-line",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=85",
+    title: "Kết nối với cơ hội đầu tư tiềm năng",
+    summary: "Dành cho nhà đầu tư quan tâm đến các dự án và mô hình kinh doanh có tiềm năng.",
+    benefits: ["Tiếp cận cơ hội theo định hướng phù hợp", "Trao đổi về nguồn vốn và phương án hợp tác", "Kết nối với doanh nghiệp trong hệ sinh thái"]
+  }
+];
+
 export default function HomeFAQ() {
   const [openIndex, setOpenIndex] = useState(0);
+  const [selectedAudience, setSelectedAudience] = useState(null);
+  const activeAudience = CTA_AUDIENCES.find(item => item.id === selectedAudience);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -38,7 +79,7 @@ export default function HomeFAQ() {
 
   return (
     <>
-      <section className="section" style={{ padding: "90px 0", background: "#05070f", position: "relative", overflow: "hidden" }}>
+      <section className="section home-faq-section" style={{ padding: "90px 0", background: "#05070f", position: "relative", overflow: "hidden" }}>
         {/* Background Ambient Glow */}
         <div style={{
           position: "absolute",
@@ -63,7 +104,7 @@ export default function HomeFAQ() {
             border: "1px solid rgba(56, 189, 248, 0.3)",
             boxShadow: "0 25px 65px rgba(0, 0, 0, 0.65), 0 0 40px rgba(56, 189, 248, 0.15)",
             padding: "48px 44px"
-          }} className="member-company-card">
+          }} className="member-company-card home-faq-panel">
             
             {/* Header section - Centered with Title, Eyebrow & Description */}
             <div style={{ textAlign: "center", marginBottom: 36 }}>
@@ -105,6 +146,7 @@ export default function HomeFAQ() {
                 return (
                   <div
                     key={item.number}
+                    className="home-faq-item"
                     style={{
                       borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
                       transition: "all 0.3s ease"
@@ -126,16 +168,16 @@ export default function HomeFAQ() {
                         gap: 16
                       }}
                     >
-                      {/* Left Number (01, 02, etc.) */}
+                      {/* Bullet marker */}
                       <span style={{
                         width: 44,
                         flexShrink: 0,
-                        color: isOpen ? "#38bdf8" : "rgba(255, 255, 255, 0.45)",
-                        fontSize: "14px",
-                        fontWeight: 800,
+                        color: "#1769aa",
+                        fontSize: "18px",
+                        fontWeight: 900,
                         transition: "color 0.2s ease"
                       }}>
-                        {item.number}
+                        —
                       </span>
 
                       {/* Question Title in Uppercase */}
@@ -196,131 +238,53 @@ export default function HomeFAQ() {
         </div>
       </section>
 
-      {/* Partner CTA Section - Framed Card Layout matching Image 2 */}
-      <section className="section" style={{ padding: "60px 0 90px", background: "#05070f", position: "relative" }}>
+      <section className="section partner-cta-section">
         <div className="container">
-          {/* Framed Container Box */}
-          <div
-            style={{
-              maxWidth: 1040,
-              margin: "0 auto",
-              background: "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 16, 30, 0.98) 100%)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              borderRadius: 24,
-              border: "1px solid rgba(56, 189, 248, 0.3)",
-              boxShadow: "0 25px 65px rgba(0, 0, 0, 0.65), 0 0 40px rgba(56, 189, 248, 0.12)",
-              padding: "46px 48px",
-              position: "relative",
-              overflow: "hidden"
-            }}
-            className="member-company-card"
-          >
-            {/* Ambient Lighting Accent inside Frame */}
-            <div
-              style={{
-                position: "absolute",
-                top: "50%",
-                right: "-50px",
-                transform: "translateY(-50%)",
-                width: "350px",
-                height: "260px",
-                background: "radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%)",
-                pointerEvents: "none"
-              }}
-            />
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr auto",
-                gap: 40,
-                alignItems: "center",
-                position: "relative",
-                zIndex: 2
-              }}
-              className="about-intro-grid"
-            >
-              {/* Left Details */}
-              <div>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                  <span style={{ width: 24, height: 2, background: "#38bdf8", borderRadius: 2 }} />
-                  <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                    ĐỒNG HÀNH CÙNG MATRIX HOLDING
-                  </span>
+          <div className="partner-cta-panel">
+            <div className="partner-cta-heading">
+              <span className="partner-cta-eyebrow">ĐỒNG HÀNH CÙNG MATRIX HOLDING</span>
+              <h2>Trở thành một phần của hệ sinh thái kiến tạo giá trị.</h2>
+              <p>Chọn vai trò phù hợp để khám phá giá trị Matrix Holding có thể cùng bạn tạo dựng.</p> <br />
+            </div>
+            <div className="partner-cta-layout">
+              <div className="partner-cta-main">
+                <div className="partner-audience-selector" role="group" aria-label="Chọn vai trò">
+                  {CTA_AUDIENCES.map(audience => (
+                    <button
+                      key={audience.id}
+                      type="button"
+                      className={`partner-audience-button${selectedAudience === audience.id ? " is-active" : ""}`}
+                      onClick={() => setSelectedAudience(current => current === audience.id ? null : audience.id)}
+                      aria-pressed={selectedAudience === audience.id}
+                    >
+                      <span className="partner-audience-logo" aria-hidden="true"><i className={`fa-solid ${audience.icon}`} /></span>
+                      <span>{audience.label}</span>
+                    </button>
+                  ))}
                 </div>
-                <h2
-                  style={{
-                    color: "#ffffff",
-                    fontSize: "clamp(22px, 2.6vw, 32px)",
-                    fontWeight: 900,
-                    lineHeight: 1.3,
-                    margin: "0 0 12px",
-                    letterSpacing: "-0.01em"
-                  }}
-                >
-                  Trở thành một phần của hệ sinh thái kiến tạo giá trị.
-                </h2>
-                <p
-                  style={{
-                    color: "rgba(255, 255, 255, 0.72)",
-                    fontSize: "14px",
-                    lineHeight: 1.65,
-                    margin: 0,
-                    maxWidth: 620,
-                    textAlign: "justify"
-                  }}
-                >
-                  Chúng tôi chào đón các đối tác cùng chia sẻ định hướng phát triển dài hạn và cách làm việc minh bạch.
-                </p>
+
+                {activeAudience && <div className="partner-audience-details" aria-live="polite" key={activeAudience.id}>
+                  <div className="partner-audience-details__copy">
+                    <h3>{activeAudience.title}</h3>
+                    <p>{activeAudience.summary}</p>
+                    <ul>{activeAudience.benefits.map(benefit => <li key={benefit}>{benefit}</li>)}</ul>
+                  </div>
+                </div>}
               </div>
 
-              {/* Right CTA Actions */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: 14,
-                  minWidth: 200
-                }}
-              >
-                <Link
-                  to="/contact"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 10,
-                    background: "#ffffff",
-                    color: "#0a0e1a",
-                    fontSize: "13.5px",
-                    fontWeight: 800,
-                    padding: "13px 28px",
-                    borderRadius: 30,
-                    textDecoration: "none",
-                    letterSpacing: "0.03em",
-                    boxShadow: "0 8px 25px rgba(255, 255, 255, 0.15)",
-                    transition: "all 0.25s ease",
-                    whiteSpace: "nowrap"
-                  }}
-                >
-                  <span>LIÊN HỆ CHÚNG TÔI</span>
-                  <i className="fa-solid fa-arrow-right" style={{ fontSize: "12px" }} />
-                </Link>
-                <Link
-                  to="/contact"
-                  style={{
-                    color: "#38bdf8",
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    transition: "opacity 0.2s ease"
-                  }}
-                >
-                  Xem cơ hội hợp tác
-                </Link>
+                <div className="partner-cta-visual" aria-label="Đội ngũ Matrix Holding">
+                <img src={activeAudience?.image || "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=85"} alt="Đội ngũ Matrix Holding cùng hợp tác và phát triển" key={activeAudience?.id || "default"} />
+                <div className="partner-cta-visual__caption"><span className="matrix-mark" aria-hidden="true">M</span><span><strong>Matrix Holding</strong><small>Cùng kiến tạo giá trị</small></span></div>
               </div>
+            </div>
+
+            <div className="partner-cta-actions">
+              <Link to={selectedAudience ? `/contact?type=${selectedAudience}` : "/contact"} className="partner-cta-button partner-cta-button--primary">
+                Liên hệ chúng tôi <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+              </Link>
+              <Link to={selectedAudience ? `/contact?type=${selectedAudience}&interest=opportunity` : "/contact?interest=opportunity"} className="partner-cta-button partner-cta-button--secondary">
+                Xem cơ hội hợp tác <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>

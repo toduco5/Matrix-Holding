@@ -76,7 +76,7 @@ export default function Contact() {
       />
       <Header />
 
-      <main style={{ background: "#05070f", color: "#ffffff", minHeight: "100vh", fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+      <main className="contact-page" style={{ background: "#05070f", color: "#ffffff", minHeight: "100vh", fontFamily: "'Be Vietnam Pro', sans-serif" }}>
         {/* HERO BANNER */}
         <PageBanner
           eyebrow="MATRIX HOLDING"
@@ -264,7 +264,7 @@ export default function Contact() {
 
                   {/* Email & Hotline Grid */}
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 18 }}>
-                    <div style={{ background: "rgba(15, 23, 42, 0.75)", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: 14, padding: "12px 12px", display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ background: "linear-gradient(135deg, #10243b 0%, #1b3554 100%)", border: "1px solid rgba(117, 166, 205, 0.38)", borderRadius: 14, padding: "12px 12px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 8px 20px rgba(9, 26, 46, 0.12)" }}>
                       <i className="fa-solid fa-envelope" style={{ color: "#38bdf8", fontSize: 15 }} />
                       <div style={{ overflow: "hidden" }}>
                         <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "8.5px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", display: "block" }}>HÒM THƯ ĐỐI TÁC</span>
@@ -274,7 +274,7 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <div style={{ background: "rgba(15, 23, 42, 0.75)", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: 14, padding: "12px 12px", display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ background: "linear-gradient(135deg, #10243b 0%, #1b3554 100%)", border: "1px solid rgba(117, 166, 205, 0.38)", borderRadius: 14, padding: "12px 12px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 8px 20px rgba(9, 26, 46, 0.12)" }}>
                       <i className="fa-solid fa-phone" style={{ color: "#38bdf8", fontSize: 15 }} />
                       <div>
                         <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "8.5px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", display: "block" }}>ĐƯỜNG DÂY NÓNG VIP</span>
@@ -520,6 +520,7 @@ export default function Contact() {
                   {/* Submit Button */}
                   <button
                     type="submit"
+                    className="contact-submit"
                     disabled={isSubmitting}
                     style={{
                       gridColumn: "1 / -1",

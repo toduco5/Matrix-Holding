@@ -1,8 +1,8 @@
 export const ECOSYSTEM_UNITS = [
   { id: "network", number: "01", name: "Matrix Network", label: "Hệ sinh thái dịch vụ toàn diện", icon: "fa-cubes", summary: "Tích hợp các năng lực tư vấn, vận hành, thương hiệu, tài chính và công nghệ để doanh nghiệp tập trung phát triển.", audiences: ["Doanh nghiệp", "Đối tác dịch vụ", "Đội ngũ vận hành"] },
   { id: "connect", number: "02", name: "Matrix Connect", label: "Hệ sinh thái kết nối kinh doanh", icon: "fa-handshake", summary: "Tạo điểm gặp giữa doanh nghiệp, chuyên gia và đối tác để hình thành các cơ hội hợp tác có cơ sở.", audiences: ["Doanh nghiệp", "Chuyên gia", "Đối tác chiến lược"] },
-  { id: "ventures", number: "03", name: "Matrix Ventures", label: "Hệ sinh thái kết nối đầu tư", icon: "fa-chart-line", summary: "Kết nối dự án, nguồn vốn và năng lực triển khai trên nguyên tắc thông tin rõ ràng và thẩm định độc lập.", audiences: ["Nhà đầu tư", "Chủ dự án", "Đối tác chuyên môn"] },
-  { id: "academy", number: "04", name: "Matrix Academy", label: "Hệ sinh thái đào tạo tinh hoa", icon: "fa-graduation-cap", summary: "Phát triển năng lực lãnh đạo, quản trị và chuyên môn bằng các chương trình học gắn với bài toán thực tế.", audiences: ["Lãnh đạo", "Đội ngũ nhân sự", "Cộng đồng học tập"] }
+  { id: "ventures", number: "03", name: "Matrix Business", label: "Hệ sinh thái kinh doanh", icon: "fa-chart-line", summary: "Xây dựng, vận hành và phát triển các mô hình kinh doanh đa ngành thông qua hợp tác sản xuất, phân phối và dự án thương mại.", audiences: ["Doanh nghiệp", "Đối tác kinh doanh", "Đội ngũ vận hành"] },
+  { id: "academy", number: "04", name: "Matrix Capital", label: "Hệ sinh thái đầu tư", icon: "fa-building-columns", summary: "Đầu tư, quản lý và phát triển vốn, gia tăng giá trị tài sản qua góp vốn, sở hữu cổ phần, liên doanh và các dự án tiềm năng.", audiences: ["Nhà đầu tư", "Chủ dự án", "Đối tác chiến lược"] }
 ];
 
 export const FAQS = [

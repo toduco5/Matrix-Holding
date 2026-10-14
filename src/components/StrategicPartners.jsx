@@ -50,7 +50,7 @@ export default function StrategicPartners() {
   }, []);
 
   return (
-    <div style={{ position: "relative", zIndex: 10, width: "100%", background: "#05070f" }}>
+    <div className="strategic-partners" style={{ position: "relative", zIndex: 10, width: "100%", background: "#05070f" }}>
       {/* Top Gradient Divider matching Matrix Ventures */}
       <div style={{ width: "100%", height: "1px", background: "linear-gradient(90deg, transparent, rgba(41, 151, 255, 0.25), transparent)" }} />
 
@@ -70,7 +70,7 @@ export default function StrategicPartners() {
           <span
             style={{
               fontSize: "11px",
-              color: "#86868b",
+              color: "#526274",
               textTransform: "uppercase",
               fontWeight: 800,
               letterSpacing: "0.22em",
@@ -108,18 +108,18 @@ export default function StrategicPartners() {
                   style={{
                     fontSize: "clamp(20px, 2.3vw, 25px)",
                     fontWeight: 800,
-                    color: "rgba(134, 134, 139, 0.45)",
+                    color: "rgba(71, 85, 105, 0.78)",
                     letterSpacing: "-0.02em",
                     whiteSpace: "nowrap",
                     cursor: "pointer",
                     transition: "color 0.25s ease, text-shadow 0.25s ease"
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#ffffff";
-                    e.currentTarget.style.textShadow = "0 0 16px rgba(56, 189, 248, 0.6)";
+                    e.currentTarget.style.color = "#1769aa";
+                    e.currentTarget.style.textShadow = "none";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(134, 134, 139, 0.45)";
+                    e.currentTarget.style.color = "rgba(71, 85, 105, 0.78)";
                     e.currentTarget.style.textShadow = "none";
                   }}
                 >

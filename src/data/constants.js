@@ -18,12 +18,9 @@ export const TOPBAR_INFO = [
   { icon:"fa-mobile-alt", text:"(+84) 964 243 026", href:"tel:+84964243026" },
 ];
 export const BANNER_SLIDES = [
-  { key:"holding", image:"photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=88", title:"Kiến tạo hệ sinh thái kinh doanh đa ngành", subtitle:"Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả, nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tiếp cận thị trường bền vững." },
   { key:"property", image:"photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=88", title:"Bất động sản & hạ tầng cho tương lai", subtitle:"Phát triển tài sản, không gian và hạ tầng dựa trên quy hoạch, hiệu quả vận hành và giá trị bền vững." },
-  { key:"technology", image:"photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=88", title:"Công nghệ thúc đẩy hiệu quả", subtitle:"Ứng dụng dữ liệu, tự động hóa và đổi mới để nâng cao năng lực cạnh tranh của từng ngành kinh doanh." },
-  { key:"energy", image:"photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2000&q=88", title:"Năng lượng cho tăng trưởng bền vững", subtitle:"Kết hợp hiệu quả kinh tế với trách nhiệm môi trường trong các quyết định phát triển dài hạn." },
-  { key:"logistics", image:"photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=88", title:"Kết nối chuỗi cung ứng thông minh", subtitle:"Tối ưu dòng chảy hàng hóa, dữ liệu và dịch vụ để phục vụ thị trường nhanh hơn, hiệu quả hơn." },
-  { key:"leisure", image:"photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=88", title:"Trải nghiệm dịch vụ có bản sắc", subtitle:"Phát triển du lịch, lưu trú và dịch vụ bằng chất lượng vận hành, thương hiệu và sự thấu hiểu khách hàng." },
+  { key:"business-performance", image:"https://i.pinimg.com/1200x/b6/9d/80/b69d80d6fb4359f3b0e598e4128fc108.jpg", title:"Phân tích hiệu quả kinh doanh", subtitle:"Dữ liệu và góc nhìn chuyên sâu giúp doanh nghiệp nhận diện cơ hội tăng trưởng." },
+  { key:"business-planning", image:"https://i.pinimg.com/1200x/41/b9/57/41b95722bb1c61d70c6d216ed82fc354.jpg", title:"Cùng kiến tạo kế hoạch phát triển", subtitle:"Kết nối chuyên gia, nguồn lực và tầm nhìn để phát triển những dự án bền vững." },
 ];
 
 export const PILLARS = [

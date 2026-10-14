@@ -7,16 +7,16 @@ import "./styles/theme.css";
 import "./styles/capabilities.css";
 import "./styles/audience-paths.css";
 import "./styles/matrix-expansion.css";
-import "./styles/brand-refresh.css";
 import "./styles/vivid-theme.css";
 import "./styles/contact-widget.css";
+import "./styles/brand-refresh.css";
 import CursorGlow from "./components/CursorGlow.jsx";
 
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 
 const savedTheme = localStorage.getItem("matrix-theme");
-// Dark is the default visual direction; visitors can still switch to light mode.
-const preferredTheme = "dark";
+// Light is the default for first-time visitors; saved user preference takes priority.
+const preferredTheme = "light";
 document.documentElement.dataset.theme = savedTheme || preferredTheme;
 
 createRoot(document.getElementById("root")).render(

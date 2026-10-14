@@ -1352,13 +1352,13 @@ header, main, footer, section {
 
 /* ── SMOOTH BE VIETNAM PRO TYPOGRAPHY & SOFT LAYOUT ── */
 body, button, input, textarea, select, h1, h2, h3, h4, h5, h6, p, a, span, div, li {
-  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--body-font, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Be Vietnam Pro', sans-serif !important;
+  font-family: var(--body-font, 'Inter'), sans-serif !important;
   letter-spacing: -0.025em !important;
 }
 
@@ -2205,7 +2205,7 @@ i[class*="fa-"], .fa-solid, .fas, .far, .fab, .fa {
 }
 .vivid-page-hero h1 {
   color: #ffffff !important;
-  font: 800 clamp(32px, 4.5vw, 52px)/1.15 'Be Vietnam Pro', sans-serif !important;
+  font: 800 clamp(32px, 4.5vw, 52px)/1.15 var(--heading-font, 'Manrope'), sans-serif !important;
   margin: 0 0 16px;
   letter-spacing: -0.03em;
 }
@@ -2796,7 +2796,7 @@ i[class*="fa-"], .fa-solid, .fas, .far, .fab, .fa {
 }
 
 .sector-project-body h3 {
-  font: 700 18px/1.3 'Be Vietnam Pro', sans-serif !important;
+  font: 700 18px/1.3 var(--heading-font, 'Manrope'), sans-serif !important;
   color: #ffffff !important;
   margin: 0 0 10px;
 }
@@ -3730,49 +3730,7 @@ i[class*="fa-"], .fa-solid, .fas, .far, .fab, .fa {
   color: #64748b !important;
 }
 
-/* =========================================================
-   UNIFIED CYBER MATRIX DOT-GRID BACKGROUND (BODY SECTIONS)
-   PRESERVING HERO BANNERS & PARTICLE BACKGROUNDS AS BEFORE
-   ========================================================= */
-html,
-body,
-#root,
-main,
-section:not(.page-banner-hero):not(.hero):not(.detail-hero):not(.career-hero):not(.news-detail-hero):not(.ecosystem-detail-hero):not(.title-band),
-.section,
-.bg-gray,
-.pillars,
-.services-section,
-.project-highlight,
-.leadership,
-.home-careers,
-.ecosystem-section,
-.about-area,
-.blog-area,
-.contact-form-area,
-.manifesto,
-.services-item,
-.service-item {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-.ecosystem-section::before,
-.property-dashboard::before,
-.hero::after {
-  background-image: none !important;
-  display: none !important;
-}
-
-.page-banner-hero,
-.hero,
-.detail-hero,
-.career-hero,
-.news-detail-hero,
-.ecosystem-detail-hero,
-.title-band {
-  background-color: transparent !important;
-}
+/* Preserve section and hero backgrounds so theme variables can control them. */
 
 /* =========================================================
    CENTER ALIGN ALL SECTION HEADINGS & TITLES ACROSS WEBSITE
@@ -4125,7 +4083,7 @@ blockquote {
   color: #fbbf24;
   font-weight: 900;
   font-size: 11px;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--heading-font, 'Manrope'), sans-serif;
   transition: all 0.25s ease;
   letter-spacing: -0.02em;
 }

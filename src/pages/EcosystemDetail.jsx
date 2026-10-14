@@ -40,7 +40,7 @@ export default function EcosystemDetail() {
     <>
       <PageMeta title={`${item.title} | Matrix Holding`} description={item.intro} />
       <Header />
-      <main>
+      <main className="ecosystem-detail-page">
         {/* Unified Matrix Navy/Blue Glass Hero Banner */}
         <PageBanner
           eyebrow={item.label || "HỆ SINH THÁI MATRIX"}

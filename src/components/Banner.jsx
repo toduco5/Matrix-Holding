@@ -82,7 +82,7 @@ function LiveTicker() {
 
 export default function Banner() {
   const [showVideoModal, setShowVideoModal] = useState(false);
-  const heroImg = BANNER_SLIDES[1]?.image || "photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=88";
+  const heroSlide = BANNER_SLIDES.find((slide) => slide.key === "business-performance") || BANNER_SLIDES[0];
 
   return (
     <>
@@ -90,9 +90,11 @@ export default function Banner() {
         className="hero hero-centered"
         aria-labelledby="home-hero-title"
         style={{
-          height: "100vh",
-          minHeight: "660px",
-          width: "100%",
+          height: "calc(100vh - 28px)",
+          minHeight: "620px",
+          width: "calc(100% - 32px)",
+          margin: "14px auto",
+          borderRadius: "28px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -101,28 +103,38 @@ export default function Banner() {
           padding: "100px 24px 50px",
           boxSizing: "border-box",
           overflow: "hidden",
-          backgroundColor: "#05070f"
+          backgroundColor: "var(--site-bg, #05070f)",
+          border: "1px solid rgba(255, 255, 255, 0.12)",
+          boxShadow: "0 18px 54px rgba(4, 14, 28, 0.22)"
         }}
       >
-        {/* Fullscreen Grayscale High-Contrast Architecture Background Layer */}
-        <div 
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url(${IMG}/${heroImg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 40%",
-            filter: "grayscale(100%) contrast(1.35) brightness(0.42)",
-            zIndex: 0
-          }}
-        />
+        {/* Crossfade through the configured corporate hero images. */}
+        {heroSlide && (
+          <div
+            key={heroSlide.key}
+            className="hero-background-image"
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: `url(${heroSlide.image.startsWith("http") ? heroSlide.image : `${IMG}/${heroSlide.image}`})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center 40%",
+              filter: "saturate(0.82) sepia(0.08) contrast(1.08) brightness(0.58)",
+              opacity: 1,
+              transition: "none",
+              zIndex: 0
+            }}
+          />
+        )}
 
-        {/* High-Contrast Radial Spotlight Dark Overlay */}
-        <div 
+        {/* Navy overlay keeps hero text readable while letting the architecture show */}
+        <div
+          className="hero-background-overlay"
           style={{
             position: "absolute",
             inset: 0,
-            background: "radial-gradient(circle at 50% 50%, rgba(5,7,15,0.45) 0%, rgba(5,7,15,0.85) 65%, rgba(5,7,15,0.98) 100%)",
+            background: "radial-gradient(circle at 50% 46%, rgba(5,7,15,0.34) 0%, rgba(5,7,15,0.62) 68%, rgba(5,7,15,0.78) 100%)",
             zIndex: 1
           }}
         />
@@ -158,59 +170,58 @@ export default function Banner() {
           }}>
             <span style={{ height: 1, width: 44, background: "rgba(56, 189, 248, 0.6)" }} />
             <span style={{
-              color: "#38bdf8",
-              background: "rgba(56, 189, 248, 0.12)",
-              border: "1px solid rgba(56, 189, 248, 0.35)",
+              color: "var(--hero-accent, #38bdf8)",
+              background: "var(--hero-badge-bg, rgba(56, 189, 248, 0.12))",
+              border: "1px solid var(--hero-badge-border, rgba(56, 189, 248, 0.35))",
               padding: "5px 18px",
               borderRadius: "50px",
               fontSize: "12px",
               fontWeight: 800,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
-              boxShadow: "0 0 15px rgba(56, 189, 248, 0.2)"
+              boxShadow: "var(--hero-badge-shadow, 0 0 15px rgba(56, 189, 248, 0.2))"
             }}>
-              MATRIX HOLDING • VIETNAM
+              - MATRIX HOLDING -
             </span>
             <span style={{ height: 1, width: 44, background: "rgba(56, 189, 248, 0.6)" }} />
           </div>
 
           <h1 id="home-hero-title" style={{
-            color: "#ffffff",
+            color: "var(--hero-title-color, #ffffff)",
             fontFamily: "'Be Vietnam Pro', sans-serif",
             fontSize: "clamp(34px, 4.6vw, 56px)",
             fontWeight: 900,
-            lineHeight: 1.2,
+            lineHeight: 1.3,
             letterSpacing: "-0.025em",
             margin: "0 0 20px",
-            textShadow: "0 10px 40px rgba(0,0,0,0.95), 0 0 30px rgba(56, 189, 248, 0.2)",
+            textShadow: "var(--hero-title-shadow, 0 10px 40px rgba(0,0,0,0.95), 0 0 30px rgba(56, 189, 248, 0.2))",
             textAlign: "center",
             width: "100%"
           }}>
             <div>HỆ SINH THÁI</div>
-            <div style={{
+            {/* <div style={{
               background: "linear-gradient(135deg, #ffffff 30%, #38bdf8 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               whiteSpace: "nowrap"
-            }}>
+            }}> */}
               KINH DOANH ĐA NGÀNH
-            </div>
+            {/* </div> */}
           </h1>
 
           <p className="hero-copy-centered" style={{
-            color: "#f1f5f9",
+            color: "var(--hero-copy-color, #f1f5f9)",
             fontSize: "clamp(15px, 1.7vw, 18px)",
-            lineHeight: 1.75,
+            lineHeight: 1.9,
             maxWidth: 920,
             width: "100%",
             margin: "0 auto 32px",
             fontWeight: 600,
             textAlign: "center",
-            textShadow: "0 4px 16px rgba(0,0,0,0.9)"
+            textShadow: "var(--hero-copy-shadow, 0 4px 16px rgba(0,0,0,0.9))"
           }}>
-            Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả<br className="hero-desktop-br" />
-            Nơi các doanh nghiệp có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội <br />
-            Tiếp cận thị trường bền vững.
+            Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả. <br />
+            Các doanh nghiệp có thể tiếp cận nhiều nguồn lực, mở rộng cơ hội và phát triển bền vững.
           </p>
 
           <div className="hero-actions-centered" style={{
@@ -242,6 +253,16 @@ export default function Banner() {
               <i className="fa-solid fa-chevron-right" style={{ fontSize: 12 }} />
             </Link>
           </div>
+
+          <button
+            type="button"
+            className="hero-scroll-down"
+            aria-label="Cuộn xuống phần giới thiệu"
+            onClick={() => document.getElementById("about-overview")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+          >
+            <span>CUỘN XUỐNG</span>
+            <i className="fa-solid fa-chevron-down" aria-hidden="true" />
+          </button>
         </div>
       </section>
 

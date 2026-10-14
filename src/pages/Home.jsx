@@ -6,7 +6,6 @@ import WorkflowProcess from "../components/WorkflowProcess.jsx";
 import Commitments from "../components/Commitments.jsx";
 import CompetitiveAdvantages from "../components/CompetitiveAdvantages.jsx";
 import HomeNews from "../components/HomeNews.jsx";
-import HomeCareers from "../components/HomeCareers.jsx";
 import HomeFAQ from "../components/HomeFAQ.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
@@ -24,7 +23,6 @@ export default function Home() {
         <Commitments />
         <CompetitiveAdvantages />
         <HomeNews />
-        <HomeCareers />
         <HomeFAQ />
       </main>
       <Footer />
