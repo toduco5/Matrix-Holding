@@ -1,0 +1,28 @@
+:root:root:root[data-theme] .header .settings-popover-menu {
+  background:#101110 !important;
+  border:1px solid #b4915b55 !important;
+  color:#eeeae2 !important;
+  box-shadow:0 18px 48px #0009 !important;
+}
+:root:root:root[data-theme] .header .settings-popover-header {
+  color:#eeeae2 !important;
+  border-color:#ffffff18 !important;
+}
+:root:root:root[data-theme] .header :is(.settings-popover-header button,.settings-group-label) { color:#bdb8ae !important; }
+:root:root:root[data-theme] .header .settings-login-link {
+  background:linear-gradient(100deg,#ffc04d,#ffd382) !important;
+  border-color:#d9a14e !important;
+  color:#54290e !important;
+  box-shadow:none !important;
+}
+:root:root:root[data-theme] .header .settings-login-link:hover { background:#ffd992 !important; }
+:root:root:root[data-theme] .header .settings-opt-btn {
+  background:#181916 !important;
+  border-color:#b4915b40 !important;
+  color:#c9c4ba !important;
+  box-shadow:none !important;
+}
+:root:root:root[data-theme] .header .settings-opt-btn:hover { background:#29251c !important; }
+:root:root:root[data-theme] .header .settings-opt-btn.is-active { background:#b4915b20 !important; border-color:#c69e51 !important; color:#e7bc67 !important; }
+:root:root:root[data-theme] .header .settings-opt-btn.is-active::after { background:#c69e51 !important; color:#15120c !important; }
+:root:root:root[data-theme] .header .settings-opt-btn i { color:#d5ad65 !important; }

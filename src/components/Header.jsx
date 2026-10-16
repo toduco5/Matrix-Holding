@@ -3,15 +3,15 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { SECTORS } from "../data/constants.js";
 import { ECOSYSTEM_UNITS } from "../data/ecosystem-units.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
-import SearchModal from "./SearchModal.jsx";
+
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "dark");
-  const { lang, setLanguage, t } = useLanguage();
+  const { lang, t } = useLanguage();
   const location = useLocation();
 
   const headerRef = useRef(null);
@@ -43,18 +43,6 @@ export default function Header() {
     };
     document.addEventListener("pointerdown", outside);
     return () => document.removeEventListener("pointerdown", outside);
-  }, []);
-
-  // Global CMD+K / CTRL+K keyboard shortcut listener
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        setIsSearchOpen(prev => !prev);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const isEcosystemActive = location.pathname.startsWith("/ecosystem") || location.pathname.startsWith("/sectors");
@@ -108,7 +96,11 @@ export default function Header() {
               <div className="dropdown-menu ecosystem-mega ecosystem-simple-menu">
                 <div className="ecosystem-simple-menu__links">
                   {ECOSYSTEM_UNITS.map(unit => (
-                    <Link key={unit.id} to={`/ecosystem/${unit.id}`} onClick={close}>{unit.name}</Link>
+                    <Link key={unit.id} to={`/ecosystem/${unit.id}`} onClick={close}>
+                      <i className={`fa-solid ${unit.icon} ecosystem-menu-icon`} aria-hidden="true" />
+                      <span>{unit.name}</span>
+                      <i className="fa-solid fa-arrow-right ecosystem-menu-arrow" aria-hidden="true" />
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -147,6 +139,7 @@ export default function Header() {
                       <span className="settings-group-label">Tài khoản & Đăng nhập</span>
                       <Link
                         to="/login"
+                        className="settings-login-link"
                         onClick={() => {
                           setIsSettingsOpen(false);
                           close();
@@ -176,41 +169,6 @@ export default function Header() {
                       </Link>
                     </div>
 
-                    {/* Search Action */}
-                    <div className="settings-group">
-                      <span className="settings-group-label">Tìm kiếm</span>
-                      <button 
-                        type="button" 
-                        onClick={() => {
-                          setIsSettingsOpen(false);
-                          setIsSearchOpen(true);
-                        }}
-                        style={{
-                          width: "100%",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          padding: "10px 14px",
-                          background: "rgba(41, 151, 255, 0.12)",
-                          border: "1px solid rgba(41, 151, 255, 0.35)",
-                          borderRadius: "10px",
-                          color: "#ffffff",
-                          fontSize: "13px",
-                          fontWeight: 600,
-                          cursor: "pointer",
-                          transition: "all 0.2s ease"
-                        }}
-                      >
-                        <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                          <i className="fa-solid fa-magnifying-glass" style={{ color: "#38bdf8" }} />
-                          <span>Tìm kiếm thông minh</span>
-                        </span>
-                        <span style={{ fontSize: "10px", background: "rgba(255,255,255,0.15)", padding: "2px 6px", borderRadius: "4px", color: "#e2e8f0" }}>
-                          CMD+K
-                        </span>
-                      </button>
-                    </div>
-
                     {/* Theme Settings */}
                     <div className="settings-group">
                       <span className="settings-group-label">Giao diện (Theme)</span>
@@ -234,26 +192,6 @@ export default function Header() {
                       </div>
                     </div>
 
-                    {/* Language Settings */}
-                    <div className="settings-group" style={{ marginBottom: 0 }}>
-                      <span className="settings-group-label">Ngôn ngữ (Language)</span>
-                      <div className="settings-btn-grid">
-                        <button 
-                          type="button" 
-                          className={`settings-opt-btn ${lang === "vi" ? "is-active" : ""}`}
-                          onClick={() => setLanguage("vi")}
-                        >
-                          🇻🇳 Tiếng Việt
-                        </button>
-                        <button 
-                          type="button" 
-                          className={`settings-opt-btn ${lang === "en" ? "is-active" : ""}`}
-                          onClick={() => setLanguage("en")}
-                        >
-                          🇬🇧 English
-                        </button>
-                      </div>
-                    </div>
                   </div>
                 </div>
               )}
@@ -262,8 +200,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Spotlight Search Modal */}
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }

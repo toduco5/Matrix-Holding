@@ -1,4 +1,8 @@
 /* A quiet black-and-gold finish shared by every page. */
+.footer :is(h3, .footer-link) { text-transform:uppercase; }
+.footer .footer-brand > p { position:relative; top:-28px; }
+.footer-explore-label { display:block; cursor:default; transition:color .2s ease; }
+:root:root[data-theme] .footer .footer-explore-label:hover { color:#e7bc67 !important; }
 :root:root[data-theme] .footer {
   background: #080808 !important;
   color: #b6b2aa !important;
@@ -7,14 +11,18 @@
 }
 :root:root[data-theme] .footer .footer-grid { padding-top: 64px; padding-bottom: 52px; }
 :root:root[data-theme] .footer .logo-footer {
+  position: relative;
+  top: -28px;
   color: #f6f1e8 !important;
   font-family: "Manrope", "Inter", sans-serif;
 }
 :root:root[data-theme] .footer .logo-footer img {
-  width: 38px;
-  height: 44px;
+  width: min(100%, 240px);
+  height: auto;
+  max-height: 210px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  object-position: left center;
+  filter: none;
 }
 :root:root[data-theme] .footer .logo-light { color: #e7bc67 !important; }
 :root:root[data-theme] .footer h3 {
@@ -33,6 +41,7 @@
 :root:root[data-theme] .footer a:hover { color: #f0cd87 !important; }
 :root:root[data-theme] .footer a:focus-visible { outline: 2px solid #e7bc67; outline-offset: 4px; }
 :root:root[data-theme] .footer .footer-bottom {
+  text-align: center;
   background: #050505 !important;
   color: #8f8a80 !important;
   border-top: 1px solid rgba(231, 188, 103, .14) !important;
