@@ -38,7 +38,7 @@ export const PROJECTS = {
     need: "Hoàn thiện định vị sản phẩm, phương án quy hoạch tổng thể, mô hình khai thác thương mại và hợp tác đơn vị vận hành.",
     impact: [
       "Cung cấp 3,500 chỗ ngồi làm việc chuẩn quốc tế",
-      "Tích hợp trung tâm đào tạo & tăng tốc startup Matrix Academy",
+      "Tích hợp trung tâm đào tạo & tăng tốc startup Matrix Network",
       "Xây dựng nguồn doanh thu đa dạng từ dịch vụ & không gian"
     ],
     status: "Đang hoàn thiện hồ sơ quy hoạch",
@@ -209,8 +209,8 @@ export const PROJECTS_BY_SECTOR = {
   energy: ["solar-school"],
   logistics: ["small-business-logistics", "matrix-logistics-hub"],
   leisure: ["coastal-wellness-resort"],
-  ventures: ["matrix-city-urban", "matrix-ai-datacenter", "solar-school"],
+  business: ["matrix-city-urban", "matrix-ai-datacenter", "solar-school"],
   network: ["community-learning", "digital-skills"],
   connect: ["matrix-city-urban", "matrix-logistics-hub"],
-  academy: ["community-learning", "digital-skills"]
+  capital: ["matrix-city-urban", "matrix-ai-datacenter", "solar-school"]
 };

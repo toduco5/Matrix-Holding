@@ -1,0 +1,47 @@
+/* Black, ivory and gold news edition, consistent with the homepage. */
+:root:root:root[data-theme] .news-page {
+  --label-gold: #e7bc67;
+  --news-paper: #000;
+  --news-surface: #151515;
+  --news-ink: #f6f1e8;
+  --news-muted: #bab7b0;
+  --news-blue: #e7bc67;
+  background: #000 !important;
+  color: #bab7b0 !important;
+  font-family: "Inter", sans-serif !important;
+}
+:root:root:root[data-theme] .news-page > section:not(.page-banner-hero) { background: #000 !important; }
+:root:root:root[data-theme] .news-page :is(h1, h2, h3, h4) {
+  color: #f6f1e8 !important;
+  -webkit-text-fill-color: #f6f1e8;
+  font-family: "Manrope", "Inter", sans-serif !important;
+}
+:root:root:root[data-theme] .news-page :is(h2, h3) { font-weight: 650 !important; }
+:root:root:root[data-theme] .news-page p { color: #bab7b0 !important; }
+:root:root:root[data-theme] .news-page :is(h2, h3) a { color: inherit !important; }
+:root:root:root[data-theme] .news-page :is(h2, h3) a:hover { color: #e7bc67 !important; }
+:root:root:root[data-theme] .news-page :is(.member-company-card, .editorial-news-card),
+:root:root:root[data-theme] .news-page [style*="background: rgba(21, 21, 21"] {
+  background: #151515 !important;
+  border-color: rgba(231, 188, 103, .22) !important;
+  box-shadow: none !important;
+}
+:root:root:root[data-theme] .news-page .older-news-section { background: transparent !important; border-color: rgba(231, 188, 103, .22) !important; }
+:root:root:root[data-theme] .news-page :is(button, .overview-pill-link, .older-news-all-button) {
+  color: #482608 !important;
+  background: #ffc15c !important;
+  border-color: #eaa640 !important;
+  box-shadow: none !important;
+}
+:root:root:root[data-theme] .news-page :is(button, .overview-pill-link, .older-news-all-button):hover { background: #ffd18a !important; }
+:root:root:root[data-theme] .news-page button[aria-pressed="false"] {
+  color: #c9c1b1 !important;
+  background: #1a1916 !important;
+  border: 1px solid rgba(231, 188, 103, .24) !important;
+}
+:root:root:root[data-theme] .news-page button[aria-pressed="false"]:hover { color: #e7bc67 !important; border-color: #bd9650 !important; }
+:root:root:root[data-theme] .news-page :is(button, a):focus-visible { outline: 2px solid #e7bc67; outline-offset: 4px; }
+:root:root:root[data-theme] .news-page [style*="color: rgb(231, 188, 103)"],
+:root:root:root[data-theme] .news-page [data-gold-label] { color: #e7bc67 !important; }
+:root:root:root[data-theme] .news-page .live-ticker__dot { background: #ffc15c; box-shadow: 0 0 8px #ffc15c55; }
+:root:root:root[data-theme] .news-page .older-news-controls button { border: 1px solid #eaa640; }

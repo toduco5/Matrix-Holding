@@ -5,8 +5,8 @@ import { SECTORS } from "../data/constants.js";
 const coreBusinesses = [
   { id: "network", name: "Network", path: "/ecosystem/network", icon: "fa-circle-nodes", description: "Mạng lưới hợp tác và mở rộng thị trường toàn cầu" },
   { id: "connect", name: "Connect", path: "/ecosystem/connect", icon: "fa-link", description: "Kết nối năng lực chuyên môn & tài chính chiến lược" },
-  { id: "ventures", name: "Business", path: "/ecosystem/ventures", icon: "fa-arrow-trend-up", description: "Phát triển mô hình kinh doanh và thị trường" },
-  { id: "academy", name: "Capital", path: "/ecosystem/academy", icon: "fa-building-columns", description: "Kết nối đầu tư và phát triển nguồn vốn" },
+  { id: "business", name: "Business", path: "/ecosystem/business", icon: "fa-arrow-trend-up", description: "Phát triển mô hình kinh doanh và thị trường" },
+  { id: "capital", name: "Capital", path: "/ecosystem/capital", icon: "fa-building-columns", description: "Kết nối đầu tư và phát triển nguồn vốn" },
 ];
 
 export default function EcosystemWheel() {

@@ -30,7 +30,7 @@ export default function PageBanner({
 
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         {eyebrow && (
-          <span style={{
+          <span data-gold-label style={{
             display: "inline-block",
             color: "#38bdf8",
             fontSize: "11px",

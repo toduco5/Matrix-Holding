@@ -431,7 +431,7 @@ export default function Careers() {
               {/* Left Column */}
               <div style={{ flex: 1, maxWidth: 680 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                  <span style={{
+                  <span data-gold-label style={{
                     background: "#ef4444",
                     color: "#ffffff",
                     fontSize: "11px",
@@ -443,7 +443,7 @@ export default function Careers() {
                   }}>
                     {activeBanner.badge}
                   </span>
-                  <span style={{
+                  <span data-gold-label style={{
                     color: "#38bdf8",
                     fontSize: "12px",
                     fontWeight: 800,

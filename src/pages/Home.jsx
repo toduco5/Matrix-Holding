@@ -2,13 +2,16 @@ import Header from "../components/Header.jsx";
 import Banner from "../components/Banner.jsx";
 import About from "../components/About.jsx";
 import FourEcosystems from "../components/FourEcosystems.jsx";
-import WorkflowProcess from "../components/WorkflowProcess.jsx";
-import Commitments from "../components/Commitments.jsx";
-import CompetitiveAdvantages from "../components/CompetitiveAdvantages.jsx";
 import HomeNews from "../components/HomeNews.jsx";
-import HomeFAQ from "../components/HomeFAQ.jsx";
+import PartnerCTA from "../components/PartnerCTA.jsx";
+import Cooperation from "../components/Cooperation.jsx";
 import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
+import SectionDivider from "../components/SectionDivider.jsx";
+import StrategicPartners from "../components/StrategicPartners.jsx";
+
+// Keep the full cooperation section available to restore later.
+const SHOW_COOPERATION = false;
 
 export default function Home() {
   return (
@@ -17,14 +20,23 @@ export default function Home() {
       <Header />
       <main>
         <Banner />
+        <StrategicPartners />
+        <SectionDivider />
         <About />
+        <SectionDivider />
         <FourEcosystems />
-        <WorkflowProcess />
-        <Commitments />
-        <CompetitiveAdvantages />
+        <SectionDivider />
         <HomeNews />
-        <HomeFAQ />
+        {SHOW_COOPERATION && (
+          <>
+            <SectionDivider />
+            <Cooperation />
+          </>
+        )}
+        <SectionDivider />
+        <PartnerCTA />
       </main>
+      <SectionDivider />
       <Footer />
     </div>
   );

@@ -1,0 +1,120 @@
+/* Match the homepage palette independently of the saved light/dark mode. */
+:root:root:root[data-theme] .about-page .leadership-heading p {
+  text-align: center !important;
+  max-width: 66ch;
+  margin-inline: auto !important;
+}
+.about-page .leadership-portrait {
+  height: auto !important;
+  aspect-ratio: 4 / 4.5;
+}
+.about-page .leadership-portrait img { display: block; }
+:root:root:root[data-theme] .about-page {
+  --label-gold: #e7bc67;
+  --ink: #f6f1e8;
+  --muted: #bab7b0;
+  --gold: #e7bc67;
+  --blue: #e7bc67;
+  background: #000 !important;
+  color: #f6f1e8 !important;
+  font-family: "Inter", sans-serif !important;
+}
+:root:root:root[data-theme] .about-page > .section {
+  background: #000 !important;
+  border-bottom: 0 !important;
+}
+:root:root:root[data-theme] .about-page :is(h1, h2, h3, blockquote) {
+  color: #f6f1e8 !important;
+  -webkit-text-fill-color: #f6f1e8;
+  font-family: "Manrope", "Inter", sans-serif !important;
+  letter-spacing: -.025em;
+}
+:root:root:root[data-theme] .about-page :is(h2, blockquote) { font-weight: 600 !important; }
+:root:root:root[data-theme] .about-page :is(p, li) {
+  color: #bab7b0 !important;
+  font-family: "Inter", sans-serif !important;
+  text-align: left !important;
+  text-justify: auto !important;
+  line-height: 1.85 !important;
+}
+:root:root:root[data-theme] .about-page :is(.about-story-panel, .member-company-card, .tech-spinner-container, .chairman-quote-copy) {
+  background: linear-gradient(135deg, #181713, #101113) !important;
+  border: 1px solid rgba(231, 188, 103, .24) !important;
+  box-shadow: none !important;
+}
+:root:root:root[data-theme] .about-page .about-story-panel::before {
+  background: linear-gradient(180deg, #e7bc67, #8d6b32) !important;
+}
+:root:root:root[data-theme] .about-page .member-company-card :is(span, strong) { color: #e7bc67 !important; }
+:root:root:root[data-theme] .about-page .member-company-card [style*="rgba(231, 188, 103"] {
+  background: rgba(231, 188, 103, .10) !important;
+  color: #e7bc67 !important;
+}
+:root:root:root[data-theme] .about-page .tech-spinner-container > div:nth-child(3) { border-color: rgba(231, 188, 103, .24) !important; box-shadow: none !important; }
+:root:root:root[data-theme] .about-page .timeline-year-option { color: #a7a39b !important; }
+:root:root:root[data-theme] .about-page .timeline-year-option.is-active { color: #1a150b !important; }
+:root:root:root[data-theme] .about-page .tech-spinner-container .timeline-year-option.is-active { color: #1a150b !important; }
+:root:root:root[data-theme] .about-page .page-banner-hero p { text-align: center !important; }
+:root:root:root[data-theme] .about-page .tech-spinner-container > div:first-child > div:nth-child(2) > div:first-child {
+  background: linear-gradient(120deg, #efd398, #d3a754) !important;
+  box-shadow: none !important;
+}
+:root:root:root[data-theme] .about-page .tech-spinner-container li > span:first-child { color: #e7bc67 !important; }
+:root:root:root[data-theme] .about-page .four-ecosystems-section > .ecosys-container {
+  width: min(1600px, calc(100% - 112px)) !important;
+  max-width: 1600px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+:root:root:root[data-theme] .about-page .four-ecosystems-section .ecosys-magazine-grid {
+  width: 100% !important;
+  max-width: none !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-rows: auto !important;
+  gap: clamp(18px, 1.8vw, 30px) !important;
+}
+:root:root:root[data-theme] .about-page .four-ecosystems-section .ecosys-intro { margin-bottom: 38px !important; }
+:root:root:root[data-theme] .about-page .ecosys-card .ecosys-name {
+  font-size: clamp(16px, 1.35vw, 22px) !important;
+  font-weight: 650 !important;
+  letter-spacing: .015em !important;
+  line-height: 1.35 !important;
+}
+:root:root:root[data-theme] .about-page .ecosys-card span.ecosys-sub {
+  font-size: clamp(12px, .95vw, 15px) !important;
+  font-weight: 400 !important;
+  color: #b0ada7 !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+}
+:root:root:root[data-theme] .about-page .ecosys-card--grid { display: block; min-height: 0 !important; border-radius: 0; background: transparent; }
+:root:root:root[data-theme] .about-page .ecosys-card-image { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; }
+:root:root:root[data-theme] .about-page .ecosys-card-image img { width: 100%; height: 100%; object-fit: cover; }
+:root:root:root[data-theme] .about-page .ecosys-body--grid { padding: 22px 0 0 !important; align-items: flex-start; }
+:root:root:root[data-theme] .about-page .ecosys-heading-sub { text-align: center !important; }
+:root:root:root[data-theme] .about-page .strategic-partners,
+:root:root:root[data-theme] .about-page .strategic-partners > section { background: #000 !important; }
+:root:root:root[data-theme] .about-page .strategic-partners > section > div > span { color: #e7bc67 !important; }
+:root:root:root[data-theme] .about-page .chairman-quote-copy { border-color: rgba(231, 188, 103, .24); }
+:root:root:root[data-theme] .about-page > .section:has(.chairman-quote-copy) > .container {
+  background: #0d0d0d !important;
+  border-color: rgba(231, 188, 103, .24) !important;
+  box-shadow: none !important;
+}
+:root:root:root[data-theme] .about-page :is(button, a):focus-visible { outline: 2px solid #e7bc67; outline-offset: 4px; }
+@media (max-width: 1000px) {
+  :root:root:root[data-theme] .about-page .four-ecosystems-section > .ecosys-container { width: calc(100% - 48px) !important; }
+  :root:root:root[data-theme] .about-page .four-ecosystems-section .ecosys-magazine-grid { grid-template-columns: repeat(4, minmax(245px, 1fr)) !important; }
+}
+@media (max-width: 760px) {
+  .about-page .brand-story-grid { grid-template-columns: 1fr !important; }
+  .about-page .about-three-grid { grid-template-columns: 1fr !important; }
+  .about-page .member-company-card { min-width: 0; }
+}
+@media (max-width: 560px) {
+  :root:root:root[data-theme] .about-page .four-ecosystems-section > .ecosys-container { width: calc(100% - 36px) !important; }
+  :root:root:root[data-theme] .about-page .four-ecosystems-section .ecosys-magazine-grid { grid-template-columns: repeat(4, minmax(78vw, 1fr)) !important; }
+}

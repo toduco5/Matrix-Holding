@@ -1,0 +1,28 @@
+/* Keep the homepage above the legacy body effects, including its separators. */
+:root[data-theme] .page-home {
+  display: flow-root;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow-x: clip;
+  background: #000 !important;
+}
+:root:root[data-theme] .page-home main { background: #000 !important; }
+:root:root[data-theme] .page-home main > .about-preview { background: #000 !important; }
+:root:root[data-theme] .header:is(.is-transparent, .is-scrolled) {
+  background: rgba(7, 9, 14, .96) !important;
+  border-color: rgba(255, 255, 255, .14) !important;
+}
+:root:root[data-theme] .header :is(.nav, .header-logo-text, .burger, .nav > a, .nav-dropdown > summary) { color: #f6f1e8 !important; }
+:root:root[data-theme] .header .header-logo-img { filter: brightness(0) invert(1) !important; }
+:root:root[data-theme] .header .settings-icon-btn {
+  color: #f6f1e8 !important;
+  background: #ffffff09 !important;
+  border-color: #ffffff33 !important;
+}
+:root:root[data-theme] .header .nav > a:is(:hover, .active) { color: #e7bc67 !important; }
+:root:root[data-theme] .header .nav a::after { background: #e7bc67 !important; }
+@media (max-width: 991px) {
+  :root:root[data-theme] .header .nav:not(.nav--open) { display: none !important; }
+  :root:root[data-theme] .header .nav.nav--open { display: flex !important; background: #101114 !important; }
+}

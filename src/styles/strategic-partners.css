@@ -1,0 +1,18 @@
+:root:root[data-theme] .strategic-partners,
+:root:root[data-theme] .strategic-partners > section { background: #000 !important; }
+:root:root[data-theme] .strategic-partners > section { padding-block: 30px; border: 0 !important; }
+.strategic-partners > div { display: none; }
+.strategic-partners > section > div { width: min(1600px, calc(100% - 112px)); max-width: 1600px !important; padding: 0 !important; }
+.strategic-partners > section > div > div { min-width: 0; }
+:root:root[data-theme] .strategic-partners .strategic-partners-label { color: #e7bc67 !important; }
+:root:root[data-theme] .strategic-partners .strategic-partners-brand {
+  color: #454545 !important;
+  font-size: clamp(16px, 1.4vw, 20px) !important;
+  font-family: "Manrope", "Inter", sans-serif;
+  cursor: default !important;
+}
+:root:root[data-theme] .strategic-partners .strategic-partners-brand:hover { color: #454545 !important; }
+@media (max-width: 700px) {
+  .strategic-partners > section > div { width: calc(100% - 36px); flex-direction: column; align-items: stretch !important; gap: 16px !important; }
+  .strategic-partners-label { text-align: center; }
+}

@@ -1,179 +1,36 @@
 import { Link } from "react-router-dom";
-import { IMG } from "../data/constants.js";
 
 export default function About() {
-  // High-resolution corporate executive boardroom photo & high-rise architecture photo
-  const mainImage = "photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=88";
-  const subImage = "photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=88";
-
   return (
-    <section id="about-overview" className="section about-preview" style={{ padding: "105px 0 115px", background: "#05070f", position: "relative", overflow: "hidden", scrollMarginTop: 80 }}>
-      {/* Background glow circle */}
-      <div style={{
-        position: "absolute",
-        top: "50%",
-        left: "8%",
-        width: 450,
-        height: 450,
-        borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(41, 151, 255, 0.14) 0%, transparent 70%)",
-        transform: "translate(-50%, -50%)",
-        pointerEvents: "none"
-      }} />
-
-      <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 64,
-          alignItems: "center"
-        }} className="about-intro-grid">
-          
-          {/* Left Column: Dual Overlapping Photos & Floating Glass Badge */}
-          <div className="about-intro-image-wrap" style={{ position: "relative", paddingRight: 28, paddingBottom: 28 }}>
-            {/* Main Executive Boardroom Photo */}
-            <div style={{
-              borderRadius: 24,
-              overflow: "hidden",
-              border: "1px solid rgba(255, 255, 255, 0.14)",
-              boxShadow: "0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(41, 151, 255, 0.2)"
-            }}>
-              <img
-                src={`${IMG}/${mainImage}`}
-                alt="Văn phòng điều hành Matrix Holding"
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  height: 430,
-                  objectFit: "cover",
-                  display: "block"
-                }}
-              />
-            </div>
-
-            {/* Floating Glass Badge (Top Left) */}
-            <div style={{
-              position: "absolute",
-              top: 24,
-                left: -16, 
-              borderRadius: 16,
-              padding: "14px 22px",
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-            }} className="float-badge-anim">
-              
-
-            </div>
-
-            {/* Secondary Overlapping Skyscraper Photo (Bottom Right) */}
-            <div style={{
-              position: "absolute",
-              bottom: 0,
-              right: 0,
-              width: 255,
-              height: 170,
-              borderRadius: 20,
-              overflow: "hidden",
-              border: "2px solid rgba(255, 255, 255, 0.2)",
-              boxShadow: "0 25px 50px rgba(0, 0, 0, 0.85), 0 0 35px rgba(41, 151, 255, 0.35)"
-            }} className="float-photo-anim">
-              <img
-                src={`${IMG}/${subImage}`}
-                alt="Tòa nhà trụ sở Matrix Holding"
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block"
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Right Column: Copy & Checklist & Glowing Pill Button */}
-          <div className="about-intro-copy">
-            <span style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              color: "#38bdf8",
-              fontSize: "11px",
-              fontWeight: 800,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              marginBottom: 14
-            }}>
-              <span style={{ width: 18, height: 2, background: "#38bdf8" }} />
-              Về Chúng Tôi
-            </span>
-
-            <h2 style={{
-              color: "#ffffff",
-              fontSize: "clamp(24px, 3.1vw, 42px)",
-              fontWeight: 800,
-              lineHeight: 2,
-              letterSpacing: "-0.02em",
-              margin: "0 0 24px",
-              whiteSpace: "nowrap",
-              fontFamily: "'Be Vietnam Pro', sans-serif"
-            }}>
-              
-              GIỚI THIỆU DOANH NGHIỆP
-              
-              
-            </h2>
-
-            <p style={{
-              color: "rgba(255, 255, 255, 0.82)",
-              fontSize: "15px",
-              lineHeight: 1.8,
-              margin: "0 0 16px",
-              fontWeight: 400
-            }}>
-              MATRIX HOLDING là doanh nghiệp hoạt động trong lĩnh vực tư vấn, đầu tư và phát triển hệ sinh thái kinh doanh đa ngành tại VIỆT NAM.
-              <br />
-              <br />
-              Chúng tôi tập trung xây dựng môi trường kinh doanh hiệu quả, nơi các doanh nghiệp SMEs và STARTUP có thể tiếp cận với nhiều nguồn lực và mở ra cơ hội tăng trưởng bền vững.
-            </p>
-            <br />
-
-            
-
-            {/* Checklist items */}
-         
-            {/* Main Pill Button */}
-            <div>
-              <Link
-                to="/gioi-thieu"
-                className="glowing-pill-btn"
-                style={{
-                  background: "#ffffff",
-                  color: "#000000",
-                  fontSize: "12px",
-                  fontWeight: 800,
-                  letterSpacing: "0.06em",
-                  // textTransform: "uppercase",
-                  padding: "16px 36px",
-                  borderRadius: "50px",
-                  textDecoration: "none",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 12,
-                  boxShadow: "0 0 30px rgba(255, 255, 255, 0.3)",
-                  transition: "all 0.3s ease"
-                }}
-              >
-                Tìm hiểu thêm  <i className="fa-solid fa-arrow-right" style={{ fontSize: 12, transition: "transform 0.25s ease" }} />
-              </Link>
-            </div>
-          </div>
-
-        </div>
+    <section id="about-overview" className="section about-introduction" aria-labelledby="introduction-title">
+      <svg className="introduction-curves" viewBox="0 0 1600 420" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="intro-gold-line" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor="#eac38b" />
+            <stop offset=".25" stopColor="#775535" stopOpacity=".5" />
+            <stop offset=".5" stopColor="#775535" stopOpacity=".05" />
+            <stop offset=".75" stopColor="#775535" stopOpacity=".5" />
+            <stop offset="1" stopColor="#eac38b" />
+          </linearGradient>
+          <linearGradient id="intro-gold-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#a57d50" stopOpacity=".22" />
+            <stop offset="1" stopColor="#a57d50" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d="M0 24 C280 306 500 420 800 420 C1100 420 1320 306 1600 24 L1600 160 C1300 345 1100 420 800 420 C500 420 300 345 0 160Z" fill="url(#intro-gold-fill)" />
+        <path d="M0 24 C280 306 500 420 800 420 C1100 420 1320 306 1600 24" fill="none" stroke="url(#intro-gold-line)" strokeWidth="1.5" />
+        <path d="M0 160 C300 345 500 420 800 420 C1100 420 1300 345 1600 160" fill="none" stroke="url(#intro-gold-line)" strokeWidth=".7" opacity=".55" />
+      </svg>
+      <div className="introduction-copy">
+        <p className="introduction-label">GIỚI THIỆU</p>
+        <h2 id="introduction-title">MATRIX <span>HOLDING</span></h2>
+        <p className="introduction-description">
+          <span className="introduction-sentence">Matrix Holding là doanh nghiệp tư vấn, đầu tư và phát triển hệ sinh thái kinh doanh đa ngành tại Việt Nam.</span>{" "}
+          <span className="introduction-sentence">Thông qua kết nối nguồn lực, chúng tôi cùng doanh nghiệp và đối tác</span>{" "}
+          <span className="introduction-sentence">mở rộng cơ hội hợp tác, phát triển năng lực và kiến tạo giá trị bền vững.</span>
+        </p>
+        <Link className="introduction-link" to="/gioi-thieu">TÌM HIỂU THÊM <i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
       </div>
     </section>
   );
 }
-
-

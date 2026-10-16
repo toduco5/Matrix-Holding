@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -16,8 +16,6 @@ import { Link } from "react-router-dom";
 import "./styles/tokens.css";
 import { initScrollAnimations } from "./utils/behavior.js";
 import ProgressScroll from "./components/ProgressScroll.jsx";
-import Skills from "./components/Skills.jsx";
-import DesignGallery from "./components/DesignGallery.jsx";
 import ContactWidget from "./components/ContactWidget.jsx";
 
 function RouteEffects() {
@@ -97,6 +95,8 @@ export default function App() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/sectors" element={<Sectors />} />
+          <Route path="/ecosystem/ventures" element={<Navigate to="/ecosystem/business" replace />} />
+          <Route path="/ecosystem/academy" element={<Navigate to="/ecosystem/capital" replace />} />
           <Route path="/ecosystem/:slug" element={<EcosystemDetail />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="*" element={<main className="not-found"><p className="eyebrow">404 · KHÔNG TÌM THẤY TRANG</p><h1>Trang bạn tìm không tồn tại.</h1><Link className="btn" to="/">Về trang chủ</Link></main>} />

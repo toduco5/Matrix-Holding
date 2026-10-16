@@ -1,0 +1,45 @@
+/* A quiet black-and-gold finish shared by every page. */
+:root:root[data-theme] .footer {
+  background: #080808 !important;
+  color: #b6b2aa !important;
+  border-top: 1px solid rgba(231, 188, 103, .20) !important;
+  box-shadow: none !important;
+}
+:root:root[data-theme] .footer .footer-grid { padding-top: 64px; padding-bottom: 52px; }
+:root:root[data-theme] .footer .logo-footer {
+  color: #f6f1e8 !important;
+  font-family: "Manrope", "Inter", sans-serif;
+}
+:root:root[data-theme] .footer .logo-footer img {
+  width: 38px;
+  height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+:root:root[data-theme] .footer .logo-light { color: #e7bc67 !important; }
+:root:root[data-theme] .footer h3 {
+  color: #e7bc67 !important;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+:root:root[data-theme] .footer :is(.footer-brand, .footer-brand p, .footer-contact, .footer-link) {
+  color: #b6b2aa !important;
+  font-family: "Inter", sans-serif;
+  line-height: 1.85;
+}
+:root:root[data-theme] .footer .footer-brand p { max-width: 34ch; }
+:root:root[data-theme] .footer a:hover { color: #f0cd87 !important; }
+:root:root[data-theme] .footer a:focus-visible { outline: 2px solid #e7bc67; outline-offset: 4px; }
+:root:root[data-theme] .footer .footer-bottom {
+  background: #050505 !important;
+  color: #8f8a80 !important;
+  border-top: 1px solid rgba(231, 188, 103, .14) !important;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  padding-block: 20px;
+}
+@media (max-width: 700px) {
+  :root:root[data-theme] .footer .footer-grid { padding-top: 44px; padding-bottom: 36px; }
+}

@@ -1,0 +1,68 @@
+/* Shared gold treatment for editorial labels and category badges. */
+
+:root {
+  --label-gold: #91651e;
+  --label-gold-bright: #e7bc67;
+  --label-gold-fill: rgba(189, 143, 62, .10);
+  --label-gold-border: rgba(189, 143, 62, .38);
+}
+
+:root[data-theme="dark"] {
+  --label-gold: var(--label-gold-bright);
+}
+
+/* These surfaces remain dark in either theme. */
+:is(.page-home, .about-page, .hero, .page-banner-hero,
+    .contact-dialog, .footer) {
+  --label-gold: var(--label-gold-bright);
+}
+
+/* Match the existing cascade, including labels styled inline. */
+:root:root:root :is([data-gold-label], .eyebrow, .news-meta,
+    .ecosystem-gallery-eyebrow, .contact-dialog__eyebrow,
+    .eyebrow-cta, .eyebrow-events, .ecosystem-eyebrow-badge,
+    .active-type-badge, .search-result-badge, .news-promo-badge,
+    .news-sidebar-ad__badge, .event-badge, .sector-project-tag,
+    .map-info-badge, .vivid-hero-badge) {
+  color: var(--label-gold) !important;
+}
+
+:root:root:root :is(.ecosystem-eyebrow-badge, .active-type-badge,
+    .search-result-badge, .news-promo-badge, .news-sidebar-ad__badge,
+    .event-badge, .sector-project-tag, .map-info-badge, .vivid-hero-badge,
+    [data-gold-label][style*="background"]) {
+  background: var(--label-gold-fill) !important;
+  border-color: var(--label-gold-border) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 231, 181, .08) !important;
+}
+
+:root:root:root .ecosystem-eyebrow-badge .dot {
+  background: var(--label-gold-bright) !important;
+  box-shadow: none !important;
+}
+
+:root:root:root .hero-centered-content > div:first-child > span:first-child,
+:root:root:root .hero-centered-content > div:first-child > span:last-child {
+  background: linear-gradient(90deg, transparent, #c89b4f, transparent) !important;
+}
+
+/* Override the theme-specific homepage banner rules at their own specificity. */
+:root:root:root .gold-label-rule,
+:root:root:root [data-gold-label] > span:empty,
+:root:root:root :is([data-gold-label], .eyebrow, .ecosystem-gallery-eyebrow)::before,
+:root:root:root :is([data-gold-label], .eyebrow, .ecosystem-gallery-eyebrow)::after {
+  background: var(--label-gold) !important;
+  box-shadow: none !important;
+}
+
+:root[data-theme] .page-home .hero-centered-content > div:first-child > span[data-gold-label]:nth-child(2) {
+  color: #e7bc67 !important;
+  background: linear-gradient(135deg, rgba(231, 188, 103, .14), rgba(160, 112, 37, .08)) !important;
+  border-color: rgba(231, 188, 103, .58) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 230, 178, .12), 0 4px 20px rgba(0, 0, 0, .12) !important;
+}
+
+:root[data-theme] .page-home .hero-centered-content > div:first-child > span:first-child,
+:root[data-theme] .page-home .hero-centered-content > div:first-child > span:last-child {
+  background: linear-gradient(90deg, transparent, #c89b4f, transparent) !important;
+}

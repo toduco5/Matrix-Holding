@@ -1,0 +1,23 @@
+/* Amber pill buttons, matching the supplied reference. */
+:root:root[data-theme] :is(.hero, .page-banner-hero, .career-hero, .detail-hero) :is(.hero-btn-primary, .hero-btn-secondary, .btn, .glowing-pill-btn, button:not(.hero-scroll-down)) {
+  background: #ffc15c !important;
+  color: #482608 !important;
+  border: 1px solid #eaa640 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 14px rgba(255, 181, 63, .14) !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+:root:root[data-theme] :is(.hero, .page-banner-hero, .career-hero, .detail-hero) :is(.hero-btn-primary, .hero-btn-secondary, .btn, .glowing-pill-btn, button:not(.hero-scroll-down)):hover {
+  background: #ffd18a !important;
+  color: #382008 !important;
+  border-color: #f3b95f !important;
+  box-shadow: 0 6px 20px rgba(255, 181, 63, .20) !important;
+}
+:root:root[data-theme] :is(.hero, .page-banner-hero, .career-hero, .detail-hero) :is(.hero-btn-primary, .hero-btn-secondary, .btn, .glowing-pill-btn, button):focus-visible {
+  outline: 2px solid #ffe0a6 !important;
+  outline-offset: 4px;
+}
+:root:root[data-theme] .hero .hero-scroll-down,
+:root:root[data-theme] .hero .hero-scroll-down :is(span, i) { color: #ffc15c !important; }

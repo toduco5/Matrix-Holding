@@ -1,0 +1,48 @@
+:is(.page-home, .about-page) .section-divider {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  height: 28px;
+  padding-inline: clamp(18px, 3vw, 64px);
+  background: #000 !important;
+  pointer-events: none;
+}
+.section-divider-line { height: 1px; flex: 1; }
+.section-divider-line:first-child {
+  background: linear-gradient(90deg, transparent, rgba(198, 158, 81, .42) 25%, #c69e51);
+}
+.section-divider-line:last-child {
+  background: linear-gradient(90deg, #c69e51, rgba(198, 158, 81, .42) 75%, transparent);
+}
+.section-divider-ornament {
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border: 1px solid #c69e51;
+  transform: rotate(45deg);
+}
+.section-divider-ornament > span { width: 4px; height: 4px; background: #e7bc67; }
+/* Balance the transition from the full-width portraits to the closing CTA. */
+:root[data-theme] .page-home main > .cooperation-section + .section-divider {
+  height: 28px;
+  padding-block: 64px;
+  box-sizing: content-box;
+}
+:root[data-theme] .page-home main > .section-divider + .partner-cta-section {
+  padding-top: 0 !important;
+}
+@media (max-width: 560px) {
+  :root[data-theme] .page-home main > .cooperation-section + .section-divider {
+    padding-block: 36px;
+    height: 22px;
+  }
+  :is(.page-home, .about-page) .section-divider { height: 22px; gap: 14px; }
+  .section-divider-ornament { width: 10px; height: 10px; flex-basis: 10px; }
+}

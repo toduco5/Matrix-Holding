@@ -10,7 +10,7 @@ import PageBanner from "../components/PageBanner.jsx";
 
 export default function Sectors() {
   return <>
-    <PageMeta title="Hệ sinh thái | Matrix Holding" description="Khám phá hệ sinh thái Matrix Holding gồm Network, Connect, Ventures và Academy." />
+    <PageMeta title="Hệ sinh thái | Matrix Holding" description="Khám phá hệ sinh thái Matrix Holding gồm Network, Connect, Business và Capital." />
     <Header />
     <main>
       <PageBanner

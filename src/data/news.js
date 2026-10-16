@@ -1,9 +1,10 @@
 // SỬA NỘI DUNG TIN TỨC TẠI ĐÂY
-export const NEWS_CATEGORIES = ["Tất cả", "Matrix Holding", "Matrix Network", "Matrix Connect", "Matrix Ventures", "Matrix Academy"];
+export const NEWS_CATEGORIES = ["Tất cả", "Matrix Holding", "Matrix Network", "Matrix Connect", "Matrix Business", "Matrix Capital"];
 
 export const FEATURED_NEWS = {
   id: "featured-news",
   slug: "matrix-holding-he-sinh-thai-da-nganh",
+  topic: "Sự kiện",
   category: "Matrix Holding",
   date: "01/10/2026",
   time: "09:00",
@@ -15,7 +16,7 @@ export const FEATURED_NEWS = {
   image: "photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1300&q=88",
   body: [
     "Matrix Holding phát triển một nền tảng để các đơn vị, doanh nghiệp và chuyên gia có thể tìm thấy điểm giao về năng lực và nhu cầu.",
-    "Bốn nhánh Matrix Network, Matrix Connect, Matrix Ventures và Matrix Academy đảm nhiệm các vai trò bổ trợ: cung cấp dịch vụ, tạo kết nối kinh doanh, kết nối đầu tư và phát triển năng lực.",
+    "Bốn nhánh Matrix Network, Matrix Connect, Matrix Business và Matrix Capital đảm nhiệm các vai trò bổ trợ: cung cấp dịch vụ, tạo kết nối kinh doanh, phát triển mô hình kinh doanh và đầu tư, quản lý vốn.",
     "Phạm vi hoạt động cụ thể của từng đơn vị được xác định theo năng lực thực tế và các thỏa thuận riêng với đối tác."
   ]
 };
@@ -69,6 +70,7 @@ export const NEWS_ITEMS = [
   {
     id: "network-ecosystem",
     slug: "matrix-network-dich-vu-doanh-nghiep",
+    topic: "Thương hiệu",
     category: "Matrix Network",
     date: "01/10/2026",
     time: "09:00",
@@ -85,6 +87,7 @@ export const NEWS_ITEMS = [
   {
     id: "capital-ecosystem",
     slug: "ket-noi-dau-tu-co-trach-nhiem",
+    topic: "Chiến lược",
     category: "Matrix Holding",
     date: "01/10/2026",
     time: "09:00",
@@ -101,6 +104,7 @@ export const NEWS_ITEMS = [
   {
     id: "community",
     slug: "hop-tac-kinh-doanh-ben-vung",
+    topic: "Kiến trúc",
     category: "Matrix Connect",
     date: "18/09/2026",
     title: "Hồi sinh kiến trúc gỗ: Khi bản sắc truyền thống hòa nhập đô thị số",
@@ -116,7 +120,8 @@ export const NEWS_ITEMS = [
   {
     id: "startup",
     slug: "hoc-tap-va-nang-luc-doanh-nghiep",
-    category: "Matrix Academy",
+    topic: "Hạ tầng",
+    category: "Matrix Network",
     date: "24/09/2026",
     title: "Bài toán nguồn lực dự án đường sắt: Kinh nghiệm quốc tế và nội địa",
     excerpt: "Phân tích chuyên sâu từ các chuyên gia tài chính và hạ tầng về giải pháp huy động vốn và đào tạo chuyển giao công nghệ cho doanh nghiệp.",
@@ -125,7 +130,7 @@ export const NEWS_ITEMS = [
     body: [
       "Đào tạo tạo tác động tốt hơn khi người học biết năng lực nào cần phát triển và có cơ hội áp dụng ngay vào công việc.",
       "Chương trình có thể kết hợp kiến thức nền, trao đổi với chuyên gia, thực hành theo tình huống và kế hoạch ứng dụng sau đào tạo.",
-      "Matrix Academy hướng tới kết nối tri thức quản trị và chuyên môn với nhu cầu phát triển của lãnh đạo và cộng đồng."
+      "Matrix Network hướng tới kết nối tri thức quản trị và chuyên môn với nhu cầu phát triển của lãnh đạo và cộng đồng."
     ]
   }
 ];
@@ -144,7 +149,7 @@ export const OLDER_NEWS = [
   {
     id: "old-2",
     slug: "goi-von-hat-giong-dong-nam-a",
-    category: "Matrix Ventures",
+    category: "Matrix Business",
     date: "28/11/2025",
     title: "Xu hướng đầu tư mạo hiểm và cơ hội gọi vốn hạt giống tại Đông Nam Á",
     excerpt: "Phân tích khẩu vị rủi ro của các quỹ đầu tư khu vực đối với các startup công nghệ ứng dụng và giải pháp chuyển đổi xanh.",
@@ -154,7 +159,7 @@ export const OLDER_NEWS = [
   {
     id: "old-3",
     slug: "dao-tao-nhan-su-quan-tri-2025",
-    category: "Matrix Academy",
+    category: "Matrix Network",
     date: "05/10/2025",
     title: "Nâng chuẩn năng lực quản trị cấp trung: Chìa khóa giữ chân nhân tài",
     excerpt: "Chương trình đào tạo chuyển giao khung năng lực lãnh đạo thực chiến cho hơn 200 quản lý doanh nghiệp trong hệ sinh thái.",

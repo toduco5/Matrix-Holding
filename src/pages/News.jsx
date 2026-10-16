@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FEATURED_NEWS,
@@ -18,6 +18,7 @@ import PageBanner from "../components/PageBanner.jsx";
 const imageUrl = image => `https://images.unsplash.com/${image}`;
 
 export default function News() {
+  const olderNewsTrackRef = useRef(null);
   const [category, setCategory] = useState("Tất cả");
   const [query, setQuery] = useState("");
   const [email, setEmail] = useState("");
@@ -60,16 +61,16 @@ export default function News() {
           subtitle="Cập nhật dòng chảy thông tin thị trường, góc nhìn chuyên gia và hoạt động nổi bật."
         />
 
-        <section style={{ padding: "60px 0 90px", background: "#05070f" }}>
+        <section style={{ padding: "60px 0 90px", background: "#000000" }}>
           <div className="container">
             
             {/* UNIFIED TOP NEWS FRAME CONTAINER (Cùng 1 Frame + Tin tức mới nhất ở trên đầu) */}
             <div style={{
-              background: "rgba(12, 18, 32, 0.92)",
+              background: "rgba(21, 21, 21, 0.92)",
               backdropFilter: "blur(16px)",
               borderRadius: 26,
               padding: "32px",
-              border: "1px solid rgba(56, 189, 248, 0.25)",
+              border: "1px solid rgba(231, 188, 103, 0.25)",
               boxShadow: "0 25px 70px rgba(0,0,0,0.8)",
               marginBottom: 64
             }}>
@@ -88,8 +89,8 @@ export default function News() {
                 {/* Latest News Badge (Tin tức mới nhất ở trên đầu) */}
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <div style={{
-                    background: "rgba(23, 105, 170, 0.10)",
-                    border: "1px solid rgba(23, 105, 170, 0.28)",
+                    background: "rgba(231, 188, 103, 0.10)",
+                    border: "1px solid rgba(231, 188, 103, 0.28)",
                     padding: "6px 14px",
                     borderRadius: "30px",
                     display: "flex",
@@ -97,7 +98,7 @@ export default function News() {
                     gap: 8
                   }}>
                     <span className="live-ticker__dot" />
-                    <span style={{ color: "#1769aa", fontSize: "12px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                    <span data-gold-label style={{ color: "#d3a754", fontSize: "12px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                       TIN TỨC MỚI NHẤT
                     </span>
                   </div>
@@ -110,11 +111,12 @@ export default function News() {
                     <button
                       key={item}
                       type="button"
+                      aria-pressed={category === item}
                       onClick={() => setCategory(item)}
                       style={{
-                        background: category === item ? "#38bdf8" : "rgba(255, 255, 255, 0.06)",
+                        background: category === item ? "#e7bc67" : "rgba(255, 255, 255, 0.06)",
                         color: category === item ? "#000000" : "rgba(255, 255, 255, 0.85)",
-                        border: category === item ? "1px solid #38bdf8" : "1px solid rgba(255, 255, 255, 0.12)",
+                        border: category === item ? "1px solid #e7bc67" : "1px solid rgba(255, 255, 255, 0.12)",
                         fontWeight: 800,
                         fontSize: "12px",
                         padding: "6px 16px",
@@ -139,7 +141,7 @@ export default function News() {
 
                 {/* LEFT COLUMN: Main Big Featured Story (Image Top, Title & Text Bottom - Picture 1) */}
                 <div style={{
-                  background: "rgba(18, 24, 38, 0.6)",
+                  background: "rgba(21, 21, 21, 0.6)",
                   borderRadius: 20,
                   overflow: "hidden",
                   border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -163,8 +165,8 @@ export default function News() {
                         display: "flex",
                         gap: 8
                       }}>
-                        <span style={{
-                          background: "#1769aa",
+                        <span data-gold-label style={{
+                          background: "#d3a754",
                           color: "#ffffff",
                           fontSize: "10.5px",
                           fontWeight: 900,
@@ -177,12 +179,12 @@ export default function News() {
                         <span style={{
                           background: "rgba(5, 7, 15, 0.85)",
                           backdropFilter: "blur(8px)",
-                          color: "#38bdf8",
+                          color: "#e7bc67",
                           fontSize: "10.5px",
                           fontWeight: 800,
                           padding: "4px 10px",
                           borderRadius: 4,
-                          border: "1px solid rgba(56, 189, 248, 0.3)"
+                          border: "1px solid rgba(231, 188, 103, 0.3)"
                         }}>
                           {(stories[0] || FEATURED_NEWS).category}
                         </span>
@@ -228,7 +230,7 @@ export default function News() {
                       <span><i className="fa-regular fa-eye" /> {(stories[0] || FEATURED_NEWS).views || "15.400"} lượt xem</span>
                       <span><i className="fa-solid fa-share-nodes" /> {(stories[0] || FEATURED_NEWS).shares || "824"} chia sẻ</span>
                     </div>
-                    <Link to={`/news/${(stories[0] || FEATURED_NEWS).slug}`} style={{ color: "#38bdf8", fontWeight: 800, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}>
+                    <Link to={`/news/${(stories[0] || FEATURED_NEWS).slug}`} style={{ color: "#e7bc67", fontWeight: 800, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}>
                       Đọc toàn văn <i className="fa-solid fa-arrow-right" style={{ fontSize: 10 }} />
                     </Link>
                   </div>
@@ -247,7 +249,7 @@ export default function News() {
                     <div
                       key={item.id}
                       style={{
-                        background: "rgba(18, 24, 38, 0.6)",
+                        background: "rgba(21, 21, 21, 0.6)",
                         backdropFilter: "blur(12px)",
                         borderRadius: 16,
                         padding: "12px 14px",
@@ -279,7 +281,7 @@ export default function News() {
                       <div style={{ flex: 1 }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
                           <span style={{
-                            color: "#38bdf8",
+                            color: "#e7bc67",
                             fontSize: "11px",
                             fontWeight: 800
                           }}>
@@ -335,7 +337,7 @@ export default function News() {
                 gap: 16
               }}>
                 <div>
-                  <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                  <span data-gold-label style={{ color: "#e7bc67", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
                     SỰ KIỆN TRONG THÁNG
                   </span>
                   <h2 style={{ color: "#ffffff", fontSize: "32px", fontWeight: 900, margin: 0 }}>
@@ -348,11 +350,12 @@ export default function News() {
                     <button
                       key={tab}
                       type="button"
+                      aria-pressed={activeTabEvents === tab}
                       onClick={() => setActiveTabEvents(tab)}
                       style={{
-                        background: activeTabEvents === tab ? "#38bdf8" : "rgba(255,255,255,0.06)",
+                        background: activeTabEvents === tab ? "#e7bc67" : "rgba(255,255,255,0.06)",
                         color: activeTabEvents === tab ? "#000000" : "rgba(255,255,255,0.8)",
-                        border: activeTabEvents === tab ? "1px solid #38bdf8" : "1px solid rgba(255,255,255,0.12)",
+                        border: activeTabEvents === tab ? "1px solid #e7bc67" : "1px solid rgba(255,255,255,0.12)",
                         fontSize: "12px",
                         fontWeight: 800,
                         padding: "6px 16px",
@@ -376,7 +379,7 @@ export default function News() {
                   <div
                     key={ev.id}
                     style={{
-                      background: "rgba(18, 24, 38, 0.85)",
+                      background: "rgba(21, 21, 21, 0.85)",
                       backdropFilter: "blur(12px)",
                       borderRadius: 20,
                       padding: "24px 20px",
@@ -392,13 +395,13 @@ export default function News() {
                       {/* Top Row: Calendar Day Box + Badge */}
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
                         <div style={{
-                          background: "rgba(15, 23, 42, 0.9)",
-                          border: "1px solid rgba(56, 189, 248, 0.35)",
+                          background: "rgba(25, 24, 21, 0.9)",
+                          border: "1px solid rgba(231, 188, 103, 0.35)",
                           borderRadius: 12,
                           padding: "5px 14px",
                           textAlign: "center"
                         }}>
-                          <span style={{ color: "#38bdf8", fontSize: "10px", fontWeight: 800, display: "block", textTransform: "uppercase" }}>
+                          <span data-gold-label style={{ color: "#e7bc67", fontSize: "10px", fontWeight: 800, display: "block", textTransform: "uppercase" }}>
                             {ev.month}
                           </span>
                           <strong style={{ color: "#ffffff", fontSize: "24px", fontWeight: 900, lineHeight: 1 }}>
@@ -421,7 +424,7 @@ export default function News() {
 
                       {/* Time Line */}
                       <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "11.5px", marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
-                        <i className="fa-regular fa-clock" style={{ color: "#38bdf8" }} />
+                        <i className="fa-regular fa-clock" style={{ color: "#e7bc67" }} />
                         <span>{ev.time}</span>
                       </div>
 
@@ -509,7 +512,7 @@ export default function News() {
                 gap: 16
               }}>
                 <div>
-                  <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                  <span data-gold-label style={{ color: "#e7bc67", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
                     GÓC NHÌN BÁO CHÍ
                   </span>
                   <h2 style={{ color: "#ffffff", fontSize: "32px", fontWeight: 900, margin: 0 }}>
@@ -522,11 +525,12 @@ export default function News() {
                     <button
                       key={tab}
                       type="button"
+                      aria-pressed={activeTabEditors === tab}
                       onClick={() => setActiveTabEditors(tab)}
                       style={{
-                        background: activeTabEditors === tab ? "#38bdf8" : "rgba(255,255,255,0.06)",
+                        background: activeTabEditors === tab ? "#e7bc67" : "rgba(255,255,255,0.06)",
                         color: activeTabEditors === tab ? "#000000" : "rgba(255,255,255,0.8)",
-                        border: activeTabEditors === tab ? "1px solid #38bdf8" : "1px solid rgba(255,255,255,0.12)",
+                        border: activeTabEditors === tab ? "1px solid #e7bc67" : "1px solid rgba(255,255,255,0.12)",
                         fontSize: "12px",
                         fontWeight: 800,
                         padding: "6px 16px",
@@ -550,7 +554,7 @@ export default function News() {
                   <article
                     key={story.id}
                     style={{
-                      background: "rgba(18, 24, 38, 0.85)",
+                      background: "rgba(21, 21, 21, 0.85)",
                       backdropFilter: "blur(12px)",
                       borderRadius: 18,
                       overflow: "hidden",
@@ -565,7 +569,7 @@ export default function News() {
                     <div>
                       <div style={{ height: 170, overflow: "hidden", position: "relative" }}>
                         <img src={imageUrl(story.image)} alt={story.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                        <span style={{ position: "absolute", top: 12, left: 12, background: "rgba(5,7,15,0.8)", color: "#38bdf8", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: 4 }}>
+                        <span style={{ position: "absolute", top: 12, left: 12, background: "rgba(5,7,15,0.8)", color: "#e7bc67", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: 4 }}>
                           {story.category}
                         </span>
                       </div>
@@ -621,7 +625,7 @@ export default function News() {
             </div>
 
             {/* SECTION 5: KHO LƯU TRỮ TIN TỨC CŨ HƠN */}
-            <div className="older-news-section" style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+            <div className="older-news-section older-news-gallery" style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
               <div style={{
                 display: "flex",
                 alignItems: "flex-end",
@@ -631,7 +635,7 @@ export default function News() {
                 gap: 16
               }}>
                 <div>
-                  <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                  <span data-gold-label style={{ color: "#e7bc67", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
                     Tin Trước Đó
                   </span>
                   <h2 style={{ color: "#ffffff", fontSize: "28px", fontWeight: 900, margin: 0 }}>
@@ -645,16 +649,12 @@ export default function News() {
               </div>
 
               {/* Grid 4 thẻ tin tức cũ */}
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: 20
-              }} className="older-news-grid">
+              <div ref={olderNewsTrackRef} className="older-news-grid">
                 {OLDER_NEWS.map(item => (
                   <article
                     key={item.id}
                     style={{
-                      background: "rgba(18, 24, 38, 0.65)",
+                      background: "rgba(21, 21, 21, 0.65)",
                       backdropFilter: "blur(12px)",
                       borderRadius: 16,
                       padding: "16px 18px",
@@ -681,7 +681,7 @@ export default function News() {
 
                     <div style={{ flex: 1 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5 }}>
-                        <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800 }}>
+                        <span style={{ color: "#e7bc67", fontSize: "11px", fontWeight: 800 }}>
                           {item.category}
                         </span>
                         <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px" }}>• {item.date}</span>
@@ -721,6 +721,23 @@ export default function News() {
               </div>
 
               {/* NÚT XEM TẤT CẢ TIN TỨC Ở CUỐI TRANG */}
+              <div className="older-news-controls" aria-label="Điều khiển tin tức trước đó">
+                <button
+                  type="button"
+                  aria-label="Cuộn tin cũ sang trái"
+                  onClick={() => olderNewsTrackRef.current?.scrollBy({ left: -520, behavior: "smooth" })}
+                >
+                  <i className="fa-solid fa-chevron-left" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Cuộn tin cũ sang phải"
+                  onClick={() => olderNewsTrackRef.current?.scrollBy({ left: 520, behavior: "smooth" })}
+                >
+                  <i className="fa-solid fa-chevron-right" />
+                </button>
+              </div>
+
               <div style={{ textAlign: "center", marginTop: 44, paddingBottom: 10 }}>
                 <button
                   type="button"
@@ -734,11 +751,11 @@ export default function News() {
                     gap: 10,
                     padding: "14px 38px",
                     borderRadius: 30,
-                    background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
+                    background: "linear-gradient(135deg, #ffc15c 0%, #eaa640 100%)",
                     color: "#ffffff",
                     fontSize: "13.5px",
                     fontWeight: 800,
-                    border: "1px solid rgba(56, 189, 248, 0.4)",
+                    border: "1px solid rgba(231, 188, 103, 0.4)",
                     boxShadow: "0 10px 30px rgba(37, 99, 235, 0.35)",
                     cursor: "pointer",
                     transition: "all 0.3s ease"

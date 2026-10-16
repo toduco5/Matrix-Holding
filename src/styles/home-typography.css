@@ -1,0 +1,37 @@
+/* Shared type scale for homepage section titles and descriptions. */
+.page-home {
+  --home-title-size: clamp(32px, 3.8vw, 58px);
+  --home-description-size: clamp(14px, 1.15vw, 17px);
+}
+
+:root:root:root[data-theme] .page-home main :is(
+  .hero-architecture h1,
+  .introduction-copy h2,
+  .matrix-ecosystem-heading h2,
+  .home-news-heading h2,
+  .cooperation-heading h2,
+  .partner-cta-copy h2
+) {
+  font-family: "Manrope", "Inter", sans-serif !important;
+  font-size: var(--home-title-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -.02em !important;
+}
+
+:root:root:root[data-theme] .page-home main :is(
+  .hero-architecture-description,
+  .introduction-description,
+  .matrix-ecosystem-heading p,
+  .matrix-ecosystem-panel p,
+  .home-news-intro,
+  .cooperation-heading > p:not(.eyebrow),
+  .cooperation-copy > p,
+  .partner-cta-copy p
+) {
+  font-family: "Inter", sans-serif !important;
+  font-size: var(--home-description-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  letter-spacing: normal !important;
+}

@@ -1,0 +1,18 @@
+/* Honey-gold buttons: warm amber to cream, with deep brown lettering. */
+:root {
+  --amber-button-fill: linear-gradient(100deg, #ffbd4a 0%, #ffc65f 50%, #ffd58b 100%);
+  --amber-button-hover: linear-gradient(100deg, #ffc65f 0%, #ffd080 50%, #ffdfa5 100%);
+  --amber-button-ink: #54290e;
+  --amber-button-border: #eaa13c;
+}
+:root:root:root[data-theme] :is(.hero, .page-banner-hero, .career-hero, .detail-hero) :is(.hero-btn-primary, .hero-btn-secondary, .btn, .glowing-pill-btn, button:not(.hero-scroll-down)), :root:root:root[data-theme] .news-page :is(button:not([aria-pressed="false"]), .overview-pill-link, .older-news-all-button) {
+  background: var(--amber-button-fill) !important;
+  color: var(--amber-button-ink) !important;
+  border: 1px solid var(--amber-button-border) !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 208, .32), 0 4px 12px rgba(170, 109, 24, .10) !important;
+}
+:root:root:root[data-theme] :is(.hero, .page-banner-hero, .career-hero, .detail-hero) :is(.hero-btn-primary, .hero-btn-secondary, .btn, .glowing-pill-btn, button:not(.hero-scroll-down)):hover, :root:root:root[data-theme] .news-page :is(button:not([aria-pressed="false"]), .overview-pill-link, .older-news-all-button):hover {
+  background: var(--amber-button-hover) !important;
+  color: var(--amber-button-ink) !important;
+}

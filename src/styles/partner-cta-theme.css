@@ -1,0 +1,23 @@
+
+:root:root[data-theme] .page-home .partner-cta-section { padding:32px 0 48px!important; background:#000!important; }
+:root:root[data-theme] .page-home .partner-cta-section > .container { width:min(1600px,calc(100% - 64px))!important; max-width:1600px!important; }
+:root:root[data-theme] .page-home .partner-cta-panel { position:relative; isolation:isolate; overflow:hidden; display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:370px; padding:64px 28px; border:1px solid #b4915b2b; border-radius:0; background:linear-gradient(90deg,#09090915,#09090955 35%,#09090955 65%,#09090915),url('/assets/cta-architecture-gold.png') center/cover no-repeat,#090909; text-align:center; }
+.partner-cta-copy { max-width:850px; }
+:root:root[data-theme] .page-home .partner-cta-copy h2 { margin:0 0 24px; color:#ece9e2!important; font:300 clamp(26px,2.5vw,40px)/1.3 Inter,sans-serif; letter-spacing:.055em; }
+.partner-cta-copy h2 span { color:#d2a06b; font-weight:400; }
+:root:root[data-theme] .page-home .partner-cta-copy p { margin:0; color:#bab8b2!important; font:400 clamp(13px,1.05vw,16px)/1.8 Inter,sans-serif; text-wrap:pretty; }
+:root:root[data-theme] .page-home .partner-cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; margin-top:34px; }
+:root:root[data-theme] .page-home .partner-cta-button { display:inline-flex; align-items:center; justify-content:center; gap:24px; min-height:48px; min-width:210px; padding:14px 24px; box-sizing:border-box; border:1px solid #b4915b; border-radius:999px; color:#e6dccb; text-decoration:none; font:500 11px/1.4 Inter,sans-serif; letter-spacing:.08em; text-transform:uppercase; transition:background .2s; }
+:root:root[data-theme] .page-home .partner-cta-button--primary { background:linear-gradient(100deg,#4e361db0,#85704b99); }
+:root:root[data-theme] .page-home .partner-cta-button--secondary { background:#09090999; }
+:root:root[data-theme] .page-home .partner-cta-button:hover { background:#a5824255; }
+.partner-cta-button i { color:#d0ab70; font-size:15px; }
+.partner-cta-panel a:focus-visible { outline:2px solid #e7bc67; outline-offset:4px; }
+@media(max-width:600px) {
+ :root:root[data-theme] .page-home .partner-cta-section > .container { width:calc(100% - 24px)!important; }
+ :root:root[data-theme] .page-home .partner-cta-panel { min-height:440px; padding:48px 20px; background-position:center; }
+ :root:root[data-theme] .page-home .partner-cta-copy h2 { font-size:clamp(22px,5.8vw,30px); letter-spacing:.02em; }
+ .partner-cta-desktop-break { display:none; }
+ :root:root[data-theme] .page-home .partner-cta-actions { width:100%; gap:14px; margin-top:28px; }
+ :root:root[data-theme] .page-home .partner-cta-button { width:min(100%,280px); }
+}

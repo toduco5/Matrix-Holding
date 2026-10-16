@@ -1,3 +1,4 @@
+import SectionDivider from "../components/SectionDivider.jsx";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
@@ -5,7 +6,6 @@ import Footer from "../components/Footer.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 import { TEAM_MEMBERS } from "../data/team.js";
 import PageBanner from "../components/PageBanner.jsx";
-import FourEcosystems from "../components/FourEcosystems.jsx";
 import StrategicPartners from "../components/StrategicPartners.jsx";
 
 const TIMELINE_DATA = [
@@ -78,7 +78,7 @@ const TIMELINE_DATA = [
     year: "2024",
     tag: "04 Trụ cột hệ sinh thái",
     title: "Những thành tựu nổi bật năm 2024",
-    desc: "Chính thức vận hành 04 trụ cột hệ sinh thái thành viên: Matrix Network, Matrix Connect, Matrix Ventures và Matrix Academy theo mô hình khép kín.",
+    desc: "Chính thức vận hành 04 trụ cột hệ sinh thái thành viên: Matrix Network, Matrix Connect, Matrix Business và Matrix Capital theo mô hình khép kín.",
     bullets: [
       "Liên kết sức mạnh 4 trụ cột hệ sinh thái bổ trợ lẫn nhau.",
       "Khởi động chương trình ươm mầm doanh nghiệp và kết nối nguồn vốn.",
@@ -91,10 +91,10 @@ const TIMELINE_DATA = [
     year: "2025",
     tag: "Đầu tư & Đào tạo tinh hoa",
     title: "Những thành tựu nổi bật năm 2025",
-    desc: "Đẩy mạnh quỹ Matrix Ventures giải ngân vào các dự án khởi nghiệp tiềm năng, đồng thời học viện Matrix Academy đào tạo thế hệ nhân lực tinh hoa.",
+    desc: "Matrix Business phát triển các mô hình kinh doanh tiềm năng, Matrix Capital kết nối nguồn vốn đầu tư, đồng thời Matrix Network hỗ trợ đào tạo và phát triển nhân lực.",
     bullets: [
       "Quỹ đầu tư hoàn thành thẩm định và rót vốn vào các dự án hạt giống.",
-      "Học viện Matrix Academy đào tạo hơn 1,000 học viên và nhà sáng lập trẻ.",
+      "Chương trình đào tạo của Matrix Network hỗ trợ hơn 1,000 học viên và nhà sáng lập trẻ.",
       "Nâng cao năng lực cạnh tranh cho các đối tác trong hệ sinh thái.",
       "Tạo bệ phóng vững chắc để các dự án tăng tốc bứt phá."
     ],
@@ -157,7 +157,7 @@ export default function About() {
       />
       <Header />
 
-      <main className="about-page" style={{ background: "#05070f", color: "#ffffff", fontFamily: "'Be Vietnam Pro', sans-serif", paddingBottom: 60, overflow: "hidden" }}>
+      <main className="about-page" style={{ background: "#000000", color: "#ffffff", fontFamily: "'Be Vietnam Pro', sans-serif", paddingBottom: 60, overflow: "hidden" }}>
         {/* HERO BANNER */}
         <PageBanner
           eyebrow="MATRIX HOLDING"
@@ -167,18 +167,19 @@ export default function About() {
 
         {/* BẢO CHỨNG BỞI (VERBATIM FROM MATRIX VENTURES - NGAY ĐẦU TRANG) */}
         <StrategicPartners />
+        <SectionDivider />
 
         {/* 1. CÂU CHUYỆN THƯƠNG HIỆU */}
-        <section className="section" style={{ padding: "80px 0", background: "#05070f", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <section className="section" style={{ padding: "80px 0", background: "#000000", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container">
             <div className="about-story-panel" style={{
               maxWidth: 1200,
               margin: "0 auto",
               background: "linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 15, 30, 0.9) 100%)",
-              border: "1px solid rgba(56, 189, 248, 0.22)",
+              border: "1px solid rgba(231, 188, 103, 0.22)",
               borderRadius: 24,
               padding: "48px 44px",
-              boxShadow: "0 25px 60px rgba(0,0,0,0.6), 0 0 35px rgba(56, 189, 248, 0.08)"
+              boxShadow: "0 25px 60px rgba(0,0,0,0.6), 0 0 35px rgba(231, 188, 103, 0.08)"
             }}>
               <div style={{
                 display: "grid",
@@ -188,8 +189,8 @@ export default function About() {
               }} className="brand-story-grid">
                 {/* Cột trái: Văn bản tinh gọn, chuẩn mực */}
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <span style={{
-                    color: "#38bdf8",
+                  <span data-gold-label style={{
+                    color: "#e7bc67",
                     fontSize: "11px",
                     fontWeight: 800,
                     letterSpacing: "0.2em",
@@ -208,7 +209,7 @@ export default function About() {
                     lineHeight: 1.35,
                     fontFamily: "'Be Vietnam Pro', sans-serif"
                   }}>
-                    Khát vọng kiến tạo bệ phóng vững chắc cho doanh nghiệp Việt
+                    KHÁT VỌNG KIẾN TẠO BỆ PHÓNG VỮNG CHẮC CHO DOANH NGHIỆP VIỆT NAM
                   </h2>
 
                   <p style={{
@@ -230,7 +231,7 @@ export default function About() {
                     textAlign: "justify",
                     textJustify: "inter-word"
                   }}>
-                    Hành trình của Matrix Holding là chặng đường không ngừng chuẩn hóa nền tảng pháp lý, hội tụ chuyên gia và xây dựng các trụ cột cốt lõi: Matrix Network, Matrix Connect, Matrix Ventures và Matrix Academy. Chúng tôi tin rằng mỗi ý tưởng tiềm năng khi được đặt đúng môi trường và kết nối đúng nguồn lực sẽ bứt phá mạnh mẽ để tạo nên những giá trị lâu dài cho xã hội.
+                    Hành trình của Matrix Holding là chặng đường không ngừng chuẩn hóa nền tảng pháp lý, hội tụ chuyên gia và xây dựng các trụ cột cốt lõi: Matrix Network, Matrix Connect, Matrix Business và Matrix Capital. Chúng tôi tin rằng mỗi ý tưởng tiềm năng khi được đặt đúng môi trường và kết nối đúng nguồn lực sẽ bứt phá mạnh mẽ để tạo nên những giá trị lâu dài cho xã hội.
                   </p>
                 </div>
 
@@ -246,74 +247,29 @@ export default function About() {
             </div>
           </div>
         </section>
+        <SectionDivider />
 
 
         {/* 4, 5, 6. SỨ MỆNH DOANH NGHIỆP - TẦM NHÌN CHIẾN LƯỢC - GIÁ TRỊ CỐT LÕI */}
-        <section className="section" style={{ padding: "80px 0", background: "#080c16", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-          <div className="container">
-            <div style={{ textAlign: "center", maxWidth: 740, margin: "0 auto 48px" }}>
-              <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 8 }}>
-                NỀN TẢNG PHÁT TRIỂN
-              </span>
-              <h2 style={{ color: "#ffffff", fontSize: "32px", fontWeight: 900, margin: "0 0 12px" }}>
-                Sứ mệnh, tầm nhìn và giá trị cốt lõi.
-              </h2>
-              <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", margin: 0, lineHeight: 1.65 }}>
-                Những định hướng nhất quán để Matrix Holding kiến tạo giá trị lâu dài cho doanh nghiệp và cộng đồng.
-              </p>
-            </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-              {/* 4. SỨ MỆNH DOANH NGHIỆP */}
-              <div style={{ background: "rgba(18, 24, 38, 0.85)", borderRadius: 20, padding: "30px 24px", border: "1px solid rgba(245, 158, 11, 0.45)" }} className="member-company-card">
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(245, 158, 11, 0.15)", color: "#f59e0b", display: "grid", placeItems: "center", fontSize: 15 }}><i className="fa-solid fa-hand-holding-heart" /></div>
-                  <span style={{ color: "#38bdf8", fontSize: "11.5px", fontWeight: 800 }}>⚡ SỨ MỆNH DOANH NGHIỆP</span>
-                </div>
-                <h3 style={{ color: "#ffffff", fontSize: "16px", fontWeight: 800, margin: "0 0 12px", lineHeight: 1.4 }}>Kiến tạo nền tảng để doanh nghiệp tiếp cận, mở ra cơ hội hợp tác và phát triển vượt trội.</h3>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px", lineHeight: 1.7, margin: 0, textAlign: "justify" }}>Matrix Holding mang trong mình sứ mệnh dẫn dắt, định hướng và đồng hành cùng thế hệ trẻ trên hành trình khởi nghiệp, giúp họ mở ra cơ hội để trở thành những kỳ lân trong tương lai.</p>
-              </div>
-
-              {/* 5. TẦM NHÌN CHIẾN LƯỢC */}
-              <div style={{ background: "rgba(18, 24, 38, 0.85)", borderRadius: 20, padding: "30px 24px", border: "1px solid rgba(245, 158, 11, 0.45)" }} className="member-company-card">
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(245, 158, 11, 0.15)", color: "#f59e0b", display: "grid", placeItems: "center", fontSize: 15 }}><i className="fa-solid fa-compass" /></div>
-                  <span style={{ color: "#f59e0b", fontSize: "11.5px", fontWeight: 800 }}>⚡ TẦM NHÌN CHIẾN LƯỢC</span>
-                </div>
-                <h3 style={{ color: "#ffffff", fontSize: "16px", fontWeight: 800, margin: "0 0 12px", lineHeight: 1.4 }}>Trở thành doanh nghiệp kiến tạo hệ sinh thái kinh doanh hàng đầu tại Việt Nam.</h3>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px", lineHeight: 1.7, margin: 0, textAlign: "justify" }}>Matrix Holding hướng đến việc xây dựng hệ sinh thái kinh doanh đa ngành có khả năng tạo ra giá trị thiết thực, nơi các ý tưởng kinh doanh được ươm mầm, nuôi dưỡng và phát triển.</p>
-              </div>
-
-              {/* 6. GIÁ TRỊ CỐT LÕI */}
-              <div style={{ background: "rgba(18, 24, 38, 0.85)", borderRadius: 20, padding: "30px 24px", border: "1px solid rgba(245, 158, 11, 0.45)" }} className="member-company-card">
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(245, 158, 11, 0.15)", color: "#f59e0b", display: "grid", placeItems: "center", fontSize: 15 }}><i className="fa-solid fa-lightbulb" /></div>
-                  <span style={{ color: "#38bdf8", fontSize: "11.5px", fontWeight: 800 }}>⚡ GIÁ TRỊ CỐT LÕI</span>
-                </div>
-                <h3 style={{ color: "#ffffff", fontSize: "16px", fontWeight: 800, margin: "0 0 12px", lineHeight: 1.4 }}>Ươm mầm và hiện thực hóa ý tưởng kinh doanh tiềm năng cùng thế hệ doanh nhân trẻ.</h3>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px", lineHeight: 1.7, margin: 0, textAlign: "justify" }}>Matrix Holding tạo điều kiện để các ý tưởng kinh doanh được định hình, thử nghiệm và phát triển thành những mô hình thực tế thông qua hệ sinh thái kinh doanh đa ngành.</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 7. BAN LÃNH ĐẠO */}
 
 
         {/* 8. MÔ HÌNH HOẠT ĐỘNG (04 HỆ SINH THÁI THÀNH VIÊN) */}
-        <FourEcosystems />
+
 
         {/* 9. LỊCH SỬ VÀ CÁC CỘT MỐC QUAN TRỌNG - CHUẨN SPINNER TECHCOMBANK */}
-        <section className="section" style={{ padding: "85px 0", background: "#05070f", borderBottom: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+        <section className="section" style={{ padding: "85px 0", background: "#000000", borderBottom: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
           <div className="container" style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
             {/* Header centered */}
             <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto 40px" }}>
-              <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ed1c24", boxShadow: "0 0 8px #ed1c24" }} />
+              <span data-gold-label style={{ color: "#e7bc67", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#d3a754", boxShadow: "0 0 8px #d3a754" }} />
                 HÀNH TRÌNH MATRIX HOLDING
               </span>
               <h2 style={{ color: "#ffffff", fontSize: "clamp(26px, 3.2vw, 36px)", fontWeight: 800, margin: 0, letterSpacing: "-0.01em" }}>
-                Lịch sử và các cột mốc quan trọng
+                LỊCH SỬ VÀ CÁC CỘT MỐC QUAN TRỌNG
               </h2>
             </div>
 
@@ -391,8 +347,8 @@ export default function About() {
                       right: 6,
                       height: 44,
                       borderRadius: 30,
-                      background: "#ed1c24",
-                      boxShadow: "0 4px 20px rgba(237, 28, 36, 0.55)",
+                      background: "#d3a754",
+                      boxShadow: "0 4px 20px rgba(211, 167, 84, 0.55)",
                       pointerEvents: "none",
                       zIndex: 1
                     }}
@@ -525,7 +481,7 @@ export default function About() {
                           textJustify: "inter-word"
                         }}
                       >
-                        <span style={{ color: "#ed1c24", fontWeight: 900, fontSize: "14px", marginTop: "1px", flexShrink: 0 }}>•</span>
+                        <span style={{ color: "#d3a754", fontWeight: 900, fontSize: "14px", marginTop: "1px", flexShrink: 0 }}>•</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -561,29 +517,30 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section className="section" style={{ padding: "80px 0", background: "#05070f", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <SectionDivider />
+        <section className="section" style={{ padding: "80px 0", background: "#000000", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container">
-            <div style={{ textAlign: "center", maxWidth: 740, margin: "0 auto 48px" }}>
-              <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 8 }}>
+            <div className="leadership-heading" style={{ textAlign: "center", maxWidth: 840, margin: "0 auto 48px" }}>
+              <span data-gold-label style={{ color: "#e7bc67", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 8 }}>
                 ⚡ BAN LÃNH ĐẠO
               </span>
               <h2 style={{ color: "#ffffff", fontSize: "32px", fontWeight: 900, margin: "0 0 12px" }}>
-                Đội Ngũ Điều Hành Tập Đoàn
+                ĐỘI NGŨ LÃNH ĐẠO CHIẾN LƯỢC
               </h2>
               <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "14px", margin: "0 auto", lineHeight: 1.65 }}>
                 Đội ngũ lãnh đạo chiến lược, giàu kinh nghiệm thực chiến của Matrix Holding.
               </p>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            <div className="about-three-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {TEAM_MEMBERS.map((member) => (
                 <div key={member.name} style={{ background: "rgba(18, 24, 38, 0.75)", borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.08)", boxShadow: "0 10px 30px rgba(0,0,0,0.5)" }} className="member-company-card">
-                  <div style={{ height: 260, overflow: "hidden" }}>
-                    <img src={member.image} alt={member.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: member.imagePosition || "center" }} />
+                  <div className="leadership-portrait" style={{ height: 260, overflow: "hidden" }}>
+                    <img src={member.image} alt={member.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: member.imagePosition?.replace("center", "top") || "center top" }} />
                   </div>
                   <div style={{ padding: "20px 20px" }}>
                     <h3 style={{ color: "#ffffff", fontSize: "17px", fontWeight: 800, margin: "0 0 4px" }}>{member.name}</h3>
-                    <strong style={{ color: "#38bdf8", fontSize: "12px", display: "block", marginBottom: 10 }}>{member.role}</strong>
+                    <strong style={{ color: "#e7bc67", fontSize: "12px", display: "block", marginBottom: 10 }}>{member.role}</strong>
                     <p style={{ color: "rgba(255, 255, 255, 0.65)", fontSize: "12.5px", lineHeight: 1.6, margin: 0, textAlign: "justify" }}>{member.bio}</p>
                   </div>
                 </div>
@@ -591,9 +548,10 @@ export default function About() {
             </div>
           </div>
         </section>
+        <SectionDivider />
 
         {/* 13. TUYÊN NGÔN CỦA CHỦ TỊCH */}
-        <section className="section" style={{ padding: "80px 0", background: "#05070f" }}>
+        <section className="section" style={{ padding: "80px 0", background: "#000000" }}>
           <div className="container">
             <div style={{
               display: "grid",
@@ -606,10 +564,10 @@ export default function About() {
                 <div style={{
                   position: "absolute",
                   inset: "14px -14px -14px 14px",
-                  background: "linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%)",
+                  background: "linear-gradient(135deg, #b48a42 0%, #594320 100%)",
                   borderRadius: 24,
                   zIndex: 1,
-                  boxShadow: "0 0 35px rgba(41, 151, 255, 0.3)"
+                  boxShadow: "0 0 35px rgba(231, 188, 103, 0.3)"
                 }} />
                 <div style={{
                   position: "relative",
@@ -618,7 +576,7 @@ export default function About() {
                   backdropFilter: "blur(16px)",
                   borderRadius: 24,
                   padding: 12,
-                  border: "1px solid rgba(41, 151, 255, 0.4)"
+                  border: "1px solid rgba(231, 188, 103, 0.4)"
                 }}>
                   <div style={{ borderRadius: 18, overflow: "hidden", height: 380, position: "relative" }}>
                     <img
@@ -632,21 +590,22 @@ export default function About() {
 
               {/* Quote text */}
               <div className="chairman-quote-copy">
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-                  <span style={{ height: 2, width: 24, background: "#38bdf8" }} />
+                <div data-gold-label style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#e7bc67", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+                  <span style={{ height: 2, width: 24, background: "#e7bc67" }} />
                   ⚡ TUYÊN NGÔN CỦA CHỦ TỊCH
                 </div>
                 <blockquote style={{ fontSize: "clamp(18px, 2.1vw, 25px)", fontWeight: 800, lineHeight: 1.5, color: "#ffffff", margin: "0 0 28px", letterSpacing: "-0.02em", textAlign: "justify" }}>
                   “Khởi nghiệp không chỉ cần một ý tưởng tốt, mà còn cần một người dẫn đường có tâm, một môi trường đủ điều kiện để phát triển và những cơ hội đủ lớn để trưởng thành.”
                 </blockquote>
-                <div style={{ borderLeft: "3px solid #38bdf8", paddingLeft: 16 }}>
+                <div style={{ borderLeft: "3px solid #e7bc67", paddingLeft: 16 }}>
                   <strong style={{ display: "block", color: "#ffffff", fontSize: "15px", fontWeight: 800 }}>CHỦ TỊCH CÔNG TY TNHH MATRIX HOLDING</strong>
-                  <span style={{ color: "#38bdf8", fontSize: "13px", fontWeight: 700 }}>ÔNG HỒ ANH TUÁN</span>
+                  <span style={{ color: "#e7bc67", fontSize: "13px", fontWeight: 700 }}>ÔNG HỒ ANH TUÁN</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <SectionDivider />
 
       </main>
 

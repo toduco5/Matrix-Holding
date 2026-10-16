@@ -22,8 +22,8 @@ export default function StrategicPartners() {
     let animId;
     let scrollPos = 0;
     let lastTime = performance.now();
-    // Tốc độ chạy chậm và êm (28 pixels / giây)
-    const SPEED = 28;
+    // Slow, steady marquee motion (10 pixels per second).
+    const SPEED = 10;
 
     const step = (now) => {
       const delta = (now - lastTime) / 1000;
@@ -32,9 +32,12 @@ export default function StrategicPartners() {
       // Di chuyển liên tục, không bao giờ dừng khi di chuột
       if (delta > 0 && delta < 0.2) {
         scrollPos += SPEED * delta;
-        const halfWidth = track.scrollWidth / 2;
-        if (halfWidth > 0 && scrollPos >= halfWidth) {
-          scrollPos -= halfWidth;
+        // Use the exact distance between repeated sets, including the gap.
+        const first = track.children[0];
+        const repeated = track.children[baseBrands.length];
+        const loopWidth = repeated && first ? repeated.offsetLeft - first.offsetLeft : 0;
+        if (loopWidth > 0 && scrollPos >= loopWidth) {
+          scrollPos %= loopWidth;
         }
         track.style.transform = `translate3d(-${scrollPos}px, 0, 0)`;
       }
@@ -67,7 +70,7 @@ export default function StrategicPartners() {
           }}
         >
           {/* Label: Bảo chứng bởi (Fixed left badge) */}
-          <span
+          <span className="strategic-partners-label"
             style={{
               fontSize: "11px",
               color: "#526274",
@@ -103,7 +106,7 @@ export default function StrategicPartners() {
               }}
             >
               {brands.map((brand, idx) => (
-                <span
+                <span className="strategic-partners-brand"
                   key={`${brand}-${idx}`}
                   style={{
                     fontSize: "clamp(20px, 2.3vw, 25px)",
@@ -113,14 +116,6 @@ export default function StrategicPartners() {
                     whiteSpace: "nowrap",
                     cursor: "pointer",
                     transition: "color 0.25s ease, text-shadow 0.25s ease"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#1769aa";
-                    e.currentTarget.style.textShadow = "none";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(71, 85, 105, 0.78)";
-                    e.currentTarget.style.textShadow = "none";
                   }}
                 >
                   {brand}

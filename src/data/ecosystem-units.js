@@ -1,13 +1,6 @@
 export const ECOSYSTEM_UNITS = [
   { id: "network", number: "01", name: "Matrix Network", label: "Hệ sinh thái dịch vụ toàn diện", icon: "fa-cubes", summary: "Tích hợp các năng lực tư vấn, vận hành, thương hiệu, tài chính và công nghệ để doanh nghiệp tập trung phát triển.", audiences: ["Doanh nghiệp", "Đối tác dịch vụ", "Đội ngũ vận hành"] },
   { id: "connect", number: "02", name: "Matrix Connect", label: "Hệ sinh thái kết nối kinh doanh", icon: "fa-handshake", summary: "Tạo điểm gặp giữa doanh nghiệp, chuyên gia và đối tác để hình thành các cơ hội hợp tác có cơ sở.", audiences: ["Doanh nghiệp", "Chuyên gia", "Đối tác chiến lược"] },
-  { id: "ventures", number: "03", name: "Matrix Business", label: "Hệ sinh thái kinh doanh", icon: "fa-chart-line", summary: "Xây dựng, vận hành và phát triển các mô hình kinh doanh đa ngành thông qua hợp tác sản xuất, phân phối và dự án thương mại.", audiences: ["Doanh nghiệp", "Đối tác kinh doanh", "Đội ngũ vận hành"] },
-  { id: "academy", number: "04", name: "Matrix Capital", label: "Hệ sinh thái đầu tư", icon: "fa-building-columns", summary: "Đầu tư, quản lý và phát triển vốn, gia tăng giá trị tài sản qua góp vốn, sở hữu cổ phần, liên doanh và các dự án tiềm năng.", audiences: ["Nhà đầu tư", "Chủ dự án", "Đối tác chiến lược"] }
-];
-
-export const FAQS = [
-  ["Matrix Holding hỗ trợ những hình thức hợp tác nào?", "Chúng tôi tiếp nhận nhu cầu kết nối về dịch vụ, kinh doanh, đầu tư và phát triển năng lực; sau đó xác định đầu mối phù hợp cho cuộc trao đổi ban đầu."],
-  ["Thông tin hợp tác có được bảo mật không?", "Thông tin chỉ được sử dụng nhằm đánh giá nhu cầu và sắp xếp kết nối. Các bên cần thống nhất thêm nguyên tắc bảo mật trước khi chia sẻ hồ sơ chuyên sâu."],
-  ["Matrix Holding có đại diện quyết định đầu tư không?", "Không. Mỗi nhà đầu tư và đối tác tự thực hiện thẩm định pháp lý, tài chính, vận hành và tự quyết định giao dịch của mình."],
-  ["Làm thế nào để bắt đầu?", "Gửi thông tin qua biểu mẫu liên hệ, nêu rõ tổ chức, người đại diện, mục tiêu hợp tác và những thông tin có thể chia sẻ."],
+  { id: "business", number: "03", name: "Matrix Business", label: "Hệ sinh thái kinh doanh", icon: "fa-chart-line", summary: "Xây dựng, vận hành và phát triển các mô hình kinh doanh đa ngành thông qua hợp tác sản xuất, phân phối và dự án thương mại.", audiences: ["Doanh nghiệp", "Đối tác kinh doanh", "Đội ngũ vận hành"] },
+  { id: "capital", number: "04", name: "Matrix Capital", label: "Hệ sinh thái đầu tư", icon: "fa-building-columns", summary: "Đầu tư, quản lý và phát triển vốn, gia tăng giá trị tài sản qua góp vốn, sở hữu cổ phần, liên doanh và các dự án tiềm năng.", audiences: ["Nhà đầu tư", "Chủ dự án", "Đối tác chiến lược"] }
 ];

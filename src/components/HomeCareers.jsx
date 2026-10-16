@@ -32,13 +32,13 @@ const MEMBER_COMPANIES = [
     slug: "connect"
   },
   {
-    id: "ventures",
-    name: "MATRIX VENTURES",
-    desc: "Đầu tư và đổi mới",
-    subDesc: "Ươm tạo dự án đổi mới sáng tạo và tối ưu danh mục đầu tư tăng trưởng.",
+    id: "business",
+    name: "MATRIX BUSINESS",
+    desc: "Phát triển kinh doanh",
+    subDesc: "Xây dựng, vận hành và mở rộng mô hình kinh doanh đa ngành.",
     jobsCount: 1,
     categories: ["Tài chính", "Công nghệ"],
-    slug: "ventures"
+    slug: "business"
   },
   {
     id: "strategy",

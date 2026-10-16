@@ -134,7 +134,7 @@ export default function Contact() {
                       <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(56, 189, 248, 0.15)", color: "#38bdf8", display: "grid", placeItems: "center", fontSize: 15 }}>
                         <i className="fa-solid fa-building-flag" />
                       </div>
-                      <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                      <span data-gold-label style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
                         TRỤ SỞ ĐIỀU HÀNH
                       </span>
                     </div>
@@ -223,7 +223,7 @@ export default function Contact() {
                       <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(56, 189, 248, 0.15)", color: "#38bdf8", display: "grid", placeItems: "center", fontSize: 15 }}>
                         <i className="fa-solid fa-shield-halved" />
                       </div>
-                      <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                      <span data-gold-label style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
                         HỒ SƠ PHÁP NHÂN
                       </span>
                     </div>
@@ -320,7 +320,7 @@ export default function Contact() {
               {/* Form Header */}
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 32 }}>
                 <div>
-                  <span style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 8 }}>
+                  <span data-gold-label style={{ color: "#38bdf8", fontSize: "11px", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 8 }}>
                     BẮT ĐẦU MỘT CUỘC TRAO ĐỔI
                   </span>
                     <h2 style={{ color: "#ffffff", fontSize: "28px", fontWeight: 900, margin: "0 0 8px", lineHeight: 1.25 }}>

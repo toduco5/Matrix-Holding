@@ -1,215 +1,81 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FEATURED_NEWS, NEWS_ITEMS } from "../data/news.js";
 
-const imageUrl = (image) => `https://images.unsplash.com/${image}`;
+const newsIllustrations = [
+  '/assets/news-auditorium-gold.png',
+  '/assets/news-headquarters-gold.png',
+  '/assets/news-investment-gold.png',
+];
 
 export default function HomeNews() {
-  const latestStories = [FEATURED_NEWS, ...NEWS_ITEMS].slice(0, 4);
-
+  const trackRef = useRef(null);
+  const dragRef = useRef(null);
+  const latestStories = [FEATURED_NEWS, ...NEWS_ITEMS];
+  const move = direction => {
+    const track = trackRef.current;
+    const card = track?.querySelector('article');
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+    track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  };
+  const startDrag = event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    dragRef.current = { x: event.clientX, left: event.currentTarget.scrollLeft, moved: false };
+  };
+  const drag = event => {
+    const state = dragRef.current;
+    if (!state) return;
+    const distance = event.clientX - state.x;
+    if (Math.abs(distance) > 6) {
+      state.moved = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+      event.currentTarget.classList.add('is-dragging');
+      event.currentTarget.scrollLeft = state.left - distance;
+    }
+  };
+  const stopDrag = event => {
+    event.currentTarget.classList.remove('is-dragging');
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    if (dragRef.current) dragRef.current.active = false;
+  };
   return (
-    <section
-      className="section home-news-section"
-      style={{ padding: "80px 0", background: "var(--navy, #05070f)" }}
-    >
+    <section className="section home-news-section" aria-labelledby="home-news-title">
       <div className="container">
-        {/* Section Heading */}
-        <div
-          className="section-heading-row"
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            marginBottom: 40,
-          }}
-        >
+        <div className="home-news-heading">
           <div>
-            <span
-              style={{
-                display: "inline-block",
-                color: "#38bdf8",
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                marginBottom: 12,
-              }}
-            >TIN TỨC & CẬP NHẬT</span>
-            <h2
-              style={{
-                color: "#ffffff",
-                fontSize: "clamp(28px, 3.6vw, 42px)",
-                fontWeight: 800,
-                letterSpacing: "-0.02em",
-                margin: 0,
-                fontFamily: "'Be Vietnam Pro', sans-serif",
-              }}
-            >
-              TIN TỨC & SỰ KIỆN
-            </h2>
-            <p
-              style={{
-                color: "rgba(255, 255, 255, 0.7)",
-                fontSize: "15px",
-                margin: "0 auto",
-                maxWidth: 500,
-                lineHeight: 1.6,
-              }}
-            >
-              Cập nhật hoạt động và những bước phát triển của Doanh Nghiệp
-            </p>
+            <p className="eyebrow">NEWS</p>
+            <h2 id="home-news-title">TIN TỨC MỚI NHẤT</h2>
+            <p className="home-news-intro">Cập nhật những hoạt động, sự kiện và câu chuyện phát triển từ MATRIX HOLDING.</p>
+          </div>
+          <div className="home-news-controls">
+            <button type="button" onClick={() => move(-1)} aria-label="Tin trước"><i className="fa-solid fa-arrow-left" aria-hidden="true" /></button>
+            <button type="button" onClick={() => move(1)} aria-label="Tin tiếp theo"><i className="fa-solid fa-arrow-right" aria-hidden="true" /></button>
           </div>
         </div>
-
-        {/* Featured story with three supporting news cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 24,
-          }}
-          className="home-news-grid"
-        >
+        <div className="home-news-track" ref={trackRef} tabIndex={0} role="region" aria-label="Danh sách tin tức, trượt ngang để xem thêm"
+          onPointerDown={startDrag} onPointerMove={event => { if (event.buttons === 1) drag(event); }} onPointerUp={stopDrag}
+          onPointerCancel={event => { dragRef.current = null; event.currentTarget.classList.remove('is-dragging'); }}
+          onDragStart={event => event.preventDefault()}
+          onClickCapture={event => { if (dragRef.current?.moved) { event.preventDefault(); event.stopPropagation(); dragRef.current = null; } }}
+          onKeyDown={event => { if (event.target === event.currentTarget && ['ArrowLeft', 'ArrowRight'].includes(event.key)) { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); } }}>
           {latestStories.map((item, index) => (
-            <article
-              key={item.id || item.slug}
-              style={{
-                background: "rgba(15, 23, 42, 0.6)",
-                border: "1px solid rgba(255, 255, 255, 0.08)",
-                borderRadius: 16,
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                transition: "all 0.35s ease",
-                backdropFilter: "blur(8px)",
-              }}
-              className={`home-news-card${index === 0 ? " home-news-card--featured" : " home-news-card--supporting"}`}
-            >
-              {/* Image Container */}
-              <div
-                style={{
-                  height: 210,
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={imageUrl(item.image)}
-                  alt={item.title}
-                  loading="lazy"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    transition: "transform 0.5s ease",
-                  }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    top: 14,
-                    left: 14,
-                    background: "rgba(0,0,0,0.75)",
-                    backdropFilter: "blur(6px)",
-                    color: "#ffffff",
-                    fontSize: "10px",
-                    fontWeight: 800,
-                    padding: "4px 10px",
-                    borderRadius: "50px",
-                    letterSpacing: "0.08em",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                  }}
-                >
-                  {item.category}
-                </span>
-              </div>
-
-              {/* Content Body */}
-              <div
-                style={{
-                  padding: "24px",
-                  display: "flex",
-                  flexDirection: "column",
-                  flex: 1,
-                  justifyContent: "space-between",
-                }}
-              >
-                <div>
-                  <span
-                    style={{
-                      color: "#64748b",
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      display: "block",
-                      marginBottom: 8,
-                    }}
-                  >
-                    {item.date}{item.time ? ` · ${item.time}` : ""}
-                  </span>
-
-                  <h3
-                    style={{
-                      color: "#ffffff",
-                      fontSize: "17px",
-                      fontWeight: 700,
-                      lineHeight: 1.45,
-                      margin: "0 0 12px",
-                      height: "50px",
-                      display: "-webkit-box",
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      textAlign: "justify",
-                      textJustify: "inter-word",
-                      fontFamily: "'Be Vietnam Pro', sans-serif",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      color: "rgba(255, 255, 255, 0.72)",
-                      fontSize: "13px",
-                      lineHeight: 1.63,
-                      margin: "0 0 20px",
-                      height: "64px",
-                      display: "-webkit-box",
-                      WebkitLineClamp: 3,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      textAlign: "justify",
-                      textJustify: "inter-word",
-                    }}
-                  >
-                    {item.excerpt}
-                  </p>
-                </div>
-
-                <Link
-                  to={`/news/${item.slug}`}
-                  style={{
-                    color: "#2997ff",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                  }}
-                >
-                  Đọc bài viết{" "}
-                  <i
-                    className="fa-solid fa-arrow-right"
-                    style={{ fontSize: 10 }}
-                  />
-                </Link>
+            <article className="home-news-card" key={item.slug}>
+              <Link className="home-news-image" to={'/news/' + item.slug} tabIndex={-1} aria-hidden="true" draggable={false}>
+                <img src={newsIllustrations[index % newsIllustrations.length]} alt="" loading="lazy" draggable={false} />
+              </Link>
+              <div className="home-news-copy">
+                <div className="home-news-meta"><time>{item.date}{item.time ? ' · ' + item.time : ''}</time></div>
+                <h3><Link to={'/news/' + item.slug}>{item.title}</Link></h3>
+                <Link className="home-news-read" to={'/news/' + item.slug} aria-label={'Đọc bài viết: ' + item.title}><i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
+                <span className="home-news-topic">{item.topic || "Tin tức"}</span>
               </div>
             </article>
           ))}
         </div>
-        <Link className="home-news-all-link" to="/news">
-          Xem toàn bộ tin tức <i className="fa-solid fa-arrow-right" />
-        </Link>
+        <div className="home-news-bottom">
+          <Link className="home-news-view-all" to="/news">Xem tất cả <i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
+        </div>
       </div>
     </section>
   );
