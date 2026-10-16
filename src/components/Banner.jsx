@@ -87,7 +87,7 @@ export default function Banner() {
         <div className="hero-architecture-container">
           <div className="hero-architecture-copy">
             <p className="hero-architecture-label home-section-label">MATRIX HOLDING</p>
-            <h1 id="home-hero-title"><span className="hero-title-line">HỆ SINH THÁI</span><span className="hero-title-line">KINH DOANH</span><span className="hero-title-line">ĐA NGÀNH</span></h1>
+            <h1 id="home-hero-title"><span className="hero-title-line">HỆ SINH THÁI</span><span className="hero-title-line hero-title-accent">KINH DOANH</span><span className="hero-title-line hero-title-accent">ĐA NGÀNH</span></h1>
             <p className="hero-architecture-description">Chúng tôi kiến tạo môi trường kinh doanh minh bạch và hiệu quả, nơi các doanh nghiệp có thể tiếp cận nhiều nguồn lực đa dạng và mở ra cơ hội phát triển bền vững.</p>
             <Link to="/sectors" className="hero-architecture-button">Khám phá Matrix Holding <i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
           </div>

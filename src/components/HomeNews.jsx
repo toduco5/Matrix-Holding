@@ -65,10 +65,9 @@ export default function HomeNews() {
                 <img src={newsIllustrations[index % newsIllustrations.length]} alt="" loading="lazy" draggable={false} />
               </Link>
               <div className="home-news-copy">
+                <span className="home-news-topic">{item.topic || "Tin tức"}</span>
                 <div className="home-news-meta"><time>{item.date}{item.time ? ' · ' + item.time : ''}</time></div>
                 <h3><Link to={'/news/' + item.slug}>{item.title}</Link></h3>
-                <Link className="home-news-read" to={'/news/' + item.slug} aria-label={'Đọc bài viết: ' + item.title}><i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
-                <span className="home-news-topic">{item.topic || "Tin tức"}</span>
               </div>
             </article>
           ))}

@@ -4,12 +4,32 @@ export default function StrategicPartners() {
   const trackRef = useRef(null);
 
   const baseBrands = [
-    "Forbes",
-    "Bloomberg",
-    "TechCrunch",
-    "WSJ",
-    "CNBC",
-    "FinancialTimes"
+    "TECHCOMBANK",
+    "MASUTO",
+    "TRIOBLADE VIETNAM",
+    "VUA NEM",
+    "JBL",
+    "FARINA",
+    "DREAMPOOL FITNESS AND YOGA",
+    "BO TO QUAN MOC",
+    "TRONG DONG PALACE",
+    "HOANG HA MOBILE",
+    "EMS FITNESS AND YOGA",
+    "SAMIE BEAUTY CENTER",
+    "SHILA SPA",
+    "HEROS FITNESS AND YOGA",
+    "INFINITY FITNESS",
+    "TIDI ACADEMY",
+    "T&G MEDIA",
+    "NEWERA MEDIA",
+    "FRAME RENTAL",
+    "155 MEDIA",
+    "KHO DA GMC",
+    "AKC ENGINEERING",
+    "MICHELIN COFFE",
+    "HANU CHICKEN",
+    "TRAI NUOI BIEN",
+    "TENNO GROUP"
   ];
 
   // Repeat brands 4 times for seamless infinite looping

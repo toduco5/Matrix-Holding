@@ -17,12 +17,12 @@
 .home-news-card:hover .home-news-image img { transform:scale(1.04); }
 .home-news-card::after { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(90deg,#080909e8 0%,#080909b0 44%,#08090915 100%),linear-gradient(0deg,#0809099c,transparent 60%); }
 :root:root:root[data-theme] .page-home .home-news-track .home-news-card .home-news-copy { display:flex; flex-direction:column; align-items:flex-start; padding:24px; width:100%; background:transparent!important; }
-.home-news-meta { margin-bottom:9px; font:400 10px/1.5 Inter,sans-serif; color:#aaa79f; }
+.home-news-meta { margin-top:auto; margin-bottom:9px; padding-top:60px; font:400 10px/1.5 Inter,sans-serif; color:#aaa79f; }
 :root:root[data-theme] .page-home .home-news-copy h3 { margin:0 0 18px; width:76%; height:auto!important; max-height:none!important; color:#eeeae2!important; font:500 clamp(15px,1.1vw,18px)/1.5 Inter,sans-serif; text-align:left!important; text-wrap:pretty; }
 :root:root[data-theme] .page-home .home-news-copy h3 a { color:inherit!important; -webkit-text-fill-color:currentColor!important; }
 .home-news-read { flex-shrink:0; width:32px; height:32px; font-size:11px; }
 :root:root:root[data-theme] .page-home .home-news-card .home-news-read { color:#d3ad72!important; background:#10110f80!important; }
-.home-news-topic { margin-top:auto; padding:5px 10px; border:1px solid #b48c5166; border-radius:20px; color:#d8c5a8; background:#25221899; font:500 9px/1.2 Inter,sans-serif; letter-spacing:.06em; text-transform:uppercase; }
+.home-news-topic { margin:0; padding:5px 10px; border:1px solid #b48c5166; border-radius:20px; color:#d8c5a8; background:#25221899; font:500 9px/1.2 Inter,sans-serif; letter-spacing:.06em; text-transform:uppercase; }
 .home-news-bottom { display:flex; justify-content:center; margin-top:24px; }
 .home-news-view-all { display:inline-flex; gap:18px; align-items:center; color:#c6a36c; font:500 11px/1.5 Inter,sans-serif; }
 .home-news-section :is(a,button,.home-news-track):focus-visible { outline:2px solid #e7bc67; outline-offset:3px; }
