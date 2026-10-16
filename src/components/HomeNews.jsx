@@ -44,7 +44,7 @@ export default function HomeNews() {
       <div className="container">
         <div className="home-news-heading">
           <div>
-            <p className="eyebrow">NEWS</p>
+            <p className="eyebrow home-section-label">TIN TỨC & CẬP NHẬT</p>
             <h2 id="home-news-title">TIN TỨC MỚI NHẤT</h2>
             <p className="home-news-intro">Cập nhật những hoạt động, sự kiện và câu chuyện phát triển từ MATRIX HOLDING.</p>
           </div>

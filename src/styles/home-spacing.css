@@ -1,0 +1,53 @@
+.page-home {
+  --home-gutter: 56px;
+  --home-content-width: min(1600px, calc(100% - var(--home-gutter) * 2));
+  --home-section-space: 64px;
+}
+
+:root:root:root[data-theme] .page-home :is(
+  .matrix-ecosystem-stage,
+  .home-news-section > .container,
+  .partner-cta-section > .container,
+  .strategic-partners > section > div,
+  .footer > .container
+) {
+  width: var(--home-content-width) !important;
+  max-width: 1600px !important;
+  margin-inline: auto !important;
+}
+
+:root:root:root[data-theme] .page-home main > :is(
+  .about-introduction,
+  .matrix-ecosystem,
+  .home-news-section,
+  .partner-cta-section
+) {
+  margin-block: 0 !important;
+  padding-block: var(--home-section-space) !important;
+}
+
+:root:root:root[data-theme] .page-home .section-divider {
+  width: var(--home-content-width);
+  height: 28px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 18px;
+}
+
+:root:root:root[data-theme] .page-home .strategic-partners + .section-divider {
+  display: none !important;
+}
+
+/* The ornament is the only border between the CTA and footer. */
+:root:root:root[data-theme] .page-home > .footer {
+  border-top: 0 !important;
+}
+
+@media (max-width: 1000px) {
+  .page-home { --home-gutter: 24px; --home-section-space: 48px; }
+}
+@media (max-width: 600px) {
+  .page-home { --home-gutter: 18px; --home-section-space: 36px; }
+  :root:root:root[data-theme] .page-home .section-divider { height: 22px; gap: 14px; }
+}

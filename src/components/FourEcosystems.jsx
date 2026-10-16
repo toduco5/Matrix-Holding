@@ -12,6 +12,7 @@ export default function FourEcosystems() {
     <section className="section matrix-ecosystem" aria-labelledby="ecosys-heading">
       <div className="matrix-ecosystem-stage">
         <header className="matrix-ecosystem-heading">
+          <p className="home-section-label">KẾT NỐI • HỢP TÁC • PHÁT TRIỂN</p>
           <h2 id="ecosys-heading">HỆ SINH THÁI</h2>
           <span className="matrix-ecosystem-heading-rule" aria-hidden="true" />
           <p>Bốn hệ sinh thái, cùng kiến tạo giá trị bền vững.</p>

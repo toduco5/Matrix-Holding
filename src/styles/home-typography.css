@@ -22,12 +22,12 @@
 :root:root:root[data-theme] .page-home main :is(
   .hero-architecture-description,
   .introduction-description,
-  .matrix-ecosystem-heading p,
+  .matrix-ecosystem-heading p:not(.home-section-label),
   .matrix-ecosystem-panel p,
   .home-news-intro,
   .cooperation-heading > p:not(.eyebrow),
   .cooperation-copy > p,
-  .partner-cta-copy p
+  .partner-cta-copy p:not(.home-section-label)
 ) {
   font-family: "Inter", sans-serif !important;
   font-size: var(--home-description-size) !important;
@@ -35,3 +35,23 @@
   line-height: 1.8 !important;
   letter-spacing: normal !important;
 }
+
+:root:root:root:root[data-theme] .page-home main .home-section-label {
+  display: block;
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  color: #aaa49b !important;
+  font: 500 10px/1.5 "Inter", sans-serif !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase;
+}
+
+:root:root:root[data-theme] .page-home main :is(
+  .introduction-copy h2,
+  .matrix-ecosystem-heading h2,
+  .home-news-heading h2,
+  .cooperation-heading h2,
+  .partner-cta-copy h2
+) { margin-bottom: 26px !important; }
+
+.page-home .matrix-ecosystem-heading-rule { display: none; }

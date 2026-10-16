@@ -22,7 +22,7 @@
 }
 :root:root[data-theme] .page-home .hero-architecture h1 .hero-title-line { display: block; color: inherit; white-space: nowrap; }
 :root:root[data-theme] .page-home .hero-architecture h1 .hero-title-accent { color: #cf9e69; font-weight: 400; }
-:root:root[data-theme] .page-home .hero-architecture-description { margin: 0 0 24px; max-width: 470px; color: #bdbdb8 !important; font: 400 clamp(14px, 1.05vw, 16px)/1.65 "Inter", sans-serif; text-align: left; text-wrap: pretty; }
+:root:root[data-theme] .page-home .hero-architecture-description { margin: 0 0 28px; max-width: 52ch; color: #bdbdb8 !important; font: 400 clamp(14px, 1.05vw, 16px)/1.65 "Inter", sans-serif; text-align: left; text-wrap: balance; }
 .hero-architecture-button { display: inline-flex; align-items: center; gap: 28px; padding: 14px 24px; border: 1px solid #b4915b; border-radius: 999px; color: #eee1c9; background: linear-gradient(100deg, #4e361d99, #85704b77); font: 500 11px/1.4 "Inter", sans-serif; letter-spacing: .09em; text-transform: uppercase; transition: background .25s; }
 .hero-architecture-button:hover { background: #a5824244; }
 .hero-architecture-button i { color: #d0ab70; }

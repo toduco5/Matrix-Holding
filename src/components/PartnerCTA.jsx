@@ -6,6 +6,7 @@ export default function PartnerCTA() {
       <div className="container">
         <div className="partner-cta-panel">
           <div className="partner-cta-copy">
+            <p className="home-section-label">ĐỒNG HÀNH CÙNG MATRIX HOLDING</p>
             <h2 id="partner-cta-title">SẴN SÀNG ĐỒNG HÀNH<br />CÙNG <span>MATRIX HOLDING?</span></h2>
             <p>Kết nối cơ hội, phát triển năng lực kinh doanh và kiến tạo tăng trưởng bền vững<br className="partner-cta-desktop-break" /> cùng hệ sinh thái MATRIX HOLDING.</p>
           </div>

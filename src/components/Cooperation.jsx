@@ -12,7 +12,7 @@ export default function Cooperation() {
     <section className="section cooperation-section" aria-labelledby="cooperation-title">
       <div className="cooperation-fullwidth">
         <header className="cooperation-heading">
-          <p className="eyebrow">QUAN HỆ HỢP TÁC</p>
+          <p className="eyebrow home-section-label">QUAN HỆ HỢP TÁC</p>
           <h2 id="cooperation-title">KẾT NỐI NGUỒN LỰC<br />CÙNG KIẾN TẠO GIÁ TRỊ</h2>
           <p>Matrix Holding hướng tới mối quan hệ hợp tác bền vững, dựa trên sự tin cậy, năng lực bổ trợ và mục tiêu chung.</p>
         </header>

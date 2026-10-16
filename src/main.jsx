@@ -25,6 +25,7 @@ import "./styles/site-layout.css";
 import "./styles/strategic-partners.css";
 import "./styles/hero-architecture.css";
 import "./styles/home-typography.css";
+import "./styles/home-spacing.css";
 import CursorGlow from "./components/CursorGlow.jsx";
 
 import { LanguageProvider } from "./context/LanguageContext.jsx";

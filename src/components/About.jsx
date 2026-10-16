@@ -22,8 +22,8 @@ export default function About() {
         <path d="M0 160 C300 345 500 420 800 420 C1100 420 1300 345 1600 160" fill="none" stroke="url(#intro-gold-line)" strokeWidth=".7" opacity=".55" />
       </svg>
       <div className="introduction-copy">
-        <p className="introduction-label">GIỚI THIỆU</p>
-        <h2 id="introduction-title">MATRIX <span>HOLDING</span></h2>
+        <p className="introduction-label home-section-label">GIỚI THIỆU</p>
+        <h2 id="introduction-title">MATRIX HOLDING</h2>
         <p className="introduction-description">
           <span className="introduction-sentence">Matrix Holding là doanh nghiệp tư vấn, đầu tư và phát triển hệ sinh thái kinh doanh đa ngành tại Việt Nam.</span>{" "}
           <span className="introduction-sentence">Thông qua kết nối nguồn lực, chúng tôi cùng doanh nghiệp và đối tác</span>{" "}

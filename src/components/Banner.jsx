@@ -86,15 +86,12 @@ export default function Banner() {
         <div className="hero-architecture-shade" aria-hidden="true" />
         <div className="hero-architecture-container">
           <div className="hero-architecture-copy">
-            <p className="hero-architecture-label">MATRIX HOLDING</p>
-            <h1 id="home-hero-title"><span className="hero-title-line">HỆ SINH THÁI</span><span className="hero-title-line">KINH DOANH</span><span className="hero-title-line hero-title-accent">ĐA NGÀNH</span></h1>
-            <p className="hero-architecture-description">Chúng tôi tập trung xây dựng một môi trường kinh doanh hiệu quả.<br />Các doanh nghiệp có thể tiếp cận nhiều nguồn lực, mở rộng cơ hội và phát triển bền vững.</p>
+            <p className="hero-architecture-label home-section-label">MATRIX HOLDING</p>
+            <h1 id="home-hero-title"><span className="hero-title-line">HỆ SINH THÁI</span><span className="hero-title-line">KINH DOANH</span><span className="hero-title-line">ĐA NGÀNH</span></h1>
+            <p className="hero-architecture-description">Chúng tôi kiến tạo môi trường kinh doanh minh bạch và hiệu quả, nơi các doanh nghiệp có thể tiếp cận nhiều nguồn lực đa dạng và mở ra cơ hội phát triển bền vững.</p>
             <Link to="/sectors" className="hero-architecture-button">Khám phá Matrix Holding <i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
           </div>
         </div>
-        <button className="hero-scroll-down" type="button" aria-label="Cuộn xuống phần giới thiệu" onClick={() => document.getElementById("about-overview")?.scrollIntoView({behavior:"smooth",block:"start"})}>
-          <span>CUỘN XUỐNG</span><i className="fa-solid fa-chevron-down" aria-hidden="true" />
-        </button>
       </section>
       <LiveTicker />
     </>
