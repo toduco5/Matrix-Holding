@@ -22,7 +22,7 @@ export default function StrategicPartners() {
     "TIDI ACADEMY",
     "NEWERA",
     "FRAME RENTAL",
-    "155 MEDIA",
+    "1995 MEDIA",
     "KHO DA GMC",
     "AKC ENGINEERING",
     "MICHELIN COFFE",
