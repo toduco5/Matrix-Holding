@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 const units = [
-  { slug: "network", name: "NETWORK", description: "Kết nối cộng đồng doanh nghiệp và nguồn lực phát triển." },
-  { slug: "connect", name: "CONNECT", description: "Mở rộng quan hệ, thúc đẩy giao thương và hợp tác." },
-  { slug: "business", name: "BUSINESS", description: "Xây dựng và phát triển các mô hình kinh doanh đa ngành." },
-  { slug: "capital", name: "CAPITAL", description: "Kết nối đầu tư, quản lý và phát triển nguồn vốn." },
+  { slug: "network", name: "NETWORK", description: "" },
+  { slug: "connect", name: "CONNECT", description: "" },
+  { slug: "business", name: "BUSINESS", description: "" },
+  { slug: "capital", name: "CAPITAL", description: "" },
 ];
 
 export default function FourEcosystems() {
@@ -12,10 +12,10 @@ export default function FourEcosystems() {
     <section className="section matrix-ecosystem" aria-labelledby="ecosys-heading">
       <div className="matrix-ecosystem-stage">
         <header className="matrix-ecosystem-heading">
-          <p className="home-section-label">KẾT NỐI • HỢP TÁC • PHÁT TRIỂN</p>
-          <h2 id="ecosys-heading">HỆ SINH THÁI</h2>
+          <p className="home-section-label">HỆ SINH THÁI</p>
+          <h2 id="ecosys-heading">KHÁM PHÁ HỆ SINH THÁI MATRIX HOLDING</h2>
           <span className="matrix-ecosystem-heading-rule" aria-hidden="true" />
-          <p>Bốn hệ sinh thái, cùng kiến tạo giá trị bền vững.</p>
+          <p>Mỗi đơn vị đảm nhiệm một vai trò riêng, cùng nhau hướng đến mục tiêu tạo ra cơ hội và giá trị cho cộng đồng.</p>
         </header>
         <div className="matrix-ecosystem-scroll">
           <div className="matrix-ecosystem-panels">

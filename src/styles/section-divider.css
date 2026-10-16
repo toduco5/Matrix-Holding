@@ -1,4 +1,5 @@
 :is(.page-home, .about-page) .section-divider {
+  display: none !important;
   position: relative;
   z-index: 1;
   isolation: isolate;

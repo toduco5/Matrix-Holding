@@ -25,9 +25,7 @@ export default function About() {
         <p className="introduction-label home-section-label">GIỚI THIỆU</p>
         <h2 id="introduction-title">MATRIX HOLDING</h2>
         <p className="introduction-description">
-          <span className="introduction-sentence">Matrix Holding là doanh nghiệp tư vấn, đầu tư và phát triển hệ sinh thái kinh doanh đa ngành tại Việt Nam.</span>{" "}
-          <span className="introduction-sentence">Thông qua kết nối nguồn lực, chúng tôi cùng doanh nghiệp và đối tác</span>{" "}
-          <span className="introduction-sentence">mở rộng cơ hội hợp tác, phát triển năng lực và kiến tạo giá trị bền vững.</span>
+          Matrix Holding là doanh nghiệp hoạt động trong lĩnh vực đầu tư và phát triển hệ sinh thái đa ngành,<br />hướng đến mục tiêu trở thành đơn vị đồng hành cùng thế hệ trẻ trên hành trình khởi nghiệp, <br />góp phần tạo ra giá trị thiết thực cho cộng đồng và xã hội.
         </p>
         <Link className="introduction-link" to="/gioi-thieu">TÌM HIỂU THÊM <i className="fa-solid fa-arrow-right" aria-hidden="true" /></Link>
       </div>

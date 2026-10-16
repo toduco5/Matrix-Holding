@@ -5,17 +5,20 @@ export default function PartnerCTA() {
     <section className="section partner-cta-section" aria-labelledby="partner-cta-title">
       <div className="container">
         <div className="partner-cta-panel">
+          <br />
+          <br />
           <div className="partner-cta-copy">
+            <br />
             <p className="home-section-label">ĐỒNG HÀNH CÙNG MATRIX HOLDING</p>
-            <h2 id="partner-cta-title">SẴN SÀNG ĐỒNG HÀNH<br />CÙNG <span>MATRIX HOLDING?</span></h2>
-            <p>Kết nối cơ hội, phát triển năng lực kinh doanh và kiến tạo tăng trưởng bền vững<br className="partner-cta-desktop-break" /> cùng hệ sinh thái MATRIX HOLDING.</p>
+            <h2 id="partner-cta-title">SẴN SÀNG ĐỒNG HÀNH CÙNG <span>MATRIX HOLDING?</span></h2>
           </div>
+          <br />
           <div className="partner-cta-actions">
             <Link to="/sectors" className="partner-cta-button partner-cta-button--primary">
-              Khám phá hệ sinh thái <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+             Liên hệ chúng tôi  <i className="fa-solid fa-arrow-right" aria-hidden="true" />
             </Link>
             <Link to="/contact?interest=opportunity" className="partner-cta-button partner-cta-button--secondary">
-              Liên hệ hợp tác <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+              Xem cơ hội hợp tác <i className="fa-solid fa-arrow-right" aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -74,7 +74,7 @@ export const NEWS_ITEMS = [
     category: "Matrix Network",
     date: "01/10/2026",
     time: "09:00",
-    title: "CÔNG BỐ THƯƠNG HIỆU THÀNH VIÊN THUỘC HỆ SINH THÁI KINH DOANH ĐA NGÀNH CỦA MATRIX HOLDING",
+    title: "CÔNG BỐ HỆ THỐNG THƯƠNG HIỆU THÀNH VIÊN THUỘC HỆ SINH THÁI MATRIX HOLDING",
     excerpt: "Các thương hiệu thành viên cùng tạo nên hệ sinh thái kinh doanh đa ngành của Matrix Holding, kết nối năng lực và cơ hội hợp tác cho doanh nghiệp.",
     image: "photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=84",
     author: "Nguyễn Tuyết Nhi · Ban Biên Tập Matrix",
@@ -91,7 +91,7 @@ export const NEWS_ITEMS = [
     category: "Matrix Holding",
     date: "01/10/2026",
     time: "09:00",
-    title: "GIỚI THIỆU MÔ HÌNH KINH DOANH VÀ ĐỊNH HƯỚNG PHÁT TRIỂN CỦA MATRIX HOLDING",
+    title: `GIỚI THIỆU MÔ HÌNH KINH DOANH VÀ ĐỊNH HƯỚNG PHÁT TRIỂN CỦA MATRIX HOLDING`,
     excerpt: "Tìm hiểu mô hình kinh doanh đa ngành và định hướng phát triển hệ sinh thái của Matrix Holding.",
     image: "photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=84",
     author: "Nguyễn Tuyết Nhi · Ban Biên Tập Matrix",
@@ -101,38 +101,7 @@ export const NEWS_ITEMS = [
       "Matrix Holding hỗ trợ trao đổi ban đầu; các bên tự chịu trách nhiệm về đánh giá và quyết định giao dịch."
     ]
   },
-  {
-    id: "community",
-    slug: "hop-tac-kinh-doanh-ben-vung",
-    topic: "Kiến trúc",
-    category: "Matrix Connect",
-    date: "18/09/2026",
-    title: "Hồi sinh kiến trúc gỗ: Khi bản sắc truyền thống hòa nhập đô thị số",
-    excerpt: "Hành trình phục dựng các công trình mang đậm dấu ấn bản địa kết hợp vật liệu sinh thái và giải pháp công nghệ thông minh thời đại mới.",
-    image: "photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=84",
-    author: "Trần Minh Đức · Chuyên gia Kiến trúc",
-    body: [
-      "Một quan hệ hợp tác hiệu quả bắt đầu từ việc xác định vấn đề cần giải quyết và giá trị mỗi bên có thể đóng góp.",
-      "Các bên cần làm rõ phạm vi công việc, quyền sử dụng thông tin, cơ chế ra quyết định và cách đánh giá kết quả.",
-      "Matrix Connect tạo điều kiện cho cuộc trao đổi ban đầu giữa doanh nghiệp, chuyên gia và đối tác tiềm năng."
-    ]
-  },
-  {
-    id: "startup",
-    slug: "hoc-tap-va-nang-luc-doanh-nghiep",
-    topic: "Hạ tầng",
-    category: "Matrix Network",
-    date: "24/09/2026",
-    title: "Bài toán nguồn lực dự án đường sắt: Kinh nghiệm quốc tế và nội địa",
-    excerpt: "Phân tích chuyên sâu từ các chuyên gia tài chính và hạ tầng về giải pháp huy động vốn và đào tạo chuyển giao công nghệ cho doanh nghiệp.",
-    image: "photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=84",
-    author: "Phạm Minh Hoàng · Viện Nghiên cứu Matrix",
-    body: [
-      "Đào tạo tạo tác động tốt hơn khi người học biết năng lực nào cần phát triển và có cơ hội áp dụng ngay vào công việc.",
-      "Chương trình có thể kết hợp kiến thức nền, trao đổi với chuyên gia, thực hành theo tình huống và kế hoạch ứng dụng sau đào tạo.",
-      "Matrix Network hướng tới kết nối tri thức quản trị và chuyên môn với nhu cầu phát triển của lãnh đạo và cộng đồng."
-    ]
-  }
+
 ];
 
 export const OLDER_NEWS = [

@@ -1,17 +1,16 @@
 
 /* Four architectural scenes composed like the supplied ecosystem reference. */
 :root:root[data-theme] .page-home main > .matrix-ecosystem { padding:48px 0 !important; background:#000 !important; }
-.matrix-ecosystem-stage { position:relative; width:min(1600px,calc(100% - 112px)); margin:0 auto; background:#050605; border:1px solid #ffffff0a; }
+.matrix-ecosystem-stage { position:relative; width:min(1600px,calc(100% - 112px)); margin:0 auto; background:#050605; border:0; }
 .matrix-ecosystem-heading { position:relative; z-index:3; width:100%; padding:0 24px 36px; box-sizing:border-box; background:#000; text-align:center; }
 :root:root[data-theme] .page-home .matrix-ecosystem-heading h2 { margin:0; color:#eeede8 !important; font:500 clamp(32px,3.8vw,58px)/1.1 Manrope,Inter,sans-serif; letter-spacing:.025em; }
 .matrix-ecosystem-heading-rule { display:block; width:36px; height:2px; margin:18px auto; background:#bca06a; }
 :root:root[data-theme] .page-home .matrix-ecosystem-heading p { margin:0; color:#bdbcb7 !important; font-size:13px; line-height:1.6; }
 .matrix-ecosystem-scroll { overflow-x:auto; scrollbar-width:none; }
 .matrix-ecosystem-scroll::-webkit-scrollbar { display:none; }
-.matrix-ecosystem-panels { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); aspect-ratio:2.5/1; min-height:520px; background:url('/assets/ecosystem-reference-panorama.png') center/100% 100% no-repeat; }
-.matrix-ecosystem-panel { position:relative; display:flex; align-items:flex-end; min-width:0; padding:0 clamp(22px,3.2vw,48px) 26px; text-decoration:none; background:linear-gradient(180deg,transparent 40%,#0007 65%,#000c 100%); }
-.matrix-ecosystem-panel::after { content:''; position:absolute; top:100px; right:0; bottom:0; width:1px; background:linear-gradient(180deg,#b99b5e12,#b99b5e66); }
-.matrix-ecosystem-panel:last-child::after { display:none; }
+/* Match the four scene boundaries in the shared panoramic artwork. */
+.matrix-ecosystem-panels { display:grid; grid-template-columns:27.46% 22.66% 22.52% 27.36%; aspect-ratio:2.5/1; min-height:520px; background:url('/assets/ecosystem-reference-panorama.png') center/100% 100% no-repeat; }
+.matrix-ecosystem-panel { position:relative; display:flex; align-items:flex-end; min-width:0; padding:0 16px 14px; text-decoration:none; background:linear-gradient(180deg,transparent 40%,#0007 65%,#000c 100%); }
 .matrix-ecosystem-copy { position:relative; z-index:1; width:100%; }
 :root:root[data-theme] .page-home .matrix-ecosystem-panel h3 { font-weight: 400 !important; letter-spacing: .07em !important; }
 .matrix-ecosystem-number { display:flex; gap:12px; align-items:center; margin-bottom:10px; color:#ba9a62; font-size:17px; font-weight:400; }
@@ -23,14 +22,14 @@
 @media(max-width:1000px) {
  .matrix-ecosystem-stage { width:calc(100% - 48px); }
  .matrix-ecosystem-panels { min-height:500px; }
- .matrix-ecosystem-panel { padding-inline:22px; }
+ .matrix-ecosystem-panel { padding-inline:16px; }
 }
 @media(max-width:700px) {
  .matrix-ecosystem-stage { width:calc(100% - 36px); }
  .matrix-ecosystem-heading { padding-bottom:28px; }
  .matrix-ecosystem-heading p { padding-inline:16px; font-size:11px !important; }
  .matrix-ecosystem-panels { width:calc(4 * 72vw); min-height:490px; aspect-ratio:auto; }
- .matrix-ecosystem-panel { scroll-snap-align:start; padding-inline:24px; }
+ .matrix-ecosystem-panel { scroll-snap-align:start; padding-inline:16px; }
  .matrix-ecosystem-scroll { scroll-snap-type:x proximity; }
 }
 @media(prefers-reduced-motion:reduce) { .matrix-ecosystem-arrow { transition:none; } }

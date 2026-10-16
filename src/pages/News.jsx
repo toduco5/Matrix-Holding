@@ -99,7 +99,7 @@ export default function News() {
                   }}>
                     <span className="live-ticker__dot" />
                     <span data-gold-label style={{ color: "#d3a754", fontSize: "12px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                      TIN TỨC MỚI NHẤT
+                      THÔNG TIN MỚI NHẤT
                     </span>
                   </div>
                   
